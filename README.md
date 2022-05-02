@@ -1,7 +1,9 @@
 # Instruções
-galera primeira vez pra baixar o repositorio usa assim <br>
+galera primeira vez pra baixar o repositorio usa assim
 # git init
 # git clone https://github.com/ernestorangel/pet-store
+# npm instal
+para instalar os modulos que foi instalado no arquivo
 # git pull origin master 
 e quando for modificar algum arquivo sempre baixe as modificaçôes antes com esse comando
 esse comando pega as modificações que alguem pode ter feito no nosso arquivo nao use o clone novamente pode causar erros
