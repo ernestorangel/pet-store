@@ -4,7 +4,7 @@ const mainControllers = {
         res.render('contato', { title: 'Contato' });
     },
     home: (req,res,next) =>{
-            res.render('index', { title: 'Projeto Integrador' });
+            res.render('home', { title: 'Projeto Integrador' });
           }
 }
 module.exports = mainControllers
