@@ -7,7 +7,7 @@ const cartController = require('../controllers/cartController')
 // router.get("/delete/all", cartController.erase);
 // router.get("/checkout", cartController.checkout);
 
-router.get("/carrinho", cartController.carrinho)
+router.get("/", cartController.carrinho)
 
 router.get("/checkout", cartController.checkout)
 
