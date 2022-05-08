@@ -1,0 +1,25 @@
+#banner {
+  padding: 400px 0 0 0;
+  width: 1280px;
+  min-width: 1280px;
+  background-image: url(../images/banners/mainBanner.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+}
+.showcase {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin: 20px 0 20px 0;
+  background-color: transparent;
+}
+
+.squareShowcase {
+  height: 100%;
+  width: 25%;
+  margin: 0 10px 0 10px;
+  background-color: #FFD8BE;
+}
