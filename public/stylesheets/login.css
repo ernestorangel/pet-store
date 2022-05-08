@@ -1,0 +1,27 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    border: 1px solid red;
+}
+
+.login-1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+}
+
+.form-2 {
+    width: 80%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+}   
+
+.form-2 p {
+    width: 10%;
+    background-color: red;
+}
+
