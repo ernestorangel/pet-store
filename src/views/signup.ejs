@@ -10,8 +10,29 @@
     </head>
     <body>
         <main>
-            
+            <div class="signup-1">
+                <div class="signupLogoHolder">
+                    <div class="logo-signup"></div>
+                </div>
+                <div class="signupFormsHolder">
+                    <h2>Criar conta</h2>
+                   <form>
+                    <label for="">Usuario</label>
+                    <input type="text" name="usuario" id="usuario" placeholder="Digite aqui seu nome de usuario">
+                    <label for="">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="Digite aqui seu e-mail">
+                    <label for="">Senha</label>
+                    <input type="password" name="senha" id="senha" placeholder="Digite aqui sua senha">
+                    <label for="">Confirmar Senha</label>
+                    <input type="senha" name="senha" id="senha" placeholder="Confirme sua senha"> 
+                    <label for="">Telefone</label>
+                    <input type="number" name="numero" id="numero" placeholder="Digite aqui seu numero de telefone">
+                    <button id="signupButton" type="submit">Cadastrar</button>
+                    <p></p>
+                   </form>
+                </div>
+            </div>
         </main>
-        <%- include('./partials/footer') %>
+        
     </body>
 </html>
