@@ -270,12 +270,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-footer {
-  height: 400px;
-  background-color: #FFD8BE;
-  padding: 0 calc((100vw - 1280px) / 2);
-}
-
 a {
   color: #00B7FF;
 }

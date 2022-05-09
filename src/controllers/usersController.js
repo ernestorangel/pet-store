@@ -1,13 +1,12 @@
-const path = require('path')
 const usersController = {
-    login:  (req, res) => {
+    login: (req, res) => {
       res.render('login');
     },
-    signup: (req,res,next) => {
+    signup: (req, res) => {
       res.render('signup');
     },
     enter: (req, res) => {
       res.render('userPanel');
     }
-}
-module.exports = usersController
+};
+module.exports = usersController;

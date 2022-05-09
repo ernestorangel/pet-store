@@ -1,0 +1,26 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  background-color: #FFD8BE;
+}
+
+#footerFirstSection {
+  display: flex;
+  flex-direction: row;
+  padding: 0 calc((100vw - 1280px) / 2);
+  background-color: #9381FF;
+  height: 300px;
+  justify-content: center;
+}
+
+#footerColumn {
+  width: 300px;
+  margin: 0 10px 0 10px;
+}
+
+#footerSecondSection {
+  padding: 0 calc((100vw - 1280px) / 2);
+  background-color: #FFD8BE;
+  height: 100px;
+}

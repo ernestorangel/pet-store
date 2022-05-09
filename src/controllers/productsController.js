@@ -1,10 +1,10 @@
 const path = require('path')
-const usersController = {
-    search:  (req, res) => {
+const productController = {
+    search: (req, res) => {
       res.render('productsList',);
     },
-    view: (req,res,next) => {
+    view: (req, res) => {
       res.render('product');
     }
 }
-module.exports = usersController
+module.exports = productController
