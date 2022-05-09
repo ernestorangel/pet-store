@@ -1,3 +1,7 @@
+main {
+  padding: 0 calc((100vw - 1280px) / 2);
+}
+
 #banner {
   padding: 400px 0 0 0;
   width: 1280px;
