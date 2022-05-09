@@ -61,6 +61,7 @@ input {
 
 #loginButton {
     height: 40px;
+    width: 100%;
     border-radius: 10px;
     margin-top: 15px;
     background-color: green;
@@ -73,10 +74,12 @@ input {
     background-color: transparent;
     margin-top: 5px;
     color: #9381FF;
+    width: 100%;
 }
 
 #signupButton {
     height: 40px;
+    width: 100%;
     border-radius: 10px;
     margin-top: 15px;
     background-color: #9381FF;
