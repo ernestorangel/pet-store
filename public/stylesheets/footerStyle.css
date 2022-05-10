@@ -3,6 +3,7 @@ footer {
   flex-direction: column;
   height: 400px;
   background-color: #FFD8BE;
+  grid-template-columns: 1fr 1fr;
 }
 
 #footerFirstSection {
@@ -19,8 +20,94 @@ footer {
   margin: 0 10px 0 10px;
 }
 
+.footerMenuTitle {
+  color: white;
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.footerMenuOption {
+  color: white;
+  padding-top: 25px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
 #footerSecondSection {
   padding: 0 calc((100vw - 1280px) / 2);
   background-color: #FFD8BE;
   height: 100px;
+}
+
+#footerSecondSectionUp {
+  display: flex;
+  flex-direction: row;
+}
+
+#footerLogo {
+  width: 200px;
+  padding-top: 10px;
+  font-size: 20px;
+  color: #9381FF;
+  font-weight: 800;
+}
+
+#footerAccessibiltyHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 880px;
+}
+
+#accessibilityIcon {
+  background-image: url(../images/icons/accessibilty-icon.png);
+}
+
+#accessibilityButton {
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 20px 0 20px 0;
+}
+
+#socialMediaFooterHolder {
+  display: flex;
+  flex-direction: row;
+}
+
+.socialMediaIcon {
+  width: 25px;
+  height: 25px;
+  margin: 15px;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+#facebookIcon {
+ background-image: url(../images/icons/facebook-logo.png);
+}
+
+#instagramIcon {
+  background-image: url(../images/icons/instagram-logo.png);
+}
+
+#twitterIcon {
+  background-image: url(../images/icons/twitter-logo.png);
+}
+
+#footerUnderline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+  font-weight: 300;
+  padding-top: 10px;
+  border-top: 1px #9381FF solid;
 }

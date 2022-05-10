@@ -3,9 +3,8 @@ main {
 }
 
 #banner {
-  padding: 400px 0 0 0;
-  width: 1280px;
-  min-width: 1280px;
+  padding: 360px 0 0 0;
+  width: 100%;
   background-image: url(../images/banners/mainBanner.png);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -21,9 +20,52 @@ main {
   background-color: transparent;
 }
 
+.doubleShowcase{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  margin: 20px 0 20px 0;
+  background-color: transparent;
+}
+
 .squareShowcase {
   height: 100%;
   width: 25%;
   margin: 0 10px 0 10px;
   background-color: #FFD8BE;
+  box-shadow: 1px 1px 8px lightgrey;
+}
+
+.rowShowcase {
+  height: 100%;
+  width: 100%;
+  margin: 0 10px 0 10px;
+  background-color: #FFD8BE;
+  box-shadow: 1px 1px 8px lightgrey;
+}
+
+.addsShowcase {
+  height: 100%;
+  width: 80%;
+  margin: 0 10px 0 10px;
+  background-color: #FFD8BE;
+  box-shadow: 1px 1px 8px lightgrey;
+}
+
+.bigShowcase {
+  height: 100%;
+  width: 75%;
+  margin: 0 10px 0 10px;
+  background-color: #FFD8BE;
+  box-shadow: 1px 1px 8px lightgrey;
+}
+
+.longShowcase {
+  height: 100%;
+  width: 25%;
+  margin: 0 10px 0 10px;
+  background-color: #FFD8BE;
+  box-shadow: 1px 1px 8px lightgrey;
 }
