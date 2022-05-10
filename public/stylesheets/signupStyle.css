@@ -6,6 +6,10 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+body {
+    background-color: #9381FF;
+}
+
 
 .signupLogoHolder {
     display: flex;
@@ -14,7 +18,7 @@
     width: 82%;
     height: 100px;
     background-color: #9381FF;
-    box-shadow: 0px 3px 5px gray;
+    
 }
 
 .logo-signup{
@@ -30,15 +34,16 @@
     
     height: 75vh;
     width: 25%;
-    margin-left: 35%;
+    margin-left: 40%;
     margin-top: 3%;
     background-color: #FFD8BE;
     border-radius: 10px;
+    
 }
 
-h2 {
+h2{
     margin-left: 7%;
-    margin-top: 15%;
+    padding-top: 5%;
     color: #9381FF;
 }  
 
