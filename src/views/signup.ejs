@@ -15,20 +15,21 @@
                     <div class="logo-signup"></div>
                 </div>
                 <div class="signupFormsHolder">
-                    <h2>Criar conta</h2>
-                   <form>
-                    <label for="">Usuario</label>
-                    <input type="text" name="usuario" id="usuario" placeholder="Digite aqui seu nome de usuario">
-                    <label for="">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="Digite aqui seu e-mail">
-                    <label for="">Senha</label>
-                    <input type="password" name="senha" id="senha" placeholder="Digite aqui sua senha">
-                    <label for="">Confirmar Senha</label>
-                    <input type="senha" name="senha" id="senha" placeholder="Confirme sua senha"> 
-                    <label for="">Telefone</label>
-                    <input type="number" name="numero" id="numero" placeholder="Digite aqui seu numero de telefone">
-                    <button id="signupButton" type="submit">Cadastrar</button>
-                    <p></p>
+                    <h2>Cadastro</h2>
+                   <form action="" method="POST">
+                       <input type="text" id="usuarioName" placeholder="Digite aqui seu nome">
+                       <input type="email" id="usuarioEmail" placeholder="Digite aqui seu e-mail">
+                       <input type="password" id="senha" placeholder="Digite aqui sua senha">
+                       <input type="password" id="confirmSenha" placeholder="Confirme sua senha">
+                       <input type="number" id="telefone" placeholder="Digite aqui seu telefone">
+                       
+                       <button id="registerButton" type="submit">Cadastrar</button>
+                       <div class="fazerLogin">
+                       <label>Voce ja tem uma conta?</label>
+                       <button type="submit">Fazer login</button>
+                       </div>
+                       
+                    
                    </form>
                 </div>
             </div>

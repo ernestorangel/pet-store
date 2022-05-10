@@ -2,6 +2,7 @@
     margin: 0%;
     padding: 0%;
     
+    
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -26,59 +27,61 @@
 }
 
 .signupFormsHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
     
-    background-color: #9381FF;
-    
-}
-
-form {
+    height: 75vh;
+    width: 25%;
+    margin-left: 35%;
+    margin-top: 3%;
     background-color: #FFD8BE;
-    padding: 70px 20px 0px 20px;
-    width: 390px;
-    height: 580px;
-    display: flex;
-    flex-direction: column;
     border-radius: 10px;
-    box-shadow: 0px 3px 5px gray;
-    
-    
 }
 
-label {
+h2 {
+    margin-left: 7%;
+    margin-top: 15%;
     color: #9381FF;
-    padding-left: 10px;
-    padding-top: 10px;
-    font-weight: 600;
-}
+}  
+
+    
+
 
 input {
-    height: 40px;
-    border-radius: 10px;
+    display: flex;
     margin-top: 20px;
-    padding: 0 10px 0 10px;
+    height: 40px;
+    width: 80%;
+    border-radius: 10px;
+    margin-left: 7%;
+    
+    padding: 0px 10px 0 10px;
 }
 
 
-#signupButton {
+#registerButton {
     height: 40px;
-    width: 100%;
+    width: 80%;
     border-radius: 10px;
     margin-top: 15px;
     background-color: green;
     color: white;
     font-size: 20px;
     font-weight: 600;
+    margin-left: 10%;
 }
 
-h2 {
-    position: absolute;
-    padding: 0px 200px 560px 0px; 
-    font-size: 35px;
-    color: #9381FF;
+.fazerLogin {
+    margin-top: 10%;
+    margin-left: 10%;
 }
+
+.fazerLogin label {
+    
+    
+}
+
+.fazerLogin button {
+    background-color: transparent;
+    color: #9381FF;
+    font-size: 2vh;
+}
+
