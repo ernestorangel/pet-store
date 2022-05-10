@@ -378,10 +378,12 @@
   #login {
     display: flex;
     flex-direction: row;
-    width: 100px;
-    min-width: 100px;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    min-width: 56px;
     height: 56px;
-    padding: 0 0 0 20px;
+    margin: 0 30px 0 30px;
   }
   
   #userPhoto {
@@ -402,7 +404,7 @@
   }
   
   #profileSection {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -448,15 +450,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 50px;
-    min-width: 50px;
+    width: 56px;
+    min-width: 56px;
     height: 56px;
-    padding: 0 0 0 25px;
+    margin: 0 30px 0 0;
   }
   
   #cartCounter {
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     background-color: #FFD8BE;
     color: #9381FF;
     font-size: 30px;
@@ -594,7 +596,7 @@
   #headerFirstSection {
     background-color: #9381FF;
     height: 100px;
-    padding: 0 calc((100vw - 1280px) / 2);
+    padding: 0 calc((100vw - 1320px) / 2);
   }
   
   #logo {
@@ -731,7 +733,7 @@
     width: 150px;
     min-width: 150px;
     height: 56px;
-    padding: 0 0 0 25px;
+    padding: 0 25px 0 25px;
   }
   
   #cartCounter {
