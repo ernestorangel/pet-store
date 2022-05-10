@@ -1,4 +1,3 @@
-const path = require('path')
 const cartController = {
     carrinho:(req, res) => {
         res.render('cart', { title: 'Carrinho' });
@@ -22,4 +21,3 @@ module.exports = cartController
 //         res.render('checkout', {title: "Checkout"});
 //     }
 // }
-// module.exports = cartController
