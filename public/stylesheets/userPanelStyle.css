@@ -1,0 +1,131 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    
+
+}
+
+main {
+    padding: 0 calc((100vw - 1280px) / 2);
+}
+
+.painel-user-0 {
+    display: flex;
+    
+}
+
+
+.painel-perfil-1 {
+    width: 350px;
+    height: 500px;
+    background-color: green;
+}
+
+
+.info-conta-2 {
+    margin-left: 20px;
+    margin-top: 30px;
+    display: flex;
+}
+
+.icone-perfil-3 {
+    background-color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 200px;
+}
+
+.detalhes-3 {
+    padding: 5px 0px 10px 15px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.forms-conta-2 {
+    
+    height: 398px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.forms-conta-2 button {
+    margin-top: 20px;
+    width: 250px;
+}
+
+
+.dados-perfil-1 {
+    width: 800px;
+    height: 1000px;
+    background-color: rgb(110, 110, 255);
+    
+}
+
+
+.titulo-perfil-2 {
+    border: 1px solid red;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.forms-perfil-2 {
+    
+    margin-left: 10px;
+    display: flex;
+    
+}
+
+.forms-perfil-2 label {
+    
+}
+
+.inputEdit-4 {
+    
+    margin-top: 40px;
+    margin-left: 20px;
+    height: 35px;
+    width: 350px;
+    border: 1px solid rgb(22, 22, 22);
+}
+
+
+.imagem-perfil-1 {
+    width: 350px;
+    height: 500px;
+    background-color: yellow;
+}
+
+
+.image-2 {
+    
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.editImgPerfil-3 {
+    height: 190px;
+    width: 190px;
+    background-color: white;
+    border-radius: 100px;
+}
+
+
+.select-image-2 {
+    
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
