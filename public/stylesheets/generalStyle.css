@@ -4,3 +4,10 @@
   border: 0px solid red;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
+:root {
+  --main-color: #9381FF;
+  --secondary-color: #f9f9f9;
+  --highlight-color: #FFD8BE;
+  --card-border-size: 10px;
+}

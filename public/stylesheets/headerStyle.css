@@ -1,108 +1,18 @@
-@media (max-width: 415px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    box-shadow: 0px 3px 5px gray;
-  }
-  
+@media (max-width: 430px) {
   .menu {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  
-  .firstMenuButton {
-    margin: 0 20px 0 0;
-    font-weight: 300;
-    font-size: 20px;
-    text-align: center;
-    color: white;
-  }
-  
-  .secondMenuButton {
-    margin: 0 20px 0 0;
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center;
-    color: #FFD8BE;
-  }
-  
-  .thirdMenuButton {
-    margin: 5px 0 5px 0;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 33px;
-    text-align: center;
-    color: #9381FF;
-  }
-  
-  #headerFirstSection {
-    background-color: #9381FF;
   }
   
   #logo {
-    background-image: url(../images/logos/main-logo.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 56px;
-    width: 250px;
-    min-width: 250px;
     margin: 5px 0 0 0;
   }
   
   #searchBar {
     width: 90%;
-    height: 56px;
     margin: 5px 0 5px 0;
-  }
-  
-  #searchBarForm {
-    display: flex;
-    align-items: center;
-    background-color: #F8F7FF;
-    height: 56px;
-    border-radius: 10px;
-  }
-  
-  #searchBarArea {
-    background-color: #F8F7FF;
-    color: gray;
-    font-size: 15px;
-    padding: 0 0 0 15px;
-    height: 100%;
-    width: calc(100% - 60px);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-right: 1px lightgray solid;
-  }
-  
-  #searchBarArea:focus {
-    outline: none;
-  }
-  
-  #searchButton {
-    background-image: url(../images/icons/search-icon.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: #F8F7FF;
-    height: 100%;
-    width: 60px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-  
-  #searchButton:hover {
-    background-color: #FFD8BE;
   }
 
   #infoHolder {
-    display: flex;
-    display: row;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -111,273 +21,66 @@
   }
   
   #login {
-    display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 50%;
     height: 100%;
-  }
-  
-  #userPhoto {
-    background-image: url(../images/profile/pp.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50px;
-    width: 50px;
-    border-radius: 28px;
-  }
-  
-  #userEmptyPhoto {
-    background-color: black;
-    height: 56px;
-    width: 56px;
-    border-radius: 28px;
   }
   
   #profileSection {
     display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  
-  #userGreeting {
-    padding: 0 0 0 5px;
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-  }
-  
-  #accountAccess {
-    padding: 0 0 0 5px;
-    font-size: 12px;
-    font-weight: 300;
-    color: white;
-  }
-  
-  #loginButton {
-    height: 100%;
-    width: 40%;
-    color: #FFD8BE;
-    font-size: 18px;
-    background-color: #9381FF;
-    margin-right: 15px;
-  }
-  
-  #signupButton {
-    height: 100%;
-    width: 60%;
-    color: #9381FF;
-    font-size: 18px;
-    background-color:  #FFD8BE;
-    border-left: 1px white;
-    border-radius: 10px;
-    text-align: center;
   }
   
   #cart {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
     width: 50%;
-    height: 50px;
   }
-  
-  #cartCounter {
-    width: 50px;
-    height: 50px;
-    background-color: #FFD8BE;
-    color: #9381FF;
-    font-size: 30px;
-    font-weight: 800;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-  }
-  
+
   #cartButtonHolder {
-    display: none;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-  }
-  
-  #cartButton1 {
-    display: none;
-  }
-  
-  #cartButton2 {
     display: none;
   }
   
   #headerSecondSection {
     display: none;
-    background-color: #9381FF;
-    padding: 0px calc((100vw - 1320px) / 2) 5px;
   }
-  
-  #secondSectionLeftSide {
-    width: 256px;
-    display: flex;
-    flex-direction: row;
-    padding-left: 20px;
-  }
-  
-  #locationPin {
-    background-image: url(../images/icons/location-pin-icon.svg);
-    background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: center;
-    width: 30px;
-    margin-right: 10px;
-  }
-  
-  #secondSectionRightSide {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 1024px;
-  }
-  
+
   #headerThirdSection {
-    background-color: #FFD8BE;
-    padding: 0 calc((100vw - 1320px) / 2);
+    background-color: var(--main-color);
   }
   
   #thirdSectionLeftSide {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
   
   #thirdSectionRightSide {
     display: none;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 30%;
-    padding-right: 20px;
+  }
+
+  .thirdMenuButton {
+    color: var(--secondary-color);
   }
 }
 
-@media (min-width: 415px) and (max-width:1000px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    box-shadow: 0px 3px 5px gray;
-  }
-  
+@media (min-width: 430px) and (max-width:1000px) {
   .menu {
-    display: flex;
     flex-direction: row;
-    align-items: center;
-  }
-  
-  .firstMenuButton {
-    margin: 0 20px 0 0;
-    font-weight: 300;
-    font-size: 20px;
-    text-align: center;
-    color: white;
-  }
-  
-  .secondMenuButton {
-    margin: 0 20px 0 0;
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center;
-    color: #FFD8BE;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  
-  .thirdMenuButton {
-    margin: 0 0 0 20px;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 33px;
-    text-align: center;
-    color: #9381FF;
-    overflow: hidden;
-    white-space: nowrap;
   }
   
   #headerFirstSection {
-    background-color: #9381FF;
     height: 100px;
-    padding: 0 calc((100vw - 1280px) / 2);
-  }
-  
-  #logo {
-    background-image: url(../images/logos/main-logo.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 56px;
-    width: 200px;
-    min-width: 100px;
   }
   
   #searchBar {
     width: 53%;
-    height: 56px;
-  }
-  
-  #searchBarForm {
-    display: flex;
-    align-items: center;
-    background-color: #F8F7FF;
-    height: 56px;
-    border-radius: 10px;
-  }
-  
-  #searchBarArea {
-    background-color: #F8F7FF;
-    color: gray;
-    font-size: 15px;
-    padding: 0 0 0 15px;
-    height: 100%;
-    width: calc(100% - 60px);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-right: 1px lightgray solid;
-  }
-  
-  #searchBarArea:focus {
-    outline: none;
-  }
-  
-  #searchButton {
-    background-image: url(../images/icons/search-icon.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: #F8F7FF;
-    height: 100%;
-    width: 60px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
   }
   
   #searchButton:hover {
     background-color: #FFD8BE;
   }
-
-  #infoHolder {
-    display: flex;
-    display: row;
-  }
   
   #login {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 56px;
@@ -386,125 +89,22 @@
     margin: 0 30px 0 30px;
   }
   
-  #userPhoto {
-    background-image: url(../images/profile/pp.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 56px;
-    width: 56px;
-    border-radius: 28px;
-  }
-  
-  #userEmptyPhoto {
-    background-color: black;
-    height: 56px;
-    width: 56px;
-    border-radius: 28px;
-  }
-  
   #profileSection {
     display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  
-  #userGreeting {
-    display: none;
-    padding: 0 0 0 5px;
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-  }
-  
-  #accountAccess {
-    display: none;
-    padding: 0 0 0 5px;
-    font-size: 12px;
-    font-weight: 300;
-    color: white;
-  }
-  
-  #loginButton {
-    height: 100%;
-    width: 40%;
-    color: #FFD8BE;
-    font-size: 18px;
-    background-color: #9381FF;
-    margin-right: 15px;
-  }
-  
-  #signupButton {
-    height: 100%;
-    width: 60%;
-    color: #9381FF;
-    font-size: 18px;
-    background-color:  #FFD8BE;
-    border-left: 1px white;
-    border-radius: 10px;
-    text-align: center;
   }
   
   #cart {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     width: 56px;
     min-width: 56px;
-    height: 56px;
     margin: 0 30px 0 0;
   }
-  
-  #cartCounter {
-    width: 56px;
-    height: 56px;
-    background-color: #FFD8BE;
-    color: #9381FF;
-    font-size: 30px;
-    font-weight: 800;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-  }
-  
+
   #cartButtonHolder {
     display: none;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-  }
-  
-  #cartButton1 {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    height: 30%;
-    width: auto;
-    color: white;
-    font-size: 10px;
-    background-color: #9381FF;
-    padding: 0 0 0 10px;
-  }
-  
-  #cartButton2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 70%;
-    width: auto;
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    background-color: #9381FF;
-    padding: 0 0 0 10px;
   }
   
   #headerSecondSection {
-    background-color: #9381FF;
+    background-color: var(--main-color);
     height: 36px;
     padding: 0px calc((100vw - 1320px) / 2) 5px;
   }
@@ -532,15 +132,11 @@
   }
   
   #headerThirdSection {
-    background-color: #FFD8BE;
     height: 48px;
-    padding: 0 calc((100vw - 1320px) / 2);
   }
   
   #thirdSectionLeftSide {
     width: 70%;
-    display: flex;
-    flex-direction: row;
   }
   
   #thirdSectionRightSide {
@@ -550,141 +146,34 @@
     width: 30%;
     padding-right: 20px;
   }
+
+  .thirdMenuButton {
+    color: var(--main-color);
+  }
 }
 
 @media (min-width:1000px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    box-shadow: 0px 3px 5px gray;
-  }
   
   .menu {
-    display: flex;
     flex-direction: row;
-    align-items: center;
-  }
-  
-  .firstMenuButton {
-    margin: 0 20px 0 0;
-    font-weight: 300;
-    font-size: 20px;
-    text-align: center;
-    color: white;
-  }
-  
-  .secondMenuButton {
-    margin: 0 20px 0 0;
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center;
-    color: #FFD8BE;
-  }
-  
-  .thirdMenuButton {
-    margin: 0 0 0 20px;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 33px;
-    text-align: center;
-    color: #9381FF;
   }
   
   #headerFirstSection {
-    background-color: #9381FF;
     height: 100px;
     padding: 0 calc((100vw - 1320px) / 2);
   }
   
-  #logo {
-    background-image: url(../images/logos/main-logo.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 56px;
-    width: 250px;
-    min-width: 250px;
-  }
-  
   #searchBar {
     width: 53%;
-    height: 56px;
-  }
-  
-  #searchBarForm {
-    display: flex;
-    align-items: center;
-    background-color: #F8F7FF;
-    height: 56px;
-    border-radius: 10px;
-  }
-  
-  #searchBarArea {
-    background-color: #F8F7FF;
-    color: gray;
-    font-size: 15px;
-    padding: 0 0 0 15px;
-    height: 100%;
-    width: calc(100% - 60px);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-right: 1px lightgray solid;
-  }
-  
-  #searchBarArea:focus {
-    outline: none;
-  }
-  
-  #searchButton {
-    background-image: url(../images/icons/search-icon.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: #F8F7FF;
-    height: 100%;
-    width: 60px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-  
-  #searchButton:hover {
-    background-color: #FFD8BE;
-  }
-
-  #infoHolder {
-    display: flex;
-    display: row;
   }
   
   #login {
-    display: flex;
-    flex-direction: row;
     width: 200px;
     min-width: 200px;
     height: 56px;
     padding: 0 0 0 20px;
   }
-  
-  #userPhoto {
-    background-image: url(../images/profile/pp.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 56px;
-    width: 56px;
-    border-radius: 28px;
-  }
-  
-  #userEmptyPhoto {
-    background-color: black;
-    height: 56px;
-    width: 56px;
-    border-radius: 28px;
-  }
-  
+
   #profileSection {
     display: flex;
     flex-direction: column;
@@ -706,51 +195,12 @@
     color: white;
   }
   
-  #loginButton {
-    height: 100%;
-    width: 40%;
-    color: #FFD8BE;
-    font-size: 18px;
-    background-color: #9381FF;
-    margin-right: 15px;
-  }
-  
-  #signupButton {
-    height: 100%;
-    width: 60%;
-    color: #9381FF;
-    font-size: 18px;
-    background-color:  #FFD8BE;
-    border-left: 1px white;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
   #cart {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     width: 150px;
     min-width: 150px;
-    height: 56px;
     padding: 0 25px 0 25px;
   }
-  
-  #cartCounter {
-    width: 50px;
-    height: 50px;
-    background-color: #FFD8BE;
-    color: #9381FF;
-    font-size: 30px;
-    font-weight: 800;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-  }
-  
+
   #cartButtonHolder {
     display: flex;
     flex-direction: column;
@@ -784,7 +234,7 @@
   }
   
   #headerSecondSection {
-    background-color: #9381FF;
+    background-color: var(--main-color);
     height: 36px;
     padding: 0px calc((100vw - 1320px) / 2) 5px;
   }
@@ -812,15 +262,12 @@
   }
   
   #headerThirdSection {
-    background-color: #FFD8BE;
     height: 48px;
     padding: 0 calc((100vw - 1320px) / 2);
   }
   
   #thirdSectionLeftSide {
     width: 70%;
-    display: flex;
-    flex-direction: row;
   }
   
   #thirdSectionRightSide {
@@ -830,4 +277,156 @@
     width: 30%;
     padding-right: 20px;
   }
+
+  .thirdMenuButton {
+    color: var(--main-color);
+  }
+}
+
+header {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0px 3px 5px gray;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.firstMenuButton {
+  margin: 0 20px 0 0;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+.secondMenuButton {
+  margin: 0 20px 0 0;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+.thirdMenuButton {
+  margin: 0 0 0 20px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 33px;
+  text-align: center;
+}
+
+#headerFirstSection {
+  background-color: var(--main-color);
+}
+
+#logo {
+  background-image: url(../images/logos/main-logo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 56px;
+  width: 250px;
+  min-width: 250px;
+}
+
+#searchBar {
+  height: 56px;
+}
+
+#searchBarForm {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-color);
+  height: 56px;
+  border-radius: var(--card-border-size);
+}
+
+#searchBarArea {
+  background-color: var(--secondary-color);
+  color: gray;
+  font-size: 15px;
+  padding: 0 0 0 15px;
+  height: 100%;
+  width: calc(100% - 60px);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: 1px solid var(--main-color);
+}
+
+#searchBarArea:focus {
+  outline: none;
+}
+
+#searchButton {
+  background-image: url(../images/icons/search-icon.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--secondary-color);
+  height: 100%;
+  width: 60px;
+  border-top-right-radius: var(--card-border-size);
+  border-bottom-right-radius: var(--card-border-size);
+}
+
+#searchButton:hover {
+  background-color: var(--highlight-color);
+}
+
+#infoHolder {
+  display: flex;
+  display: row;
+}
+
+#login {
+  display: flex;
+  flex-direction: row;
+}
+
+#userPhoto {
+  background-image: url(../images/profile/pp.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 56px;
+  width: 56px;
+  border-radius: 28px;
+}
+
+#userEmptyPhoto {
+  background-color: black;
+  height: 56px;
+  width: 56px;
+  border-radius: 28px;
+}
+
+#cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 56px;
+}
+
+#cartCounter {
+  width: 56px;
+  height: 56px;
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+#thirdSectionLeftSide {
+  display: flex;
+  flex-direction: row;
 }
