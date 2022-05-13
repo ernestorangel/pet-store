@@ -2,12 +2,14 @@
   margin: 0px;
   padding: 0px;
   border: 0px solid red;
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Lexend', sans-serif;
 }
 
 :root {
-  --main-color: #9381FF;
-  --secondary-color: #f9f9f9;
-  --highlight-color: #FFD8BE;
+  --main-color: #3CACF6;
+  --secondary-color: #FF470A;
+  --text-bright-color: #FBFEF9;
+  --text-dark-color: #000000;
   --card-border-size: 10px;
+  --big-border-size: 15px;
 }

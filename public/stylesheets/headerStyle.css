@@ -98,10 +98,6 @@
     min-width: 56px;
     margin: 0 30px 0 0;
   }
-
-  #cartButtonHolder {
-    display: none;
-  }
   
   #headerSecondSection {
     background-color: var(--main-color);
@@ -165,13 +161,14 @@
   
   #searchBar {
     width: 53%;
+    margin-left: 15px;
   }
   
   #login {
     width: 200px;
     min-width: 200px;
     height: 56px;
-    padding: 0 0 0 20px;
+    padding: 0 0 0 45px;
   }
 
   #profileSection {
@@ -179,58 +176,50 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    padding-left: 5px;
   }
   
   #userGreeting {
     padding: 0 0 0 5px;
     font-size: 16px;
     font-weight: 600;
-    color: white;
+    color: var(--text-bright-color);
   }
   
   #accountAccess {
     padding: 0 0 0 5px;
     font-size: 12px;
     font-weight: 300;
-    color: white;
+    color: var(--text-bright-color);
   }
   
   #cart {
-    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
     min-width: 150px;
-    padding: 0 25px 0 25px;
+    padding: 0 22px 0 0;
   }
 
-  #cartButtonHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+  .cartIcon {
+    width: 30px;
+    height: 30px;
+    margin: 0 0 0 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
-  
-  #cartButton1 {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    height: 30%;
-    width: auto;
-    color: white;
-    font-size: 10px;
-    background-color: #9381FF;
-    padding: 0 0 0 10px;
+
+  #favoritesIcon {
+    background-image: url(../images/icons/heart-icon.svg);
   }
-  
-  #cartButton2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 70%;
-    width: auto;
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    background-color: #9381FF;
-    padding: 0 0 0 10px;
+
+  #notificationIcon {
+    background-image: url(../images/icons/notification-icon.svg);
+  }
+
+  #cartIcon {
+    background-image: url(../images/icons/cart-icon.svg);
   }
   
   #headerSecondSection {
@@ -308,7 +297,7 @@ header {
   font-weight: 600;
   font-size: 20px;
   text-align: center;
-  color: var(--secondary-color);
+  color: var(--text-bright-color);
 }
 
 .thirdMenuButton {
@@ -317,6 +306,7 @@ header {
   font-size: 20px;
   line-height: 33px;
   text-align: center;
+  color: var(--text-bright-color);
 }
 
 #headerFirstSection {
@@ -324,7 +314,7 @@ header {
 }
 
 #logo {
-  background-image: url(../images/logos/main-logo.svg);
+  background-image: url(../images/logos/pet-store-logo.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -340,21 +330,20 @@ header {
 #searchBarForm {
   display: flex;
   align-items: center;
-  background-color: var(--secondary-color);
+  background-color: var(--text-bright-color);
   height: 56px;
-  border-radius: var(--card-border-size);
+  border-radius: var(--big-border-size);
 }
 
 #searchBarArea {
-  background-color: var(--secondary-color);
+  background-color: var(--text-bright-color);
   color: gray;
   font-size: 15px;
   padding: 0 0 0 15px;
   height: 100%;
   width: calc(100% - 60px);
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-right: 1px solid var(--main-color);
+  border-top-left-radius: var(--big-border-size);
+  border-bottom-left-radius: var(--big-border-size);
 }
 
 #searchBarArea:focus {
@@ -364,17 +353,17 @@ header {
 #searchButton {
   background-image: url(../images/icons/search-icon.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 50%;
   background-position: center;
-  background-color: var(--secondary-color);
+  background-color: var(--text-bright-color);
   height: 100%;
   width: 60px;
-  border-top-right-radius: var(--card-border-size);
-  border-bottom-right-radius: var(--card-border-size);
+  border-radius: var(--big-border-size);
 }
 
 #searchButton:hover {
-  background-color: var(--highlight-color);
+  background-color: var(--secondary-color);
+  background-image: url(../images/icons/search-icon-hover.svg);
 }
 
 #infoHolder {
@@ -424,6 +413,10 @@ header {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+}
+
+#headerThirdSection {
+  background-color: var(--secondary-color);
 }
 
 #thirdSectionLeftSide {

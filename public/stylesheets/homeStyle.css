@@ -130,10 +130,10 @@
   #banner {
     padding: 360px 0 0 0;
     width: 100%;
-    background-image: url(../images/banners/mainBanner.png);
+    /* background-image: url(../images/banners/mainBanner.png);
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: top;
+    background-position: top; */
   }
   .showcase {
     display: flex;
@@ -166,17 +166,17 @@
     min-width: 1240px;
     margin: 0 10px 0 10px;
     box-shadow: 1px 1px 8px lightgrey;
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid #9381FF;
+    background-color: var(--text-bright-color);
+    border-radius: var(--card-border-size);
   }
   
   .addsShowcase {
     height: 100%;
     width: 80%;
     margin: 0 10px 0 10px;
-    background-color: #FFD8BE;
+    background-color: var(--text-bright-color);
     box-shadow: 1px 1px 8px lightgrey;
+    border-radius: var(--card-border-size);
   }
   
   .bigShowcase {
@@ -184,8 +184,9 @@
     width: 925px;
     min-width: 925px;
     margin: 0 10px 0 10px;
-    background-color: #FFD8BE;
+    background-color: var(--text-bright-color);
     box-shadow: 1px 1px 8px lightgrey;
+    border-radius: var(--card-border-size);
   }
   
   .longShowcase {
@@ -193,8 +194,9 @@
     width: 295px;
     min-width: 295px;
     margin: 0 10px 0 10px;
-    background-color: #FFD8BE;
+    background-color: var(--text-bright-color);
     box-shadow: 1px 1px 8px lightgrey;
+    border-radius: var(--card-border-size);
   }
 }
 
@@ -204,14 +206,13 @@
   min-width: 295px;
   margin: 10px;
   box-shadow: 1px 1px 8px lightgrey;
-  background-color: var(--secondary-color);
+  background-color: var(--text-bright-color);
   border-radius: 10px;
-  border: 1px solid var(--main-color);
 }
 
 .showcaseTitle {
   margin: 15px 0 0 15px;
-  color: #9381FF;
+  color: var(--main-color);
   font-size: 20px;
   font-weight: 600;
 }
@@ -243,14 +244,14 @@
 
 .showcaseDescription {
   margin: 10px 0 0 10px;
-  color: black;
+  color: var(--main-color);
   font-size: 25px;
   font-weight: 600;
 }
 
 .seeMore {
   margin: 10px 0 0 15px;
-  color: #9381FF;
+  color: var(--secondary-color);
   font-size: 15px;
   font-weight: 300;
 }
