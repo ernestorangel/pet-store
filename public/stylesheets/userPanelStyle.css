@@ -68,7 +68,7 @@ main {
 
 
 .titulo-perfil-2 {
-    border: 1px solid red;
+    
     height: 60px;
     display: flex;
     justify-content: center;
@@ -81,22 +81,74 @@ main {
     
     margin-left: 10px;
     display: flex;
+    justify-content: flex-start;
+    
     
 }
 
-.forms-perfil-2 label {
+
+
+
+.labelEdit-4 {
+    margin-right: 10px;
     
+
 }
 
 .inputEdit-4 {
     
+    
     margin-top: 40px;
-    margin-left: 20px;
     height: 35px;
-    width: 350px;
-    border: 1px solid rgb(22, 22, 22);
+    width: 400px;
+    
+}
+ 
+#inputEmail {
+    margin-left: 111px;
 }
 
+#inputUserName {
+    margin-left: 25px;
+}
+
+#inputFullName {
+    margin-left: 35px;
+}
+
+#inputTell {
+    margin-left: 3px;
+}
+
+#inputCPF {
+    margin-left: 130px;
+}
+
+.labelAndInputSexo {
+    margin-top: 40px;
+    
+}
+
+.labelAndInputSexo input {
+    margin-left: 50px;
+}
+
+#inputMasculino {
+    margin-left: 130px;
+}
+
+.labelAndInputData {
+    margin-top: 40px;
+}
+
+.labelAndInputData input {
+    margin-left: 10px;
+}
+
+.forms-perfil-2 button {
+    height: 30px;
+    width: 100px;
+}
 
 .imagem-perfil-1 {
     width: 350px;

@@ -34,30 +34,31 @@
         </div>
         <div class="forms-perfil-2">
           <form action="" method="">
-           <label for="userName">Nome de Usuario</label>
-           <input class="inputEdit-4" type="text" name="userName" id="userName"></br>
+           <label class="labelEdit-4"  for="userName">Nome de Usuario</label>
+           <input id="inputUserName" class="inputEdit-4" type="text" name="userName" id="userName"></br>
 
-           <label for="fullName">Nome Completo</label>
-           <input class="inputEdit-4" type="text" name="fullName" id="fullName"></br>
+           <label class="labelEdit-4"  for="fullName">Nome Completo</label>
+           <input id="inputFullName" class="inputEdit-4" type="text" name="fullName" id="fullName"></br>
 
-           <label for="userEmail">E-mail</label>
-           <input class="inputEdit-4" type="email" name="userEmail" id="userEmail"></br>
+           <label class="labelEdit-4"  for="userEmail">E-mail</label>
+           <input id="inputEmail" class="inputEdit-4" type="email" name="userEmail" id="userEmail"></br>
 
-           <label for="userTell">Numero De Telefone</label>
-           <input class="inputEdit-4" type="tel" name="userTell" id="userTell"></br>
-
-           <label for="userCPF">CPF</label>
-           <input class="inputEdit-4" type="number" name="userCPF" id="userCPF"></br>
+           <label class="labelEdit-4"  for="userTell">Numero De Telefone</label>
+           <input id="inputTell" class="inputEdit-4" type="tel" name="userTell" id="userTell"></br>
 
 
-           <label >Sexo</label>
-           <input type="radio" id="masculino" name="sexo" placeholder="Masculino"><label for="sexo">Masculino</label>
+           <label class="labelEdit-4"   for="userCPF">CPF</label>
+           <input id="inputCPF" class="inputEdit-4" type="number" name="userCPF" id="userCPF"></br>
+
+          <div class="labelAndInputSexo">
+           <label  >Sexo:</label>
+           <input id="inputMasculino" type="radio" id="masculino" name="sexo" placeholder="Masculino"><label for="sexo">Masculino</label>
            <input type="radio" id="feminino" name="sexo" placeholder="Feminino"><label for="sexo">Feminino</label></br>
-          
-
-           <label for="dataNascimento">Data de Nascimento</label>
+          </div>
+          <div class="labelAndInputData">
+           <label  for="dataNascimento">Data de Nascimento</label>
            <input type="date" name="dataNascimento"></br>
-
+          </div>
            <button type="submit">Salvar</button>
           </form>
         </div>
