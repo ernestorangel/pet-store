@@ -7,9 +7,20 @@ body {
 	
 	padding: 0;
 	
-	background-color: #FFD8BE;
+	background-color: white;
 	
 	font-family: 'Raleway', sans-serif;
+}
+
+main{
+	padding: 0 calc((100vw - 1320px) / 2);
+}
+
+.minha-cesta{
+	margin: 15px auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .aproveite{
@@ -17,6 +28,25 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 25px;
+}
+
+.tabela-produtos{
+	border:1px solid black;
+	width: 50%;
+	height: 500px;
+    /* margin-top: 15px; */
+	margin: 15px auto;
+
+}
+
+.produto-test{
+	border:1px solid black;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	/* display:grid; */
+	justify-content: center;
+	align-items: center;
 }
 
 .imagen-produto{
