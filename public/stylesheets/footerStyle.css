@@ -1,16 +1,43 @@
 footer {
   display: flex;
   flex-direction: column;
-  height: 400px;
-  background-color: #FFD8BE;
+  height: 440px;
+  background-color: transparent;
   grid-template-columns: 1fr 1fr;
+  padding-top: 20px;
+}
+
+#backToTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: var(--main-color)
+}
+
+#backToTopButton {
+  position: relative;
+  bottom: 15px;
+  height: 100%;
+  width: 200px;
+  background-color: var(--secondary-color);
+  color: var(--text-bright-color);
+  font-weight: 600;
+  text-align: center;
+  padding-top: 6px;
+  border-radius: var(--card-border-size);
+}
+
+#emptySpace {
+  height: 10px;
 }
 
 #footerFirstSection {
   display: flex;
   flex-direction: row;
   padding: 0 calc((100vw - 1280px) / 2);
-  background-color: #9381FF;
+  background-color: var(--main-color);
   height: 300px;
   justify-content: center;
 }
@@ -21,14 +48,14 @@ footer {
 }
 
 .footerMenuTitle {
-  color: white;
+  color: var(--text-bright-color);
   padding-top: 20px;
   font-size: 20px;
   font-weight: 800;
 }
 
 .footerMenuOption {
-  color: white;
+  color: var(--text-bright-color);
   padding-top: 25px;
   font-size: 15px;
   font-weight: 300;
@@ -36,7 +63,7 @@ footer {
 
 #footerSecondSection {
   padding: 0 calc((100vw - 1280px) / 2);
-  background-color: #FFD8BE;
+  background-color: var(--secondary-color);
   height: 100px;
 }
 
@@ -46,11 +73,13 @@ footer {
 }
 
 #footerLogo {
+  background-image: url(../images/logos/pet-store-logo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 56px;
   width: 200px;
-  padding-top: 10px;
-  font-size: 20px;
-  color: #9381FF;
-  font-weight: 800;
+  min-width: 200px;
 }
 
 #footerAccessibiltyHolder {
@@ -62,12 +91,12 @@ footer {
 }
 
 #accessibilityIcon {
-  background-image: url(../images/icons/accessibilty-icon.png);
+  background-image: url(../images/icons/accessibilty-icon.svg);
 }
 
 #accessibilityButton {
   text-align: center;
-  color: black;
+  color: var(--text-bright-color);
   font-size: 15px;
   font-weight: 400;
   padding: 20px 0 20px 0;
@@ -84,19 +113,23 @@ footer {
   margin: 15px;
   background-size: cover;
   background-position: center;
-  filter: grayscale(100%);
 }
 
 #facebookIcon {
- background-image: url(../images/icons/facebook-logo.png);
+ background-image: url(../images/icons/facebook-icon.svg);
 }
 
 #instagramIcon {
-  background-image: url(../images/icons/instagram-logo.png);
+  background-image: url(../images/icons/instagram-icon.svg);
 }
 
 #twitterIcon {
-  background-image: url(../images/icons/twitter-logo.png);
+  background-image: url(../images/icons/twitter-icon.svg);
+}
+
+#whatsappIcon {
+  display: none;
+  background-image: url(../images/icons/whatsapp-icon.svg);
 }
 
 #footerUnderline {
@@ -105,9 +138,9 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: grey;
+  color: var(--text-bright-color);
   font-size: 12px;
   font-weight: 300;
   padding-top: 10px;
-  border-top: 1px #9381FF solid;
+  border-top: 1px var(--text-bright-color) solid;
 }

@@ -1,0 +1,183 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    
+
+}
+
+main {
+    padding: 0 calc((100vw - 1280px) / 2);
+}
+
+.painel-user-0 {
+    display: flex;
+    
+}
+
+
+.painel-perfil-1 {
+    width: 350px;
+    height: 500px;
+    background-color: green;
+}
+
+
+.info-conta-2 {
+    margin-left: 20px;
+    margin-top: 30px;
+    display: flex;
+}
+
+.icone-perfil-3 {
+    background-color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 200px;
+}
+
+.detalhes-3 {
+    padding: 5px 0px 10px 15px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.forms-conta-2 {
+    
+    height: 398px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.forms-conta-2 button {
+    margin-top: 20px;
+    width: 250px;
+}
+
+
+.dados-perfil-1 {
+    width: 800px;
+    height: 1000px;
+    background-color: rgb(110, 110, 255);
+    
+}
+
+
+.titulo-perfil-2 {
+    
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.forms-perfil-2 {
+    
+    margin-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    
+    
+}
+
+
+
+
+.labelEdit-4 {
+    margin-right: 10px;
+    
+
+}
+
+.inputEdit-4 {
+    
+    
+    margin-top: 40px;
+    height: 35px;
+    width: 400px;
+    
+}
+ 
+#inputEmail {
+    margin-left: 111px;
+}
+
+#inputUserName {
+    margin-left: 25px;
+}
+
+#inputFullName {
+    margin-left: 35px;
+}
+
+#inputTell {
+    margin-left: 3px;
+}
+
+#inputCPF {
+    margin-left: 130px;
+}
+
+.labelAndInputSexo {
+    margin-top: 40px;
+    
+}
+
+.labelAndInputSexo input {
+    margin-left: 50px;
+}
+
+#inputMasculino {
+    margin-left: 130px;
+}
+
+.labelAndInputData {
+    margin-top: 40px;
+}
+
+.labelAndInputData input {
+    margin-left: 10px;
+}
+
+.forms-perfil-2 button {
+    height: 30px;
+    width: 100px;
+}
+
+.imagem-perfil-1 {
+    width: 350px;
+    height: 500px;
+    background-color: yellow;
+}
+
+
+.image-2 {
+    
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.editImgPerfil-3 {
+    height: 190px;
+    width: 190px;
+    background-color: white;
+    border-radius: 100px;
+}
+
+
+.select-image-2 {
+    
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

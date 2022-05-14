@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const favicon = require('serve-favicon');
 
 const mainRouter = require('./src/routes/main');
 const usersRouter = require('./src/routes/users');
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'favicon.ico')))
 
 app.use('/', mainRouter);
 app.use('/users', usersRouter);

@@ -5,10 +5,9 @@
     
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-body {
-    background-color: #9381FF;
-}
+ main {
+     padding: 0px 0px 17px 0px;
+ }
 
 
 .signupLogoHolder {
@@ -32,9 +31,9 @@ body {
 
 .signupFormsHolder {
     
-    height: 75vh;
+    height: 550px;
     width: 25%;
-    margin-left: 40%;
+    margin-left: 38%;
     margin-top: 3%;
     background-color: #FFD8BE;
     border-radius: 10px;
@@ -79,10 +78,7 @@ input {
     margin-left: 10%;
 }
 
-.fazerLogin label {
-    
-    
-}
+
 
 .fazerLogin button {
     background-color: transparent;

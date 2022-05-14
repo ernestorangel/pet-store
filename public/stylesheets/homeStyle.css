@@ -1,71 +1,257 @@
-main {
-  padding: 0 calc((100vw - 1280px) / 2);
+@media (max-width:430px) {
+  #banner {
+    padding-top: 20px;
+    width: 100%;
+  }
+  .showcase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: transparent;
+  }
+
+  .middleShowcase {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .doubleShowcase{
+    display: none;
+  }
+  
+  .rowShowcase {
+    display: flex;
+    height: 300px;
+    width: 295px;
+    min-width: 295px;
+    margin: 10px;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+  
+  .addsShowcase {
+    height: 300px;
+    width: 295px;
+    min-width: 295px;
+    margin: 10px;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+  
+  .bigShowcase {
+    height: 600px;
+    width: 925px;
+    min-width: 925px;
+    margin: 10px;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+  
+  .longShowcase {
+    height: 600px;
+    width: 295px;
+    min-width: 295px;
+    margin: 10px;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
 }
 
-#banner {
-  padding: 360px 0 0 0;
-  width: 100%;
-  background-image: url(../images/banners/mainBanner.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: top;
-}
-.showcase {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  margin: 20px 0 20px 0;
-  background-color: transparent;
+@media (min-width:430px) and (max-width:1280px) {
+  #banner {
+    padding: 25% 0 0 0;
+    width: 100%;
+    background-image: url(../images/banners/mainBanner.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+  }
+  .showcase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: transparent;
+  }
+
+  .middleShowcase {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .doubleShowcase{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    margin: 10px;
+    background-color: transparent;
+  }
+  
+  .rowShowcase {
+    height: 300px;
+    width: 610px;
+    min-width: 610px;
+    margin: 10px;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+  
+  .addsShowcase {
+    height: 100%;
+    width: 80%;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+  
+  .bigShowcase {
+    height: 600px;
+    width: 610px;
+    min-width: 610px;
+    margin: 10px;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+  
+  .longShowcase {
+    display: none;
+  }
 }
 
-.doubleShowcase{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 600px;
-  margin: 20px 0 20px 0;
-  background-color: transparent;
+@media (min-width: 1280px) {
+  main {
+    padding: 0 calc((100vw - 1280px) / 2);
+  }
+  
+  #banner {
+    padding: 360px 0 0 0;
+    width: 100%;
+    /* background-image: url(../images/banners/mainBanner.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top; */
+  }
+  .showcase {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin: 20px 0 20px 0;
+    background-color: transparent;
+  }
+
+  .middleShowcase {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .doubleShowcase{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    margin: 20px 0 20px 0;
+    background-color: transparent;
+  }
+  
+  .rowShowcase {
+    height: 100%;
+    width: 1240px;
+    min-width: 1240px;
+    margin: 0 10px 0 10px;
+    box-shadow: 1px 1px 8px lightgrey;
+    background-color: var(--text-bright-color);
+    border-radius: var(--card-border-size);
+  }
+  
+  .addsShowcase {
+    height: 100%;
+    width: 80%;
+    margin: 0 10px 0 10px;
+    background-color: var(--text-bright-color);
+    box-shadow: 1px 1px 8px lightgrey;
+    border-radius: var(--card-border-size);
+  }
+  
+  .bigShowcase {
+    height: 600px;
+    width: 925px;
+    min-width: 925px;
+    margin: 0 10px 0 10px;
+    background-color: var(--text-bright-color);
+    box-shadow: 1px 1px 8px lightgrey;
+    border-radius: var(--card-border-size);
+  }
+  
+  .longShowcase {
+    height: 600px;
+    width: 295px;
+    min-width: 295px;
+    margin: 0 10px 0 10px;
+    background-color: var(--text-bright-color);
+    box-shadow: 1px 1px 8px lightgrey;
+    border-radius: var(--card-border-size);
+  }
 }
 
 .squareShowcase {
-  height: 100%;
-  width: 25%;
-  margin: 0 10px 0 10px;
-  background-color: #FFD8BE;
+  height: 300px;
+  width: 295px;
+  min-width: 295px;
+  margin: 10px;
   box-shadow: 1px 1px 8px lightgrey;
+  background-color: var(--text-bright-color);
+  border-radius: 10px;
 }
 
-.rowShowcase {
-  height: 100%;
+.showcaseTitle {
+  margin: 15px 0 0 15px;
+  color: var(--main-color);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.showcaseImage {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
-  margin: 0 10px 0 10px;
-  background-color: #FFD8BE;
-  box-shadow: 1px 1px 8px lightgrey;
+  height: 210px;
+  margin: 10px 0 0 0;
 }
 
-.addsShowcase {
-  height: 100%;
-  width: 80%;
-  margin: 0 10px 0 10px;
-  background-color: #FFD8BE;
-  box-shadow: 1px 1px 8px lightgrey;
+#nutritionImage {
+  background-image: url(../images/banners/nutrition-banner.jpg);
 }
 
-.bigShowcase {
-  height: 100%;
-  width: 75%;
-  margin: 0 10px 0 10px;
-  background-color: #FFD8BE;
-  box-shadow: 1px 1px 8px lightgrey;
+#bedImage {
+  background-image: url(../images/banners/bed-bath-banner.jpg);
 }
 
-.longShowcase {
-  height: 100%;
-  width: 25%;
-  margin: 0 10px 0 10px;
-  background-color: #FFD8BE;
-  box-shadow: 1px 1px 8px lightgrey;
+#beautyImage {
+  background-image: url(../images/banners/beauty-banner.jpg);
+}
+
+#toyImage {
+  background-image: url(../images/banners/toy-banner.jpg);
+}
+
+.showcaseDescription {
+  margin: 10px 0 0 10px;
+  color: var(--main-color);
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.seeMore {
+  margin: 10px 0 0 15px;
+  color: var(--secondary-color);
+  font-size: 15px;
+  font-weight: 300;
 }
