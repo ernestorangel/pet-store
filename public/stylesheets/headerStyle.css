@@ -1,4 +1,4 @@
-@media (max-width: 430px) {
+@media (max-width: 480px) {
   .menu {
     flex-direction: column;
   }
@@ -63,7 +63,72 @@
   }
 }
 
-@media (min-width: 430px) and (max-width:1000px) {
+@media (min-width: 481px) and (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+  
+  #logo {
+    margin: 5px 0 0 0;
+  }
+  
+  #searchBar {
+    width: 90%;
+    margin: 5px 0 5px 0;
+  }
+
+  #infoHolder {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0 10px 0;
+  }
+  
+  #login {
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+  }
+  
+  #profileSection {
+    display: none;
+  }
+  
+  #cart {
+    justify-content: center;
+    width: 50%;
+  }
+
+  #cartButtonHolder {
+    display: none;
+  }
+  
+  #headerSecondSection {
+    display: none;
+  }
+
+  #headerThirdSection {
+    background-color: var(--main-color);
+  }
+  
+  #thirdSectionLeftSide {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #thirdSectionRightSide {
+    display: none;
+  }
+
+  .thirdMenuButton {
+    color: var(--secondary-color);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
   .menu {
     flex-direction: row;
   }
@@ -148,7 +213,7 @@
   }
 }
 
-@media (min-width:1000px) {
+@media (min-width:1025px) {
   
   .menu {
     flex-direction: row;
@@ -208,18 +273,6 @@
     margin: 0 0 0 25px;
     background-size: contain;
     background-repeat: no-repeat;
-  }
-
-  #favoritesIcon {
-    background-image: url(../images/icons/heart-icon.svg);
-  }
-
-  #notificationIcon {
-    background-image: url(../images/icons/notification-icon.svg);
-  }
-
-  #cartIcon {
-    background-image: url(../images/icons/cart-icon.svg);
   }
   
   #headerSecondSection {
@@ -400,19 +453,16 @@ header {
   height: 56px;
 }
 
-#cartCounter {
-  width: 56px;
-  height: 56px;
-  background-color: var(--secondary-color);
-  color: var(--main-color);
-  font-size: 30px;
-  font-weight: 800;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
+#favoritesIcon {
+  background-image: url(../images/icons/heart-icon.svg);
+}
+
+#notificationIcon {
+  background-image: url(../images/icons/notification-icon.svg);
+}
+
+#cartIcon {
+  background-image: url(../images/icons/cart-icon.svg);
 }
 
 #headerThirdSection {
