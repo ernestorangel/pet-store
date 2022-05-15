@@ -65,43 +65,43 @@
 						<tr>
 							<td class="tabela-imagen"><img class="produto-cesta" src="/images/products/Ração_Seca_Balance_Frango_e_Vegetais_para_Cães_Adultos_de_Raças_Médias_e_Grandes_2272198_10kg-removebg-preview.png" alt="ração balance"></td>
 							<td class="tabela-descricao">Ração Seca Balance Frango e Vegetais para Cães Adultos de Raças Médias e Grandes</td>
-							<td class="tabela-descricao">
+							<td class="tabela-quantidade">
 								<ul class="adicionar-produto">
 									<a href="#">-</a>
 									1									
 									<a href="#">+</a>
 								</ul>
 							</td>
-							<td class="tabela-descricao">R$104,90</td>
+							<td class="tabela-preco">R$104,90</td>
 						</tr>
 						<tr>
 							<td class="tabela-imagen"><img class="produto-cesta" src="/images/products/7898490095315-removebg-preview.png" alt="caixa Transporte Luxo Pet"></td>
 							<td class="tabela-descricao">Caixa de Transporte Luxo Furacão Pet Preto</td>
-							<td class="tabela-descricao">
+							<td class="tabela-quantidade">
 								<ul class="adicionar-produto">
 								<a href="#">-</a>
 								1									
 								<a href="#">+</a>
 								</ul>
 							</td>
-							<td class="tabela-descricao">
+							<td class="tabela-preco">
 								R$109,90</td>
 						</tr>
 						<tr>
 							<td class="tabela-imagen"><img class="produto-cesta" src="/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png" alt="Petisco Pesticao Pet"></td>
 							<td class="tabela-descricao">Bifinho Petiscão Ossinho de Carne para Cães</td>
-							<td class="tabela-descricao">
+							<td class="tabela-quantidade">
 								<ul class="adicionar-produto">
 									<a href="#">-</a>
 									1									
 									<a href="#">+</a>
 									</ul>
 							</td>
-							<td class="tabela-descricao"> R$22,99 </td>
-						</tr>
+							<td class="tabela-preco"> R$22,99 </td>
+						</tr>					
 					</table>
 				</div>
-
+				
 				
 				<div class="container">
 
@@ -195,11 +195,19 @@
 
 										<p>R$22,99</p>
 
-									</div>	
-								
+									</div>
+									
+																	
 								</div>
-
-
+								<br>
+								
+								<form>
+									<label for="CEP">CEP:
+									<input class="cep-5" name="CEP" id="CEP" required pattern="\d{5}-\d{3}"/>
+									<input class="cep-3" name="CEP" id="CEP" required pattern="\d{5}-\d{3}"/>
+									</label>
+									<input class="botao-frete" type="submit" value="Calcular Frete" />
+									</form>
 
 							</div>
 						
@@ -218,9 +226,9 @@
 
 							<div class="totals">
 								
-								<p class="total-label">Taxa</p>
+								<p class="total-label">Frete</p>
 
-								<p class="total-amount">R$0,00</p>
+								<p class="frete">Gratis</p>
 
 							</div>
 
