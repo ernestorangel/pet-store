@@ -11,69 +11,98 @@
     <body>
 	<%- include('./partials/header') %>
 		<main>
-			<h1 class="aproveite">Aproveite Outros Produtos</h1>
+			<h1 class="aproveite">Produtos Mais Vendidos</h1>
 			<div class="produtos">
-				<div class="produto-info">
-					<img class="imagen-produto" src="/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png" alt="Produto Pet">
-					<div class="texto"><p>lalasldasdjkahjdadfhsdsfgsfvbsfhgfhgdfgffgsdjfhgsjfhgsdjfhsufhh</p></div>
+				<div class="produto-em-destaque">
+					<div class="produto-info">
+						<img class="imagen-produto" src="/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png" alt="Produto Pet">
+						<div class="texto"><p>Bifinho Petiscão Ossinho de Carne para Cães</p></div>
+					</div>
+					<form class="adicionar-carinho" action="">
+						<button class="botao-adicionar" type="submit">Adicionar ao Carinho</button>
+					</form>
 				</div>
-				<div class="produto-info">
-					<img class="imagen-produto" src="/images/products/fabrica-produtos-pet-shop-01-removebg-preview.png" alt="Produto Pet">
-					<div class="texto"><p>lalasldasdjkahjdadfhsdsfgsfvbsfhgfhgdfgffgsdjfhgsjfhgsdjfhsufhh</p></div>
+				<div class="produto-em-destaque">
+					<div class="produto-info">
+						<img class="imagen-produto" src="/images/products/fabrica-produtos-pet-shop-01-removebg-preview.png" alt="Produto Pet">
+						<div class="texto"><p>Comedouro Plástico</p></div>
+					</div>
+					<form class="adicionar-carinho" action="">
+						<button class="botao-adicionar" type="submit">Adicionar ao Carinho</button>
+					</form>
 				</div>
-				<div class="produto-info">
-					<img class="imagen-produto" src="/images/products/fornecedores-produtos-pet-shop-01-removebg-preview.png" alt="Produto Pet">
-					<div class="texto"><p>lalasldasdjkahjdadfhsdsfgsfvbsfhgfhgdfgffgsdjfhgsjfhgsdjfhsufhh</p></div>
+				<div class="produto-em-destaque">
+					<div class="produto-info">
+						<img class="imagen-produto" src="/images/products/fornecedores-produtos-pet-shop-01-removebg-preview.png" alt="Produto Pet">
+						<div class="texto"><p>Caixa de Transporte Luxo Furacão Pet Rosa</p></div>
+					</div>
+					<form class="adicionar-carinho" action="">
+						<button class="botao-adicionar" type="submit">Adicionar ao Carinho</button>
+					</form>
 				</div>
-				<div class="produto-info">
-					<img class="imagen-produto" src="/images/products/fornecedores-produtos-pet-shop-atacado-01-removebg-preview.png" alt="Produto Pet">
-					<div class="texto"><p>lalasldasdjkahjdadfhsdsfgsfvbsfhgfhgdfgffgsdjfhgsjfhgsdjfhsufhh</p></div>
+				<div class="produto-em-destaque">
+					<div class="produto-info">
+						<img class="imagen-produto" src="/images/products/fornecedores-produtos-pet-shop-atacado-01-removebg-preview.png" alt="Produto Pet">
+						<div class="texto"><p>Sanitário Canino</p></div>
+					</div>
+					<form class="adicionar-carinho" action="">
+						<button class="botao-adicionar" type="submit">Adicionar ao Carinho</button>
+					</form>
 				</div>
-				
 			</div>
-			<h2 class="minha-cesta">Minha Cesta</h2>
+
+			<h1 class="minha-cesta">Minha Cesta</h2>
+
 			<div class="products-cart">
+				<div class="tabela-produtos-mae">
+					<table>
+						<tr>
+							<th class="cesta-titulo"><h3>Protudo</h3></th>
+							<th class="cesta-titulo"><h3>Descrisão</h3></th>
+							<th class="cesta-titulo"><h3>Quantidade</h3></th>
+							<th class="cesta-titulo"><h3>Preço</h3></th>
+						</tr>
+						<tr>
+							<td class="tabela-imagen"><img class="produto-cesta" src="/images/products/Ração_Seca_Balance_Frango_e_Vegetais_para_Cães_Adultos_de_Raças_Médias_e_Grandes_2272198_10kg-removebg-preview.png" alt="ração balance"></td>
+							<td class="tabela-descricao">Ração Seca Balance Frango e Vegetais para Cães Adultos de Raças Médias e Grandes</td>
+							<td class="tabela-descricao">
+								<ul class="adicionar-produto">
+									<a href="#">-</a>
+									1									
+									<a href="#">+</a>
+								</ul>
+							</td>
+							<td class="tabela-descricao">R$104,90</td>
+						</tr>
+						<tr>
+							<td class="tabela-imagen"><img class="produto-cesta" src="/images/products/7898490095315-removebg-preview.png" alt="caixa Transporte Luxo Pet"></td>
+							<td class="tabela-descricao">Caixa de Transporte Luxo Furacão Pet Preto</td>
+							<td class="tabela-descricao">
+								<ul class="adicionar-produto">
+								<a href="#">-</a>
+								1									
+								<a href="#">+</a>
+								</ul>
+							</td>
+							<td class="tabela-descricao">
+								R$109,90</td>
+						</tr>
+						<tr>
+							<td class="tabela-imagen"><img class="produto-cesta" src="/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png" alt="Petisco Pesticao Pet"></td>
+							<td class="tabela-descricao">Bifinho Petiscão Ossinho de Carne para Cães</td>
+							<td class="tabela-descricao">
+								<ul class="adicionar-produto">
+									<a href="#">-</a>
+									1									
+									<a href="#">+</a>
+									</ul>
+							</td>
+							<td class="tabela-descricao"> R$22,99 </td>
+						</tr>
+					</table>
+				</div>
+
 				
-				<!-- <style>
-					table, th, td {
-					  border:1px solid black;
-					}
-					</style> -->
-				<table class="tabela-produtos">
-					<tr>
-					  <th class="produto-test">Company</th>
-					  <th class="produto-test">Contact</th>
-					  <th class="produto-test">Country</th>
-					</tr>
-					<tr>
-					  <td class="produto-test"><img class="produto-test" src="/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png" alt="Produto Pet"></td>
-					  <td class="produto-test">Maria Anders</td>
-					  <td class="produto-test">Germany</td>
-					</tr>
-					<tr>
-					  <td class="produto-test">Centro comercial Moctezuma</td>
-					  <td class="produto-test">Francisco Chang</td>
-					  <td class="produto-test">Mexico</td>
-					</tr>
-				  </table>
-
-
-				<!-- <div class="products-info">
-					<article>Produto</article>
-					<article>Quantidade</article>
-					<div class="produto-cart-info">
-						<img class="imagen-produto" src="/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png" alt="Produto Pet">
-						<div class="texto"><p>lalasldasdjkahjdadfhsdsfgsfvbsfhgfhgdfgffgsdjfhgsjfhgsdjfhsufhh</p></div>
-					</div>
-					<div class="produto-cart-info">
-						<img class="imagen-produto" src="/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png" alt="Produto Pet">
-						<div class="texto"><p>lalasldasdjkahjdadfhsdsfgsfvbsfhgfhgdfgffgsdjfhgsjfhgsdjfhsufhh</p></div>
-					</div>
-					<div class="produto-cart-info">
-						<img class="imagen-produto" src="/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png" alt="Produto Pet">
-						<div class="texto"><p>lalasldasdjkahjdadfhsdsfgsfvbsfhgfhgdfgffgsdjfhgsjfhgsdjfhsufhh</p></div>
-					</div>
-				</div> -->
 				<div class="container">
 
 					<div class="cart-container">
@@ -106,17 +135,7 @@
 
 									</div>
 
-									<div class="cart-row-cell quant">
-
-										<ul>
-											<li><a href="#">-</a></li>
-
-											<li>1</li>
-											
-											<li><a href="#">+</a></li>
-										</ul>
-
-									</div>
+									
 
 									<div class="cart-row-cell amount">
 
@@ -144,17 +163,7 @@
 
 									</div>
 
-									<div class="cart-row-cell quant">
-
-										<ul>
-											<li><a href="#">-</a></li>
-
-											<li>1</li>
-											
-											<li><a href="#">+</a></li>
-										</ul>
-
-									</div>
+									
 
 									<div class="cart-row-cell amount">
 
@@ -176,21 +185,9 @@
 
 									<div class="cart-row-cell desc">
 										
-										<h5>Mini Bifinho</h5>
+										<h5>Petiscao</h5>
 
 										<p>#41345755</p>
-
-									</div>
-
-									<div class="cart-row-cell quant">
-
-										<ul>
-											<li><a href="#">-</a></li>
-
-											<li>1</li>
-											
-											<li><a href="#">+</a></li>
-										</ul>
 
 									</div>
 
