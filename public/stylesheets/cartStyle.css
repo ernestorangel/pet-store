@@ -16,6 +16,11 @@ main{
 	padding: 0 calc((100vw - 1320px) / 2);
 }
 
+table{
+  	box-shadow: 2px 4px 4px #888888;
+	border-radius: 10px;
+}
+
 .produto-em-destaque{
 	display: flex;
 	flex-direction: column;
@@ -27,20 +32,56 @@ main{
 }
 
 .botao-adicionar{
-	border-radius: 8px;
 	color: white;
 	background-color: #ff470a;
 	margin-top: 5px;
 	font-size: 20px;
 	width: 275px;
+	border-radius: 6px;
+}
+
+.botao-frete{
+	margin-left: 15px;
+	font-size: 15px;
+	height: 25px;
+	width: 110px;
+	background-color: #ff470a;
+	color: #fff;
+	border: 1px #888888 solid;
+  	box-shadow: 2px 4px 4px #888888;
+	border-radius: 6px;
+}
+
+.footer-button {
+	color: #fff;
+	
+	border: none;
+	
+	font-size: 1em;
+	
+	padding: 5px 15px;
+	
+	background-color: #ff470a;
+
+	border-radius: 6px;
 }
 
 .botao-adicionar:hover{
 	background-color: #3cacf6 ;
+	transition: 0.5s;
+	border-radius: 10px;
+}
+
+.botao-frete:hover{
+	background-color: #3cacf6;
+	transition: 0.5s;
+	border-radius: 10px;
 }
 
 .footer-button:hover{
 	background-color: #3cacf6 ;
+	transition: 0.5s;
+	border-radius: 10px;
 }
 
 .aproveite{
@@ -78,7 +119,6 @@ main{
 	border-radius: 10px
 }
 
-
 .texto{
     width: 150px; 
 	text-align: center;
@@ -114,7 +154,7 @@ main{
 
 .tabela-imagen{
 	width: 110px;
-	height: 110px;
+	height: 80px;
 	background-color:#cecece ;
 	border:1px solid black;
 }
@@ -127,18 +167,35 @@ main{
 }
 
 .tabela-descricao{
-	width: 110px;
-	height: 110px;
+	width: 180px;
+	height: 80px;
 	background-color:#dedede ;
 	border:1px solid black;
 	text-align: center;
 	font-size: 14px;
 }
 
+.tabela-quantidade{
+	width: 90px;
+	height: 80px;
+	background-color:#dedede ;
+	border:1px solid black;
+	text-align: center;
+	font-size: 14px;
+}
+
+.tabela-preco{
+	width: 90px;
+	height: 80px;
+	background-color:#dedede ;
+	border:1px solid black;
+	text-align: center;
+	font-size: 18px;
+}
+
 .adicionar-produto{
 	font-size: 25px;
 }
-
 
 .container {
     width: 50%;
@@ -304,18 +361,6 @@ main{
 	border-bottom-right-radius: 8px;
 }
 
-.footer-button {
-	color: #fff;
-	
-	border: none;
-	
-	font-size: 1em;
-	
-	padding: 5px 15px;
-	
-	background-color: #ff470a;
-}
-
 .container-footer .totals {
 	display: flex;
 
@@ -336,4 +381,22 @@ main{
 	flex: 1;
 
 	text-align: right;
+}
+.container-footer .frete {
+	color: #00a650;
+}
+
+.cep-5{
+	height: 20px;
+	width: 80px;
+	border: 1px #888888 solid;
+  	box-shadow: 2px 4px 4px #888888;
+
+}
+
+.cep-3{
+	height: 20px;
+	width: 60px;
+	border: 1px #888888 solid;
+  	box-shadow: 2px 4px 4px #888888;
 }
