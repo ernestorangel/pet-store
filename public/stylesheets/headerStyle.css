@@ -268,11 +268,18 @@
   }
 
   .cartIcon {
-    width: 30px;
-    height: 30px;
+    width: 56px;
+    height: 56px;
     margin: 0 0 0 25px;
-    background-size: contain;
+    background-size: 60%;
     background-repeat: no-repeat;
+    background-position: center;
+    border-radius: var(--card-border-size);
+  }
+
+  .cartIcon:hover {
+    background-color: var(--secondary-color);
+    fill: var(--main-color);
   }
   
   #headerSecondSection {
@@ -323,6 +330,14 @@
   .thirdMenuButton {
     color: var(--main-color);
   }
+
+  #promoIcon {
+    width: 30px;
+    background-image: url(../images/icons/promo-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
 
 header {
@@ -347,10 +362,16 @@ header {
 
 .secondMenuButton {
   margin: 0 20px 0 0;
+  padding: 2px 5px;
+  border-radius: var(--card-border-size);
   font-weight: 600;
   font-size: 20px;
   text-align: center;
   color: var(--text-bright-color);
+}
+
+.secondMenuButton:hover {
+  background-color: var(--secondary-color);
 }
 
 .thirdMenuButton {
@@ -359,7 +380,13 @@ header {
   font-size: 20px;
   line-height: 33px;
   text-align: center;
+  padding: 2px 5px;
+  border-radius: var(--card-border-size);
   color: var(--text-bright-color);
+}
+
+.thirdMenuButton:hover {
+  background-color: var(--main-color);
 }
 
 #headerFirstSection {
