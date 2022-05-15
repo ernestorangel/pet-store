@@ -37,6 +37,7 @@ table{
 	margin-top: 5px;
 	font-size: 20px;
 	width: 275px;
+	border-radius: 6px;
 }
 
 .botao-frete{
@@ -48,6 +49,21 @@ table{
 	color: #fff;
 	border: 1px #888888 solid;
   	box-shadow: 2px 4px 4px #888888;
+	border-radius: 6px;
+}
+
+.footer-button {
+	color: #fff;
+	
+	border: none;
+	
+	font-size: 1em;
+	
+	padding: 5px 15px;
+	
+	background-color: #ff470a;
+
+	border-radius: 6px;
 }
 
 .botao-adicionar:hover{
@@ -343,18 +359,6 @@ table{
 	border-bottom-left-radius: 8px;
 	
 	border-bottom-right-radius: 8px;
-}
-
-.footer-button {
-	color: #fff;
-	
-	border: none;
-	
-	font-size: 1em;
-	
-	padding: 5px 15px;
-	
-	background-color: #ff470a;
 }
 
 .container-footer .totals {
