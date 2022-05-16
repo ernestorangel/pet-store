@@ -257,6 +257,10 @@
     font-weight: 300;
     color: var(--text-bright-color);
   }
+
+  #accountAccess:hover {
+    color: var(--secondary-color);
+  }
   
   #cart {
     display: flex;
@@ -285,15 +289,20 @@
   
   #headerSecondSection {
     background-color: var(--main-color);
-    height: 36px;
-    padding: 0px calc((100vw - 1320px) / 2) 5px;
+    height: auto;
+    padding: 0px calc((100vw - 1320px) / 2) 10px calc((100vw - 1280px) / 2);
   }
   
   #secondSectionLeftSide {
-    width: 256px;
+    width: auto;
     display: flex;
     flex-direction: row;
-    padding-left: 20px;
+    padding: 5px 5px;
+    border-radius: var(--card-border-size);
+  }
+
+  #secondSectionLeftSide:hover {
+    background-color: var(--secondary-color);
   }
   
   #locationPin {
@@ -312,20 +321,25 @@
   }
   
   #headerThirdSection {
+    width: 100%;
     height: 48px;
     padding: 0 calc((100vw - 1320px) / 2);
   }
   
   #thirdSectionLeftSide {
-    width: 70%;
+    width: 1015px;
   }
   
   #thirdSectionRightSide {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    width: 30%;
-    padding-right: 20px;
+    width: auto;
+    border-radius: var(--card-border-size);
+  }
+
+  #thirdSectionRightSide:hover {
+    background-color: var(--main-color);
   }
 
   .thirdMenuButton {
@@ -371,12 +385,31 @@ header {
   color: var(--text-bright-color);
 }
 
+.secondMenuButtonSpecial {
+  padding: 2px 5px;
+  border-radius: var(--card-border-size);
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: var(--text-bright-color);
+}
+
 .secondMenuButton:hover {
   background-color: var(--secondary-color);
 }
 
 .thirdMenuButton {
   margin: 0 0 0 20px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 33px;
+  text-align: center;
+  padding: 2px 5px;
+  border-radius: var(--card-border-size);
+  color: var(--text-bright-color);
+}
+
+.thirdMenuButtonSpecial {
   font-weight: 600;
   font-size: 20px;
   line-height: 33px;

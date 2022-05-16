@@ -29,6 +29,12 @@ footer {
   border-radius: var(--card-border-size);
 }
 
+#backToTopButton:hover {
+  background-color: var(--text-bright-color);
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
 #emptySpace {
   height: 10px;
 }
@@ -59,6 +65,10 @@ footer {
   padding-top: 25px;
   font-size: 15px;
   font-weight: 300;
+}
+
+.footerMenuOption:hover {
+  color: var(--secondary-color);
 }
 
 #footerSecondSection {
