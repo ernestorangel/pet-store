@@ -213,7 +213,7 @@
   }
 }
 
-@media (min-width:1025px) {
+@media (min-width: 1025px) {
   
   .menu {
     flex-direction: row;
@@ -280,6 +280,7 @@
   .cartIcon:hover {
     background-color: var(--secondary-color);
     fill: var(--main-color);
+    transition: 0.5ms;
   }
   
   #headerSecondSection {
