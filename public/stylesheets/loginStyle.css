@@ -1,25 +1,21 @@
-* {
-    margin: 0%;
-    padding: 0%;
-    border: 0px solid red;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+body {
+    background-color: var(--main-color);
 }
 
 #loginLogoHolder {
     display: flex;
     flex-direction: row;
-    padding: 0 calc((100vw - 1280px) / 2);
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100px;
-    background-color: #9381FF;
-    box-shadow: 0px 3px 5px gray;
-    
+    background-color: var(--main-color);
 }
 
 #logo {
     width: 400px;
     height: 100%;
-    background-image: url(../images/logos/main-logo.svg);
+    background-image: url(../images/logos/pet-store-logo.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,23 +27,23 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50vh;
-    background-color: #9381FF;
+    height: 395px;
+    background-color: var(--main-color);
 }
 
 form {
-    background-color: #FFD8BE;
+    background-color: var(--text-bright-color);
     padding: 0 20px 20px 20px;
     width: 300px;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 0px 3px 5px gray;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 label {
-    color: #9381FF;
+    color: var(--secondary-color);
     padding-left: 10px;
     padding-top: 10px;
     font-weight: 600;
@@ -58,6 +54,7 @@ input {
     border-radius: 10px;
     margin-top: 20px;
     padding: 0 10px 0 10px;
+    border: 5px solid var(--main-color);
 }
 
 #loginButton {
@@ -65,8 +62,8 @@ input {
     width: 100%;
     border-radius: 10px;
     margin-top: 15px;
-    background-color: green;
-    color: white;
+    background-color: var(--main-color);
+    color: var(--text-bright-color);
     font-size: 20px;
     font-weight: 600;
 }
@@ -74,7 +71,7 @@ input {
 #forgotButton {
     background-color: transparent;
     margin-top: 5px;
-    color: #9381FF;
+    color: var(--main-color);
     width: 100%;
 }
 
@@ -83,8 +80,8 @@ input {
     width: 100%;
     border-radius: 10px;
     margin-top: 15px;
-    background-color: green;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-bright-color);
     font-size: 20px;
     font-weight: 600;
 }
