@@ -260,6 +260,7 @@
 
   #accountAccess:hover {
     color: var(--secondary-color);
+    transition: 0.5s;
   }
   
   #cart {
@@ -284,7 +285,7 @@
   .cartIcon:hover {
     background-color: var(--secondary-color);
     fill: var(--main-color);
-    transition: 0.5ms;
+    transition: 0.5s;
   }
   
   #headerSecondSection {
@@ -303,6 +304,7 @@
 
   #secondSectionLeftSide:hover {
     background-color: var(--secondary-color);
+    transition: 0.5s;
   }
   
   #locationPin {
@@ -340,6 +342,7 @@
 
   #thirdSectionRightSide:hover {
     background-color: var(--main-color);
+    transition: 0.5s;
   }
 
   .thirdMenuButton {
@@ -396,6 +399,7 @@ header {
 
 .secondMenuButton:hover {
   background-color: var(--secondary-color);
+  transition: 0.5s;
 }
 
 .thirdMenuButton {
@@ -421,6 +425,7 @@ header {
 
 .thirdMenuButton:hover {
   background-color: var(--main-color);
+  transition: 0.5s;
 }
 
 #headerFirstSection {
@@ -478,6 +483,7 @@ header {
 #searchButton:hover {
   background-color: var(--secondary-color);
   background-image: url(../images/icons/search-icon-hover.svg);
+  transition: 0.5s;
 }
 
 #infoHolder {
