@@ -2,6 +2,10 @@ p{color: rgb(17, 16, 16);
     align-items: flex-start;
 }
 
+hr{
+    color: lightgray;
+    size: 2px;
+}
 
  .main-content {
     display: flex;
