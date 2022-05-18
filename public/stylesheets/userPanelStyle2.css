@@ -2,7 +2,7 @@ main {
   display: flex;
   flex-direction: row;
   padding: 0 calc((100vw - 1280px) / 2) 10px;
-  background-color: var(--text-bright-color);
+  background-color: white;
 }
 
 #optionsPanel {
@@ -173,7 +173,7 @@ main {
 }
 
 #overviewSearchbarArea {
-  background-color: var(--text-bright-color);
+  background-color: white;
   color: gray;
   font-size: 15px;
   padding: 0 0 0 15px;
@@ -192,7 +192,7 @@ main {
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center;
-  background-color: var(--text-bright-color);
+  background-color: white;
   height: 100%;
   width: 60px;
   border-radius: var(--big-border-size);
@@ -212,6 +212,7 @@ main {
   border-radius: var(--card-border-size);
   margin-bottom: 20px;
   padding: 0 20px;
+  background-color: white;
 }
 
 .overviewOrderCardHeader {
