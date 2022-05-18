@@ -54,7 +54,7 @@ hr{
 .content2-container2 {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start; 
     height: 400px;
     width: 500px;
@@ -81,22 +81,23 @@ p {
 
 .content3-container2{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center; 
+    flex-direction: column;
     height: 400px;
-    width: 300px;
+    width: 220px;
     margin: 15px;
     background-color: white;
-    box-shadow: 1px 1px 8px rgb(77, 74, 74);
     border-radius: 10px;
 }
+
 
 
 .size_container3{
     display: flex;
     justify-content: center;
     align-items:center;
+    
     height: 250px;
     width: 250px;
     margin: 2px;
@@ -118,26 +119,14 @@ p {
 }
 
 
-.choose2{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    flex-direction:row;
-    height: 40px;
-    width: 50px;
-    margin: 2px;
-    background-color: white;
-    box-shadow: 1px 1px 8px rgb(77, 74, 74);
-    border-radius: 10px;
-}
 
 .infotext-container3{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 50px;
-    width: 150px;
+    height: 100px;
+    width: 220px;
     margin: 2px;
     background-color: rgb(247, 72, 19);
     box-shadow: 1px 1px 8px rgb(77, 74, 74);
@@ -149,9 +138,9 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
+    flex-direction: column;
     height: 100px;
-    width: 200px;
+    width: 220px;
     margin: 2px;
     background-color: whitesmoke;
     box-shadow: 1px 1px 8px rgb(77, 74, 74);
@@ -163,8 +152,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    width: 150px;
+    height: 100px;
+    width: 220px;
     min-width: 5px;
     margin: 2px;
     background-color: rgb(75, 88, 209);
@@ -180,7 +169,6 @@ p {
     align-items: center;
     height: 150px;
     width: 250px;
-    min-width: 5px;
     margin: 2px;
     background-color: whitesmoke;
     box-shadow: 1px 1px 8px rgb(77, 74, 74);
@@ -192,8 +180,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    width: 150px;
+    height: 100px;
+    width: 220px;
     min-width: 5px;
     margin: 2px;
     background-color: whitesmoke;
