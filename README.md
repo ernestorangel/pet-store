@@ -1,22 +1,22 @@
-# Rotas
+# Views & Rotas
 
-Para acessar as diferentes views, acesse:
+Para visualizar as diferentes views, acesse as seguintes rotas:
 
-/ ⇒ Página Inicial
+Página Inicial ⇒ /
 
-/users/login ⇒ Página de Login
+Página de Login => /users/login
 
-/users/signup ⇒ Página de Cadastro
+Página de Cadastro => /users/signup
 
-/users/enter/:id ⇒ Painel do Usuário
+Painel do Usuário => /users/enter/:id
 
-/products/:id ⇒ Página de Produto
+Página de Produto => /products/:id
 
-/products/:word ⇒ Listagem de Produtos
+Listagem de Produtos => /products/:word
 
-/cart ⇒ Carrinho
+Carrinho => /cart
 
-/cart/checkout ⇒ Checkout
+Checkout => /cart/checkout
 
 # Instruções
 
