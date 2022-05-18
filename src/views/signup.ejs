@@ -12,7 +12,7 @@
         <main>
             <div class="signup-1">
                 <div class="signupLogoHolder">
-                    <div class="logo-signup"></div>
+                    <a href="/" class="logo-signup"></a>
                 </div>
                 <div class="signupFormsHolder">
                     <h2>Cadastro</h2>
@@ -21,19 +21,15 @@
                        <input type="email" id="usuarioEmail" placeholder="Digite aqui seu e-mail">
                        <input type="password" id="senha" placeholder="Digite aqui sua senha">
                        <input type="password" id="confirmSenha" placeholder="Confirme sua senha">
-                       <input type="number" id="telefone" placeholder="Digite aqui seu telefone">
-                       
+                       <input type="phone" id="telefone" placeholder="Digite aqui seu telefone">
                        <button id="registerButton" type="submit">Cadastrar</button>
                        <div class="fazerLogin">
-                       <label>Voce ja tem uma conta?</label>
-                       <button type="submit">Fazer login</button>
+                        <label>Voce ja tem uma conta?</label>
+                        <button type="submit">Clique aqui.</button>
                        </div>
-                       
-                    
                    </form>
                 </div>
             </div>
         </main>
-        <%- include('./partials/footer') %>
     </body>
 </html>

@@ -34,7 +34,7 @@ body {
 form {
     background-color: var(--text-bright-color);
     padding: 0 20px 20px 20px;
-    width: 300px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -42,15 +42,8 @@ form {
     margin-top: 10px;
 }
 
-label {
-    color: var(--secondary-color);
-    padding-left: 10px;
-    padding-top: 10px;
-    font-weight: 600;
-}
-
 input {
-    height: 40px;
+    height: 50px;
     border-radius: 10px;
     margin-top: 20px;
     padding: 0 10px 0 10px;
@@ -62,7 +55,7 @@ input:focus {
 }
 
 #loginButton {
-    height: 40px;
+    height: 50px;
     width: 100%;
     border-radius: 10px;
     margin-top: 15px;
@@ -74,13 +67,13 @@ input:focus {
 
 #forgotButton {
     background-color: transparent;
-    margin-top: 5px;
+    margin-top: 15px;
     color: var(--main-color);
     width: 100%;
 }
 
 #signupButton {
-    height: 40px;
+    height: 50px;
     width: 100%;
     border-radius: 10px;
     margin-top: 15px;
