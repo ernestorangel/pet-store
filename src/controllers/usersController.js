@@ -6,7 +6,7 @@ const usersController = {
       res.render('signup');
     },
     enter: (req, res) => {
-      res.render('userPanel');
+      res.render('userPanel2');
     }
 };
 module.exports = usersController;

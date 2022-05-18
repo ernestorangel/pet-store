@@ -1,26 +1,16 @@
-* {
-    margin: 0%;
-    padding: 0%;
-    
-
-}
-
 main {
-    padding: 0 calc((100vw - 1280px) / 2);
+    padding: 20px calc((100vw - 1280px) / 2);
 }
 
 .painel-user-0 {
     display: flex;
-    
 }
-
 
 .painel-perfil-1 {
     width: 350px;
     height: 500px;
     background-color: green;
 }
-
 
 .info-conta-2 {
     margin-left: 20px;
@@ -36,16 +26,13 @@ main {
 }
 
 .detalhes-3 {
-    padding: 5px 0px 10px 15px;
-    
+    padding: 5px 0px 10px 15px; 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-
-.forms-conta-2 {
-    
+.forms-conta-2 {  
     height: 398px;
     margin-top: 20px;
     display: flex;
@@ -58,50 +45,33 @@ main {
     width: 250px;
 }
 
-
 .dados-perfil-1 {
     width: 800px;
     height: 1000px;
     background-color: rgb(110, 110, 255);
-    
 }
 
-
 .titulo-perfil-2 {
-    
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-
 .forms-perfil-2 {
-    
     margin-left: 10px;
     display: flex;
     justify-content: flex-start;
-    
-    
 }
-
-
-
 
 .labelEdit-4 {
     margin-right: 10px;
-    
-
 }
 
-.inputEdit-4 {
-    
-    
+.inputEdit-4 { 
     margin-top: 40px;
     height: 35px;
     width: 400px;
-    
 }
  
 #inputEmail {
@@ -126,7 +96,6 @@ main {
 
 .labelAndInputSexo {
     margin-top: 40px;
-    
 }
 
 .labelAndInputSexo input {
@@ -156,15 +125,12 @@ main {
     background-color: yellow;
 }
 
-
 .image-2 {
-    
     height: 250px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
-
 
 .editImgPerfil-3 {
     height: 190px;
@@ -173,9 +139,7 @@ main {
     border-radius: 100px;
 }
 
-
 .select-image-2 {
-    
     height: 50px;
     display: flex;
     align-items: center;

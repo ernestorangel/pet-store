@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Painel de Usuário | PET STORE</title>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/generalStyle.css"/>
+    <link rel="stylesheet" href="/stylesheets/headerStyle.css"/>
+    <link rel="stylesheet" href="/stylesheets/userPanelStyle2.css"/>
+    <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
+  </head>
+  <body>
+    <%- include('./partials/loggedHeader') %>
+    <main>
+      <div id="optionsPanel">
+        <div class="profileCard">
+          <div class="profilePhoto"></div>
+          <div class="userName">Ernesto Rangel</div>
+          <div class="userInfo">ernestojrcjunior@gmail.com</div>
+          <div class="profileConfig">
+            <div class="profileConfigButton">
+              <div class="profileIcon" id="editIcon"></div>
+              <div class="profileOption">Editar</div>
+            </div>
+            <div class="profileConfigButton">
+              <div class="profileIcon" id="configIcon"></div>
+              <div class="profileOption">Preferências</div>
+            </div>
+          </div>
+        </div>
+        <div class="optionCard">
+          <div class="cardIcon" id="ordersIcon"></div>
+          <div class="cardInfo">
+            <div class="cardTitle">Pedidos</div>
+            <div class="cardDescription">Histórico, Status de Entregas, Notas Fiscais, etc.</div>
+          </div>
+        </div>
+        <div class="optionCard">
+          <div class="cardIcon" id="addressIcon"></div>
+          <div class="cardInfo">
+            <div class="cardTitle">Endereços</div>
+            <div class="cardDescription">Histórico, Status de Entregas, Notas Fiscais, etc.</div>
+          </div>
+        </div>
+        <div class="optionCard">
+          <div class="cardIcon" id="paymentIcon"></div>
+          <div class="cardInfo">
+            <div class="cardTitle">Pagamento</div>
+            <div class="cardDescription">Histórico, Status de Entregas, Notas Fiscais, etc.</div>
+          </div>
+        </div>
+        <div class="optionCard">
+          <div class="cardIcon" id="vouchersIcon"></div>
+          <div class="cardInfo">
+            <div class="cardTitle">Vouchers</div>
+            <div class="cardDescription">Histórico, Status de Entregas, Notas Fiscais, etc.</div>
+          </div>
+        </div>
+        <div class="optionCard">
+          <div class="cardIcon" id="chatIcon"></div>
+          <div class="cardInfo">
+            <div class="cardTitle">Atendimento</div>
+            <div class="cardDescription">Histórico, Status de Entregas, Notas Fiscais, etc.</div>
+          </div>
+        </div>
+      </div>
+      <div id="overviewPanel">
+        <div class="overviewTitle">Pedidos</div>
+        <div class="overviewSearchbar">
+          <form action="" method="GET" id="overviewSearchbarForm">
+            <input type="text" name="search" id="overviewSearchbarArea" placeholder="Procure seu pedido por aqui.">
+            <button type="submit" id="overviewSearchbarButton"></button>
+          </form>
+        </div>
+        <div class="overviewInfoArea">
+          <div class="overviewOrderCard">
+            <div class="overviewOrderCardHeader">
+              <div class="overviewOrderCardHeaderIcon"></div>
+              <div class="overviewOrderCardHeaderTitle">Pedido Entregue</div>
+              <div class="overviewOrderCardHeaderInfo">Entregue dia:</div>
+              <div class="overviewOrderCardHeaderDate">10/mar</div>
+            </div>
+            <div class="overviewOrderCardBody">
+              <div class="overviewOrderCardBodyPic"></div>
+              <div class="overviewOrderCardBodyInfoHolder">
+                <div class="overviewOrderCardBodyName">Pestico Petiscão - 300g</div>
+                <div class="overviewOrderCardBodyDescription">12 unidades</div>
+              </div>
+            </div>
+          </div>
+          <div class="overviewOrderCard">
+            <div class="overviewOrderCardHeader">
+              <div class="overviewOrderCardHeaderIcon"></div>
+              <div class="overviewOrderCardHeaderTitle">Pedido Entregue</div>
+              <div class="overviewOrderCardHeaderInfo">Entregue dia:</div>
+              <div class="overviewOrderCardHeaderDate">07/fev</div>
+            </div>
+            <div class="overviewOrderCardBody">
+              <div class="overviewOrderCardBodyPic"></div>
+              <div class="overviewOrderCardBodyInfoHolder">
+                <div class="overviewOrderCardBodyName">Pestico Petiscão - 300g</div>
+                <div class="overviewOrderCardBodyDescription">12 unidades</div>
+              </div>
+            </div>
+          </div>
+          <div class="overviewOrderCard">
+            <div class="overviewOrderCardHeader">
+              <div class="overviewOrderCardHeaderIcon"></div>
+              <div class="overviewOrderCardHeaderTitle">Pedido Entregue</div>
+              <div class="overviewOrderCardHeaderInfo">Entregue dia:</div>
+              <div class="overviewOrderCardHeaderDate">12/jan</div>
+            </div>
+            <div class="overviewOrderCardBody">
+              <div class="overviewOrderCardBodyPic"></div>
+              <div class="overviewOrderCardBodyInfoHolder">
+                <div class="overviewOrderCardBodyName">Pestico Petiscão - 300g</div>
+                <div class="overviewOrderCardBodyDescription">12 unidades</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('./partials/footer') %>
+  </body>
+</html>

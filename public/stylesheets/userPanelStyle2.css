@@ -1,0 +1,281 @@
+main {
+  display: flex;
+  flex-direction: row;
+  padding: 0 calc((100vw - 1280px) / 2) 10px;
+  background-color: var(--text-bright-color);
+}
+
+#optionsPanel {
+  width: 500px;
+  height: auto;
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--text-bright-color);
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  box-shadow: 1px 1px 8px lightgrey;
+  border-radius: var(--card-border-size);
+}
+
+.profilePhoto {
+  height: 200px;
+  width: 200px;
+  background-image: url(../images/profile/pp.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin: 30px 0 20px 0;
+}
+
+.userName {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.userInfo {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--main-color);
+}
+
+.profileConfig {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+
+.profileConfigButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+  padding: 5px 8px;
+  color: var(--secondary-color);
+  border-radius: var(--card-border-size);
+}
+
+.profileConfigButton:hover {
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+}
+
+.profileIcon {
+  margin: 0 2px;
+  width: 25px;
+  height: 25px;
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+}
+
+#editIcon {
+  background-image: url(../images/icons/pencil-icon.svg);
+}
+
+#configIcon {
+  background-image: url(../images/icons/settings-icon.svg);
+}
+
+.optionCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--text-bright-color);
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 8px lightgrey;
+  border-radius: var(--card-border-size);
+  border-left: 10px solid var(--text-bright-color);
+}
+
+.optionCard:hover {
+  border-left: 10px solid var(--secondary-color);
+}
+
+.cardIcon {
+  margin: 0 5px;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+}
+
+#ordersIcon {
+  background-image: url(../images/icons/orders-icon.svg);
+}
+
+#addressIcon {
+  background-image: url(../images/icons/address-icon.svg);
+}
+
+#paymentIcon {
+  background-image: url(../images/icons/payment-icon.svg);
+}
+
+#vouchersIcon {
+  background-image: url(../images/icons/vouchers-icon.svg);
+}
+
+#chatIcon {
+  background-image: url(../images/icons/chat-icon.svg);
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--secondary-color);
+}
+
+.cardDescription {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--main-color);
+}
+
+#overviewPanel {
+  margin: 20px 0 0 0;
+  padding: 15px 20px;
+  background-color: var(--text-bright-color);
+  width: 100%;
+  height: auto;
+  margin-left: 20px;
+  box-shadow: 1px 1px 8px lightgrey;
+  border-radius: var(--card-border-size);
+}
+
+.overviewTitle {
+  color: var(--main-color);
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.overviewSearchbar {
+  margin: 30px 0 30px 0;
+  height: 56px;
+}
+
+#overviewSearchbarForm {
+  display: flex;
+  align-items: center;
+  background-color: var(--text-bright-color);
+  height: 56px;
+  border-radius: var(--big-border-size);
+  border: 1px solid lightgray;
+}
+
+#overviewSearchbarArea {
+  background-color: var(--text-bright-color);
+  color: gray;
+  font-size: 15px;
+  padding: 0 0 0 15px;
+  height: 100%;
+  width: calc(100% - 60px);
+  border-top-left-radius: var(--big-border-size);
+  border-bottom-left-radius: var(--big-border-size);
+}
+
+#overviewSearchbarArea:focus {
+  outline: none;
+}
+
+#overviewSearchbarButton {
+  background-image: url(../images/icons/search-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  background-color: var(--text-bright-color);
+  height: 100%;
+  width: 60px;
+  border-radius: var(--big-border-size);
+}
+
+#overviewSearchbarButton:hover {
+  background-color: var(--secondary-color);
+  background-image: url(../images/icons/search-icon-hover.svg);
+  transition: 0.5s;
+}
+
+.overviewOrderCard {
+  width: 100%;
+  height: 200px;
+  border: 1px solid lightgray;
+  border-left: 10px solid green;
+  border-radius: var(--card-border-size);
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.overviewOrderCardHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid lightgray;
+}
+
+.overviewOrderCardHeaderIcon {
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/icons/down-arrow-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
+.overviewOrderCardHeaderTitle {
+  padding: 0 0 0 5px;
+  color: green;
+  width: 100%;
+}
+
+.overviewOrderCardHeaderInfo {
+  min-width: 110px;
+}
+
+.overviewOrderCardHeaderDate {
+  color: green;
+}
+
+.overviewOrderCardBody {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: calc(100% - 50px);
+}
+
+.overviewOrderCardBodyPic {
+  width: 100px;
+  height: 100px;
+  background-image: url(../images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
+.overviewOrderCardBodyInfoHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.overviewOrderCardBodyName {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--main-color);
+}
+
+.overviewOrderCardBodyDescription {
+  font-size: 15px;
+  font-weight: 800;
+  color: lightgray;
+}

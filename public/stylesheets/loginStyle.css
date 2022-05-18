@@ -65,11 +65,26 @@ input:focus {
     font-weight: 600;
 }
 
-#forgotButton {
+.forgotArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+#forgoText {
     background-color: transparent;
     margin-top: 15px;
-    color: var(--main-color);
-    width: 100%;
+    font-size: 15px;
+}
+
+#forgotButton {
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-size: 15px;
+    margin: 0 0 0 5px;
+
 }
 
 #signupButton {
