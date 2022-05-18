@@ -57,6 +57,10 @@ input {
     border: 5px solid var(--main-color);
 }
 
+input:focus {
+    outline: none;
+}
+
 #loginButton {
     height: 40px;
     width: 100%;
