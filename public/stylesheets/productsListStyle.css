@@ -128,25 +128,35 @@ h1{
 
 .content2-container2{   
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start; 
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between; 
     height: 1000px;
     width: 1000px;
-    margin: 10px;
     background-color: white;
-    box-shadow: 3px 3px 8px lightgray;
     border-radius: 10px;
 
+}
+
+
+.images1-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between; 
+    flex-direction: column;
+    height: 1000px;
+    width: 220px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 
 .image-container3{
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end; 
-    height: 150px;
-    width: 950px;
+    justify-content: space-around;
+    align-items: space-around; 
+    flex-direction: column;
+    height: 300px;
+    width: 200px;
     margin: 10px;
     background-color: white;
     box-shadow: 3px 3px 8px lightgray;
@@ -154,3 +164,26 @@ h1{
 }
 
 
+.image1-container4{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    box-shadow: 3px 3px 8px lightgray;
+    border-radius: 10px;
+}
+
+
+.name1-container4{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100px;
+    width: 200px;
+    background-color: white;
+    box-shadow: 3px 3px 8px lightgray;
+    border-radius: 10px;
+
+}
