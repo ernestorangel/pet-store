@@ -1,4 +1,4 @@
-p{color: rgb(17, 16, 16);
+p{color: rgb(255, 25, 25);
     align-items: flex-start;
 }
 
@@ -12,6 +12,8 @@ hr{
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    padding-top: 20px;
+    width: 100%;
  }
 
 
@@ -27,6 +29,8 @@ hr{
     margin: 20px;
     background-color: white;
     box-shadow: 1px 1px 5px rgb(17, 16, 16);
+    padding-top: 20px;
+    width: 100%;
  }
 
 
@@ -34,6 +38,7 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center; 
+
  }
 
 
@@ -62,6 +67,7 @@ hr{
     background-color: white;
     font-size: medium;
     font-family:Arial, Helvetica, sans-serif;
+       
 }
 
 h1{
@@ -97,7 +103,6 @@ p {
     display: flex;
     justify-content: center;
     align-items:center;
-    
     height: 250px;
     width: 250px;
     margin: 2px;
