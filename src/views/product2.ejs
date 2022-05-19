@@ -31,8 +31,14 @@
             </div>
             <div class="productRate">
               <div class="productRating">
-                <div class="productStars"></div>
-                <div class="productRatingCount"></div>
+                <div class="productStars">
+                  <div class="filledRateStar"></div>
+                  <div class="filledRateStar"></div>
+                  <div class="filledRateStar"></div>
+                  <div class="filledRateStar"></div>
+                  <div class="emptyRateStar"></div>
+                </div>
+                <div class="productRatingCount">(43 avaliações)</div>
               </div>
               <div class="productStockInfo">Em estoque</div>
             </div>
@@ -60,6 +66,13 @@
               <div class="productButtons">
                 <button type="submit" class="addToCartButton">Adicionar ao carrinho</button>
               </div>
+            </form>
+            <form>
+              <div id="postalTitle">
+                Calcular Frete
+              </div>
+              <input type="text" name="postalCode" id="postalCodeInput" placeholder="Digite aqui seu CEP.">
+              <button type="submit" id="calculateShippingButton">Calcular</button>
             </form>
           </div>
         </div>

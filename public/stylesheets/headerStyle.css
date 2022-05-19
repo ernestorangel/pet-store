@@ -274,7 +274,7 @@
     padding: 0 10px 0 0;
   }
 
-  .cartIcon {
+  .headerOptionsIcon {
     width: 56px;
     height: 56px;
     margin: 0 0 0 15px;
@@ -284,7 +284,7 @@
     border-radius: var(--card-border-size);
   }
 
-  .cartIcon:hover {
+  .headerOptionsIcon:hover {
     background-color: var(--secondary-color);
     fill: var(--main-color);
     transition: 0.5s;

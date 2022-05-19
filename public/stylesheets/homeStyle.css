@@ -206,6 +206,7 @@
     padding: 5px 10px;
     border-radius: var(--card-border-size);
     transition: 0.3ms;
+    text-decoration: none;
   }
 
   .rowShowcaseItem:hover {
@@ -371,6 +372,7 @@
   box-shadow: 1px 1px 8px lightgrey;
   background-color: var(--text-bright-color);
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .showcaseTitle {
