@@ -162,7 +162,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 305px;
     margin: 20px 0 20px 0;
     background-color: transparent;
   }
@@ -187,6 +187,7 @@
     width: 1240px;
     min-width: 1240px;
     margin: 0 10px 0 10px;
+    padding-right: 10px;
     box-shadow: 1px 1px 8px lightgrey;
     background-color: var(--text-bright-color);
     border-radius: var(--card-border-size);
@@ -202,22 +203,23 @@
 
   .rowShowcaseItem {
     width: 200px;
-    margin: 0px 15px;
+    margin: 0px 0 0 10px;
     padding: 5px 10px;
     border-radius: var(--card-border-size);
     transition: 0.3ms;
     text-decoration: none;
+    border: 1px solid lightgrey;
   }
 
   .rowShowcaseItem:hover {
     /* box-shadow: 1px 1px 8px lightgrey; */
-    border: 2px solid var(--secondary-color);
+    border: 1px solid var(--secondary-color);
   }
 
   .rowShowcaseItemImage {
     height: 160px;
     background-position: center;
-    background-size: contain;
+    background-size: 70%;
     background-repeat: no-repeat;
   }
 
@@ -227,7 +229,7 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     color: var(--main-color);
   }

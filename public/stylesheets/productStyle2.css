@@ -245,23 +245,115 @@ main {
 .recomendationsSection {
     background-color: var(--text-bright-color);
     width: 100%;
-    height: 250px;
+    height: 310px;
     margin-top: 40px;
+    padding: 2px 5px;
     box-shadow: 1px 1px 8px lightgrey;
     border-radius: var(--card-border-size);
 }
 
+.showcaseTitle {
+    margin: 15px 0 0 15px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.rowShowcaseItemArea {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    margin: 10px 0px;
+}
+
+.rowShowcaseItem {
+    width: 200px;
+    margin: 0px 15px;
+    padding: 5px 10px;
+    border-radius: var(--card-border-size);
+    transition: 0.3ms;
+    text-decoration: none;
+}
+
+.rowShowcaseItem:hover {
+    border: 2px solid var(--secondary-color);
+}
+
+.rowShowcaseItemImage {
+    height: 160px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.rowShowcaseItemTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    color: var(--main-color);
+}
+
+.rowShowcaseItemDescription {
+    height: 20px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+#rowShowcaseItemImage-1 {
+    background-image: url(../images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png);
+}
+
+#rowShowcaseItemImage-2 {
+    background-image: url(../images/products/fabrica-produtos-pet-shop-01-removebg-preview.png);
+}
+
+#rowShowcaseItemImage-3 {
+    background-image: url(../images/products/fornecedores-produtos-pet-shop-01-removebg-preview.png);
+}
+
+#rowShowcaseItemImage-4 {
+    background-image: url(../images/products/fornecedores-produtos-pet-shop-atacado-01-removebg-preview.png);
+}
+
+#rowShowcaseItemImage-5 {
+    background-image: url(../images/products/Pet-Shop-Produtos-Pet-Pet-Alimentador-Autom-tico-De-Comida-Auto-Beber-gua-C-o-Gato-removebg-preview.png);
+}
+
+#rowShowcaseItemImage-6 {
+    background-image: url(../images/products/Ração_Seca_Balance_Frango_e_Vegetais_para_Cães_Adultos_de_Raças_Médias_e_Grandes_2272198_10kg-removebg-preview.png);
+}
+
 .descriptionSection {
     width: 100%;
-    height: 250px;
+    height: auto;
     margin-top: 40px;
+    padding-bottom: 20px;
     border-bottom: 1px solid lightgray;
+}
+
+.descriptionSectionTitle {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.descriptionSectionText {
+    text-align: justify;
 }
 
 .specificationSection {
     width: 100%;
-    height: 250px;
+    height: auto;
     margin-top: 40px;
+    padding-bottom: 20px;
     border-bottom: 1px solid lightgray
 }
 
