@@ -17,6 +17,8 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    padding-top: 20px;
+    width: 100%;
  }
 
  .main-container1 {
@@ -38,6 +40,7 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center; 
+
  }
 
  .content1-container2 {
@@ -61,6 +64,7 @@ hr {
     background-color: white;
     font-size: medium;
     font-family:Arial, Helvetica, sans-serif;
+       
 }
 
 h1 {
