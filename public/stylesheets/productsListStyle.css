@@ -47,7 +47,7 @@ h1{
 
 .filter-container3{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center; 
     flex-direction: column;
     height: 180px;
@@ -62,7 +62,7 @@ h1{
 .filter1{
     display: flex;
     justify-content: space-around;
-    align-items: space-around; 
+    align-items: center; 
     height: 30px;
     width: 150px;
     margin: 10px;
@@ -89,7 +89,7 @@ h1{
 .category1{
     display: flex;
     justify-content: space-around;
-    align-items: space-around; 
+    align-items: center; 
     height: 30px;
     width: 150px;
     margin: 10px;
@@ -101,7 +101,7 @@ h1{
 
 .products-container3{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center; 
     flex-direction: column;
     height: 360px;
@@ -116,7 +116,7 @@ h1{
 .products1{
     display: flex;
     justify-content: space-around;
-    align-items: space-around; 
+    align-items: center; 
     height: 30px;
     width: 150px;
     margin: 10px;
