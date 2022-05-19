@@ -1,9 +1,10 @@
-p{color: rgb(255, 25, 25);
-    align-items: flex-start;
+main {
+    padding: 0 calc((100vw - 1280px) / 2);
 }
 
-h1{
-
+p {
+    color: rgb(255, 25, 25);
+    align-items: flex-start;
 }
 
 
@@ -18,7 +19,6 @@ h1{
 
 .main-container1{
     display: flex;
-    
     justify-content: center;
     gap: 20px;
     align-items: space-between; 
@@ -53,7 +53,7 @@ h1{
     height: 180px;
     width: 200px;
     margin: 10px;
-    background-color: rgb(255, 25, 25);
+    background-color: var(--secondary-color);
     box-shadow: 1px 1px 5px lightgray;
     border-radius: 10px;
 }
@@ -80,7 +80,7 @@ h1{
     height: 360px;
     width: 200px;
     margin: 10px;
-    background-color: rgb(255, 25, 25);
+    background-color: var(--secondary-color);
     box-shadow: 1px 1px 5px lightgray;
     border-radius: 10px;
 }
@@ -107,7 +107,7 @@ h1{
     height: 360px;
     width: 200px;
     margin: 10px;
-    background-color: rgb(255, 25, 25);
+    background-color: var(--secondary-color);
     box-shadow: 1px 1px 5px lightgray;
     border-radius: 10px;
 }
