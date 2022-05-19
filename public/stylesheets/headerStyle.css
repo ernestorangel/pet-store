@@ -301,6 +301,7 @@
     width: auto;
     display: flex;
     flex-direction: row;
+    width: 250px;
     padding: 5px 5px;
     border-radius: var(--card-border-size);
   }
@@ -322,7 +323,7 @@
   #secondSectionRightSide {
     display: flex;
     flex-direction: row-reverse;
-    width: 1024px;
+    width: 1044px;
   }
   
   #headerThirdSection {

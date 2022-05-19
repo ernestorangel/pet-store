@@ -1,0 +1,42 @@
+body {
+  background-color: var(--main-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#loginLogoHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color: var(--main-color);
+}
+
+#logo {
+  width: 400px;
+  height: 100%;
+  background-image: url(../images/logos/pet-store-logo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#errorNumber {
+  color: var(--text-bright-color);
+  font-size: 300px;
+  line-height: 300px;
+  font-weight: 800;
+}
+
+#errorMessage {
+  color: var(--text-bright-color);
+  font-size: 40px;
+  font-weight: 600;
+}
