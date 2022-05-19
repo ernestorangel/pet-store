@@ -1,0 +1,195 @@
+main {
+    padding: 0 calc((100vw - 1280px) / 2);
+}
+
+.productSession {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.productPathText {
+    font-size: 15px;
+    color: var(--main-color);
+}
+
+.productArea {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.photosPreview {
+    width: 150px;
+    height: 100%;
+    padding: 0 5px;
+}
+
+.previewImage {
+    width: 100%;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    margin-bottom: 10px;
+    border-radius: var(--card-border-size);
+    border: 1px solid lightgray;
+}
+
+#preview-1 {
+    background-image: url(../images/products/Ração_Premier2.jpg);
+}
+
+#preview-2 {
+    background-image: url(../images/products/Ração_Premier3.jpg);
+}
+
+.mainPhoto {
+    width: 500px;
+    height: 500px;
+    margin-left: 20px;
+    background-image: url(../images/products/Ração_Premier1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    border-radius: var(--card-border-size);
+    border: 1px solid lightgray;
+}
+
+.infoHolder {
+    width: 580px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productTitle {
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0;
+}
+
+.productCode {
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+    padding-right: 5px;
+}
+
+.productInfoWord {
+    font-size: 15px;
+    font-weight: 300;
+    border-left: 2px solid grey;
+    margin-left: 5px;
+    padding-left: 5px;
+    color: grey;
+}
+
+.productRate {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.productOption {
+    color: var(--secondary-color);
+    padding: 2px 10px;
+    background-color: var(--text-bright-color);
+    width: 300px;
+    margin-top: 20px;
+    height: 50px;
+    border-radius: var(--card-border-size);
+    border: 1px solid lightgray;
+}
+
+.priceArea {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+#fullPrice {
+    padding-left: 23px;
+}
+
+.unityPrice {
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--main-color)
+}
+
+.productPrice {
+    padding-left: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--secondary-color)
+}
+
+.productButtons {
+    height: auto;
+}
+
+.productQuantity {
+    width: 100px;
+    height: 100%;
+    color: var(--secondary-color);
+    padding: 2px 10px;
+    background-color: var(--text-bright-color);
+    margin-top: 20px;
+    height: 50px;
+    border-radius: var(--card-border-size);
+    border: 1px solid lightgray;
+}
+
+.addToCartButton {
+    width: 300px;
+    height: 100%;
+    color: var(--secondary-color);
+    padding: 2px 10px;
+    background-color: var(--text-bright-color);
+    margin-top: 20px;
+    height: 50px;
+    border-radius: var(--card-border-size);
+    border: 1px solid lightgray;
+}
+
+.recomendationsSection {
+    background-color: var(--text-bright-color);
+    width: 100%;
+    height: 250px;
+    margin-top: 40px;
+    box-shadow: 1px 1px 8px lightgrey;
+    border-radius: var(--card-border-size);
+}
+
+.descriptionSection {
+    width: 100%;
+    height: 250px;
+    margin-top: 40px;
+    border-bottom: 1px solid lightgray;
+}
+
+.specificationSection {
+    width: 100%;
+    height: 250px;
+    margin-top: 40px;
+    border-bottom: 1px solid lightgray
+}
+
+.ratingSection {
+    width: 100%;
+    height: 250px;
+    margin-top: 40px;
+}

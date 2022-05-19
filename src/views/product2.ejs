@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Produto | PET STORE</title>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/generalStyle.css"/>
+    <link rel="stylesheet" href="/stylesheets/headerStyle.css"/>
+    <link rel="stylesheet" href="/stylesheets/productStyle2.css"/>
+    <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
+  </head>
+  <body>
+    <%- include('./partials/loggedHeader') %>
+    <main>
+      <section class="productSession">
+        <div class="productPathText">
+          Pet Shop > Cachorro > Ração > Ração Seca
+        </div>
+        <div class="productArea">
+          <div class="photosPreview">
+            <div class="previewImage" id="preview-1"></div>
+            <div class="previewImage" id="preview-2"></div>
+          </div>
+          <div class="mainPhoto"></div>
+          <div class="infoHolder">
+            <div class="productTitle">Ração Golden Special Sabor Frango e Carne para Cães Adultos</div>
+            <div class="productInfo">
+              <div class="productCode">Código: 10002310000032</div>
+              <div class="productInfoWord">Ver descrição completa</div>
+              <div class="productInfoWord">Premier Pet</div>
+              <div class="productInfoWord">Golden</div>
+            </div>
+            <div class="productRate">
+              <div class="productRating">
+                <div class="productStars"></div>
+                <div class="productRatingCount"></div>
+              </div>
+              <div class="productStockInfo">Em estoque</div>
+            </div>
+            <form action="" method="GET" class="inputForm">
+              <div class="productOptionHolder">
+                <select name="qtd" class="productQuantity">
+                  <% for(let i=1; i < 13; i++) { %>
+                    <option value="<%= i %>"><%= i %> un.</option>
+                  <% } %>
+                </select>
+                <select name="qtd" class="productOption">
+                  <option value="1">2,5 kg</option>
+                  <option value="2">5,0 kg</option>
+                  <option value="3">10,0 kg</option>
+                </select>
+              </div>
+              <div class="priceArea">
+                <div>Preço Unítário:</div>
+                <div class="unityPrice">R$ 142,90</div>
+              </div>
+              <div class="priceArea">
+                <div id="fullPrice">Preço Total:</div>
+                <div class="productPrice">R$ 428,70</div>
+              </div>
+              <div class="productButtons">
+                <button type="submit" class="addToCartButton">Adicionar ao carrinho</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="recomendationsSection"></section>
+      <section class="descriptionSection"></section>
+      <section class="specificationSection"></section>
+      <section class="ratingSection"></section>
+    </main>
+    <%- include('./partials/footer') %>
+  </body>
+</html>

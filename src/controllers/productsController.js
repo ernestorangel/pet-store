@@ -4,7 +4,7 @@ const productController = {
       res.render('productsList',);
     },
     view: (req, res) => {
-      res.render('product');
+      res.render('product2');
     }
 }
 module.exports = productController

@@ -1,8 +1,13 @@
-p{color: rgb(17, 16, 16);
+main {
+    padding: 0 calc((100vw - 1280px) / 2);
+}
+
+p {
+    color: rgb(17, 16, 16);
     align-items: flex-start;
 }
 
-hr{
+hr {
     color: lightgray;
     size: 2px;
 }
@@ -14,7 +19,6 @@ hr{
     align-items: center; 
  }
 
-
  .main-container1 {
     display: flex;
     flex-direction: column;
@@ -25,17 +29,16 @@ hr{
     width: 100%;
     min-width: 295px;
     margin: 20px;
-    background-color: white;
-    box-shadow: 1px 1px 5px rgb(17, 16, 16);
+    background-color: var(--text-bright-color);
+    border-radius: var(--card-border-size);
+    box-shadow: 1px 1px 8px lightgrey;
  }
-
 
   .content{
     display: flex;
     justify-content: center;
     align-items: center; 
  }
-
 
  .content1-container2 {
     display: flex;
@@ -44,10 +47,6 @@ hr{
     width: 400px;
     margin: 15px;
     background-color: white;
-     
-}
-
-.image-container3 {
      
 }
 
@@ -64,7 +63,7 @@ hr{
     font-family:Arial, Helvetica, sans-serif;
 }
 
-h1{
+h1 {
     color: rgb(17, 16, 16);
     display: flex;
     flex-direction: column;
@@ -91,18 +90,13 @@ p {
     border-radius: 10px;
 }
 
-
-
 .size_container3{
     display: flex;
     justify-content: center;
     align-items:center;
-    
     height: 250px;
     width: 250px;
-    margin: 2px;
-
-    
+    margin: 2px; 
 }
 
 .choose1{
@@ -115,10 +109,7 @@ p {
     background-color: white;
     box-shadow: 1px 1px 8px rgb(77, 74, 74);
     border-radius: 10px;
-    
 }
-
-
 
 .infotext-container3{
     display: flex;
@@ -128,10 +119,9 @@ p {
     height: 100px;
     width: 220px;
     margin: 2px;
-    background-color: rgb(247, 72, 19);
-    box-shadow: 1px 1px 8px rgb(77, 74, 74);
-    border-radius: 10px;
-
+    background-color: var(--text-bright-color);
+    border-radius: var(--card-border-size);
+    box-shadow: 1px 1px 8px lightgrey;
 }
 
 .addcart-container3 {
@@ -147,7 +137,6 @@ p {
     border-radius: 10px;
 }
 
-
 .buy-container3 {
     display: flex;
     justify-content: center;
@@ -159,9 +148,7 @@ p {
     background-color: rgb(75, 88, 209);
     box-shadow: 1px 1px 8px rgb(77, 74, 74);
     border-radius: 10px;
-
 }
-
 
 .text-container3 {
     display: flex;
@@ -175,7 +162,6 @@ p {
     border-radius: 10px;
 }
 
-
 .cep-container3 {
     display: flex;
     justify-content: center;
@@ -187,22 +173,17 @@ p {
     background-color: whitesmoke;
     box-shadow: 1px 1px 8px rgb(77, 74, 74);
     border-radius: 10px;
-
 }
-
 
 .infotext3-container1 {
     display:flex;
     flex-direction: column;
     align-items: left;
     height: 200px;
-    width: 1200px;
+    width: 100%;
     min-width: 5px;
-    margin: 10px;
-    background-color: whitesmoke;
-    box-shadow: 1px 1px 8px rgb(77, 74, 74);
-    border-radius: 10px;
-    gap: 20px;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
 }
 
 .infotext4-container1{
