@@ -1,3 +1,7 @@
+const produtos = [{
+    
+}]
+
 const cartController = {
     carrinho:(req, res) => {
         res.render('cart', { title: 'Carrinho' });

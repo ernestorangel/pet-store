@@ -8,13 +8,91 @@
         <link rel="stylesheet" href="/stylesheets/checkoutStyle.css"/>
         <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
     </head>
+
  <body>
-  <%- include('./partials/header') %>
-  <main>
-   <section>
-    <h1>Checkout</h1>
-   </main>
-  <%- include('./partials/footer') %>
+    <%- include('./partials/loggedHeader') %>
+
+    <main>
+        <h1 class="titulo">Esses Produtos Já São Quase Seus</h1>
+        <div class="mae-checkout">
+            <div class="resumo-pedido">
+                <h2 class="titulo">Resumo Do Pedido</h2>
+                <div class="resumo-produto">
+                    <img class="resumo-imagen" src="/images/products/7898490095315-removebg-preview.png" alt="">
+                    <div class="resumo-descricao">
+                        <h3>Casinha Luxo Preta</h3>
+                        <p class="resumo-texto-descricao">Esteja Sempre Pronto para levar seu Pet com voce</p>
+                    </div>
+                    <div class="resumo-qtd">
+                        <p class="resumo-qtd-font">Qtd :                       
+                            
+                            1 								
+                            
+                        </p>
+                    </div>
+                    <div class="resumo-preco">
+                        <p class="resumo-preco-font">R$ 150.00</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="formas-pagamento">
+                <h2 class="titulo">Forma De Pagamento</h2>
+                <div class="formas-pagamentos-icon">
+                    <div class="parametros-icons-selecionado">
+                        <p>Cartão</p>
+                        <img class="icons-pagamento" src="/images/icons/cartao-icon.png" alt="">
+                    </div>
+                    <div class="parametros-icons">
+                        <p>Boleto</p>
+                        <img class="icons-pagamento" src="/images/icons/boleto-icon.png" alt="">
+                    </div>
+                    <div class="parametros-icons">
+                        <p>Pix</p>
+                        <img class="icons-pagamento" src="/images/icons/pix-image.png" alt="">
+                    </div>
+                </div>
+                <form class="pagamento-forms" action="">
+                    <p class="pagamento-forms-textos">Digite o Numero do Cartão</p>
+                    <br>
+                    <input class="pagamento-forms-inputs" type="number" name="" id="">
+                    <br>
+                    <p class="pagamento-forms-textos">Digite o Nome Impresso no Cartão</p>
+                    <br>
+                    <input class="pagamento-forms-inputs" type="text" name="" id="">
+                    <br>
+                    <p class="pagamento-forms-textos">Digite a Validade do Cartão</p>
+                    <br> 
+                    <input type="date" name="" id="">
+                    <br>
+                    <p class="pagamento-forms-textos">Digite o Codigo de Segurança</p>
+                    <br>
+                    <input class="pagamento-forms-cvc" type="number" name="" id="">
+                    <br>
+                    <p class="pagamento-forms-textos">Parcele Sua Compra</p>
+                    <br>
+                    <select class="pagamento-forms-textos" name="qtd">
+                        <% for(let i=1; i <= 12; i++) { %>
+                            <option value="<%= i %>">
+                                <%= i %>x Sem juros
+                            </option>
+                        <% } %>
+                      </select>
+                    <br>
+                    <label class="pagamento-forms-checkbox" for="salvar">
+                        <input class="pagamento-forms-checkbox" type="checkbox" name="salvar" id="salvar">
+                        Salvar Pra Compras Futuras
+                    </label>
+                    <br>
+                    <button class="button-comprar-agora" type="submit">Comprar Agora</button>
+                </form>
+                
+
+            </div>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %>
  </body>
-</html>
+
 </html>
