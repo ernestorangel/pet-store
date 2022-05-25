@@ -17,22 +17,29 @@
         <div class="mae-checkout">
             <div class="resumo-pedido">
                 <h2 class="titulo">Resumo Do Pedido</h2>
-                <div class="resumo-produto">
-                    <img class="resumo-imagen" src="/images/products/7898490095315-removebg-preview.png" alt="">
-                    <div class="resumo-descricao">
-                        <h3>Casinha Luxo Preta</h3>
-                        <p class="resumo-texto-descricao">Esteja Sempre Pronto para levar seu Pet com voce</p>
-                    </div>
-                    <div class="resumo-qtd">
-                        <p class="resumo-qtd-font">Qtd :                       
-                            
-                            1 								
-                            
-                        </p>
-                    </div>
-                    <div class="resumo-preco">
-                        <p class="resumo-preco-font">R$ 150.00</p>
-                    </div>
+                <ul>
+                    <% produtos.forEach(function(produto){ %>
+                        <li>
+                            <div class="resumo-produto">                            
+                                <img class="resumo-imagen" src="\images\products\casinhaLuxoPreta.png" alt="">
+                                <div class="resumo-descricao">
+                                    <h3><%= produto.titulo %></h3>
+                                    <p class="resumo-texto-descricao"><%= produto.descricao %></p>
+                                </div>
+                                <div class="resumo-qtd">
+                                    <p class="resumo-qtd-font"> Qtd : <%= produto.quantidade %> </p>
+                                </div>
+                                <div class="resumo-preco">
+                                    <p class="resumo-preco-font">R$ <%= produto.preco %>,00</p>
+                                </div>                        
+                            </div>
+                        </li>
+                    <% }) %>
+                </ul>
+                <div class="">                   
+        
+                    <p>Total</p>                    
+                    
                 </div>
 
             </div>
