@@ -17,11 +17,11 @@
         <div class="mae-checkout">
             <div class="resumo-pedido">
                 <h2 class="titulo">Resumo Do Pedido</h2>
-                <ul>
+                
                     <% produtos.forEach(function(produto){ %>
-                        <li>
+                        
                             <div class="resumo-produto">                            
-                                <img class="resumo-imagen" src="\images\products\casinhaLuxoPreta.png" alt="">
+                                <img class="resumo-imagen" src="\images\products\<%= produto.imagen %>" alt="">
                                 <div class="resumo-descricao">
                                     <h3><%= produto.titulo %></h3>
                                     <p class="resumo-texto-descricao"><%= produto.descricao %></p>
@@ -30,15 +30,16 @@
                                     <p class="resumo-qtd-font"> Qtd : <%= produto.quantidade %> </p>
                                 </div>
                                 <div class="resumo-preco">
-                                    <p class="resumo-preco-font">R$ <%= produto.preco %>,00</p>
+                                    <p class="resumo-preco-font">   R$ <%= produto.preco %>,00</p>
                                 </div>                        
                             </div>
-                        </li>
+                        
+                            
                     <% }) %>
-                </ul>
+                
                 <div class="">                   
         
-                    <p>Total</p>                    
+                    <p>Total </p>                    
                     
                 </div>
 

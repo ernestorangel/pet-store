@@ -16,6 +16,7 @@ main{
 	padding: 0 calc((100vw - 1320px) / 2);
 }
 
+
 .titulo{
     text-align: center;
     padding: 10px;
@@ -29,27 +30,34 @@ main{
 }
 
 .resumo-pedido{
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
 
 .resumo-produto{
-    height: 100px;
     display: flex;
     justify-content: space-around;
+    border: black solid 1px;
+    margin-bottom: 10px;
+    align-items: center;
 }
+
+
 
 .resumo-imagen{
     height: 100px;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .resumo-descricao{
     padding: 10px;
     display: flex;
     flex-direction: column;
-    height: 100px;
     width: 50%;       
 }
 
@@ -58,12 +66,8 @@ main{
     
 }
 
-.resumo-qtd{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 6px;
-    width: 15%;
+.resumo-qtd{  
+
 }
 
 .resumo-qtd-font{
@@ -71,11 +75,6 @@ main{
 }
 
 .resumo-preco{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 6px;
-    width: 22%;
     
 }
 
