@@ -21,6 +21,11 @@ table{
 	border-radius: 10px;
 }
 
+.links{
+    text-decoration: none;
+    color: #fff;
+}
+
 .produto-em-destaque{
 	display: flex;
 	flex-direction: column;

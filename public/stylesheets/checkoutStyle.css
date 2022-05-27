@@ -116,6 +116,7 @@ main{
     background-color: #ff470a;
     border-radius: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .parametros-icons:hover{

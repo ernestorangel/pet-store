@@ -7,8 +7,12 @@ const cartController = require('../controllers/cartController')
 // router.get("/delete/all", cartController.erase);
 // router.get("/checkout", cartController.checkout);
 
-router.get("/", cartController.carrinho)
 
+// Rotas Carrinho De Compra
+router.get("/2", cartController.carrinho)
+router.get("/", cartController.carrinho2)
+
+// Rotas Paginas Forma Pagamento
 router.get("/checkout", cartController.checkout)
 
 module.exports = router;

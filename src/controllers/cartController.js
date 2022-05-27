@@ -1,5 +1,16 @@
 const path = require('path')
-const casinha = path.join('images', 'products', 'casinhaLuxoPreta.png')
+const produtosDestaque = [{
+    titulo: "Alimentador Automatico",
+    descricao: "Coloque até 4 Litros de Agua e Deixe seu pet sempre hidratado",
+    preco: 75,
+    imagen: "Pet-Shop-Produtos-Pet-Pet-Alimentador-Autom-tico-De-Comida-Auto-Beber-gua-C-o-Gato-removebg-preview.png"
+},
+{
+    titulo: "Caixa Transporte",
+    descricao: "Esteja Sempre Pronto para levar seu Pet com voce",
+    preco: 75,
+    imagen: "casinhaLuxoPreta.png"
+}]
 const produtos = [{
     titulo: "Casinha Luxo Preta",
     descricao: "Esteja Sempre Pronto para levar seu Pet com voce",
@@ -23,7 +34,10 @@ const produtos = [{
 
 const cartController = {
     carrinho:(req, res) => {
-        res.render('cart', { title: 'Carrinho' });
+        res.render('cart', { title: 'Carrinho', produtos: produtos });
+    },
+    carrinho2:(req,res)=>{
+        res.render('cart2', { title: 'Carrinho', produtosDestaque: produtosDestaque , produtos: produtos });
     },
     checkout: (req,res,next) =>{
         res.render('checkout', { title: 'Checkout', produtos: produtos });

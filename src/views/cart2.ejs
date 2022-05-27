@@ -1,0 +1,126 @@
+<html lang="pt-br">
+    <head>
+			<title>Carrinho | PET STORE</title>
+      <%- include('./partials/head') %>
+			<link rel="stylesheet" href="/stylesheets/generalStyle.css"/>
+      <link rel="stylesheet" href="/stylesheets/headerStyle.css"/>
+      <link rel="stylesheet" href="/stylesheets/cartStyle2.css"/>
+      <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
+    </head>
+    <body>
+	    <%- include('./partials/loggedHeader') %>
+            <main>
+                <h1 class="titulo">Produtos em Destaque</h1>
+                <div class="produtos-destaque-mae">  
+                    <div class="vector">
+                        <img class="vector-arrow" src="/images/icons/vectorLeft.png" alt="">
+                    </div> 
+                    <% produtosDestaque.forEach(function(produto){ %>
+                        <div class="produtos-destaque">
+                            <img class="produtos-destaque-imagens" src="/images/products/<%= produto.imagen %>" alt="">
+                            <div class="produtos-destaques-infos">
+                                <h3 class="produtos-destaque-textos"> <%= produto.titulo %> </h3>
+                                <p class="produtos-destaque-textos"> <%= produto.descricao %> </p>
+                                <p class="produtos-destaque-textos"> Preço: <%= produto.preco %>,00 </p>
+                                <p class="produtos-destaque-textos"> <strong> Em Estoque </strong></p>
+                                <form class="produtos-destaque-form" action="">
+                                    <button class="adicionar-carrinho" type="submit">
+                                        Adicionar Ao Carrinho 
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    <% }) %>
+                    <div class="vector">
+                        <img class="vector-arrow" src="/images/icons/vectorRight.png" alt="">
+                    </div> 
+                </div>
+                <h1 class="titulo" >Meu Pedido</h1>
+                <div class="pedido-pai">
+                    <div class="descricao">
+                        <p><strong>Produto</strong></p>
+                        <p><strong>Descrição</strong></p>
+                        <p><strong>Quantidade</strong></p>
+                        <p><strong>Preço</strong></p>
+                        <p><strong>Remover</strong></p>
+                    </div>
+                    <% produtos.forEach(function(produto){ %>
+                        <div class="pedido-produto">
+                            <img class="pedido-imagen" src="/images/products/<%= produto.imagen %>" alt="">
+                            <div class="pedido-info">
+                                <h3 class="pedido-info-texto"> <%= produto.titulo %> </h3>
+                                <p class="pedido-info-texto"> <%= produto.descricao %> </p>
+                                <p class="pedido-info-texto"><strong> Em Estoque </strong></p>
+                            </div>
+                            <div class="pedido-quantidade"> 
+                                + 1 -
+                            </div>
+                            <div class="pedido-preco"> 
+                                <%= produto.preco %>,00 
+                            </div>
+                            <div class="pedido-remover">
+                                <div class="lixeira">
+                                    <img class="lixeira-icon" src="/images/icons/lixeira.png" alt="">
+                                </div>                    
+                            </div>                        
+                        </div>
+                    <% }) %>                    
+                </div>
+                <div class="finalizar-compra-pai">
+                    <div class="finalizar-compra-filha">                        
+                        <form class="cep-form">
+                            <label class="info-cep" for="CEP">CEP:
+                            <input class="cep-5" name="CEP" id="CEP" required pattern="\d{5}-\d{3}"/>
+                            -
+                            <input class="cep-3" name="CEP" id="CEP" required pattern="\d{5}-\d{3}"/>
+                            </label>
+                            <button class="adicionar-carrinho" type="submit">
+                                Calcular Frete 
+                            </button>
+                        </form>
+                        <div class="info-valores">
+                            <p>Subtotal</p>
+                            <p>R$200,00</p>
+                        </div>
+                        <div class="info-valores">
+                            <p>Frete</p>
+                            <p class="frete-valor">Gratis</p>
+                        </div>
+                        <div class="info-valores">
+                            <p>Total</p>
+                            <p>R$ 500,00</p>
+                        </div>
+                        <form class="finalizar-form" action="">
+                            <button class="finalizar-compra" type="submit">
+                                <a class="links" href="/cart/checkout/">Finalizar Compra</a> 
+                            </button>
+                        </form>
+
+                    </div>
+                    
+
+                </div>
+            </main>
+
+        <%- include('./partials/footer') %>
+    </body>
+
+
+    <!-- <% produtos.forEach(function(produto){ %>
+                        
+        <div class="resumo-produto">                            
+            <img class="resumo-imagen" src="\images\products\<%= produto.imagen %>" alt="Produto Pet">
+            <div class="resumo-descricao">
+                <h3><%= produto.titulo %></h3>
+                <p class="resumo-texto-descricao"><%= produto.descricao %></p>
+            </div>
+            <div class="resumo-qtd">
+                <p class="resumo-qtd-font"> Qtd : <%= produto.quantidade %> </p>
+            </div>
+            <div class="resumo-preco">
+                <p class="resumo-preco-font">   R$ <%= produto.preco %>,00</p>
+            </div>                        
+        </div>
+    
+        
+<% }) %> -->
