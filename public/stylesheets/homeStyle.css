@@ -1,8 +1,18 @@
-@media (max-width:430px) {
+/* smartphone */
+@media (max-width: 480px) {
   #banner {
     padding-top: 20px;
     width: 100%;
   }
+
+  #carousel {
+    display: none;
+  }
+
+  .featureTitle {
+    font-size: 14px;
+  }
+
   .showcase {
     display: flex;
     flex-direction: column;
@@ -59,15 +69,92 @@
   }
 }
 
-@media (min-width:430px) and (max-width:1280px) {
+/* small tablet */
+@media (min-width: 481px) and (max-width: 768px) {
   #banner {
-    padding: 25% 0 0 0;
+    padding-top: 20px;
     width: 100%;
-    background-image: url(../images/banners/mainBanner.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: top;
   }
+
+  #carousel {
+    display: none;
+  }
+
+  .featureTitle {
+    font-size: 16px;
+  }
+
+  .showcase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: transparent;
+  }
+
+  .middleShowcase {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .doubleShowcase{
+    display: none;
+  }
+  
+  .rowShowcase {
+    display: flex;
+    height: 300px;
+    width: 295px;
+    min-width: 295px;
+    margin: 10px;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+  
+  .addsShowcase {
+    height: 300px;
+    width: 295px;
+    min-width: 295px;
+    margin: 10px;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+  
+  .bigShowcase {
+    height: 600px;
+    width: 925px;
+    min-width: 925px;
+    margin: 10px;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+  
+  .longShowcase {
+    height: 600px;
+    width: 295px;
+    min-width: 295px;
+    margin: 10px;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+}
+
+/* big tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #banner {
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  #carousel {
+    display: none;
+  }
+
+  .featureTitle {
+    font-size: 18px;
+  }
+
   .showcase {
     display: flex;
     flex-direction: column;
@@ -122,7 +209,70 @@
   }
 }
 
-@media (min-width: 1280px) {
+/* HD Monitors */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  #banner {
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  .featureTitle {
+    font-size: 20px;
+  }
+
+  .showcase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: transparent;
+  }
+
+  .middleShowcase {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .doubleShowcase{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    margin: 10px;
+    background-color: transparent;
+  }
+  
+  .rowShowcase {
+    height: 300px;
+    width: 610px;
+    min-width: 610px;
+  }
+  
+  .addsShowcase {
+    height: 100%;
+    width: 80%;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+  
+  .bigShowcase {
+    height: 600px;
+    width: 610px;
+    min-width: 610px;
+    margin: 10px;
+    background-color: #FFD8BE;
+    box-shadow: 1px 1px 8px lightgrey;
+  }
+  
+  .longShowcase {
+    display: none;
+  }
+}
+
+/* Full HD Monitors + */
+@media (min-width: 1281px) {
   main {
     padding: 0 calc((100vw - 1280px) / 2);
   }
@@ -131,30 +281,13 @@
     width: 100%;
   }
 
-  .featuresShowcase {
+  #carousel {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 80px;
-  }
-
-  .featureHolder {
-    margin: 0 30px 0 30px;
-    padding-left: 10px;
-    border-left: 5px solid var(--secondary-color);
+    flex-direction: column;
   }
 
   .featureTitle {
-    color: var(--main-color);
     font-size: 22px;
-    font-weight: 600;
-  }
-
-  .featureMore {
-    color: var(--secondary-color);
-    font-size: 12px;
-    font-weight: 300;
   }
 
   .showcase {
@@ -186,84 +319,6 @@
     height: 100%;
     width: 1240px;
     min-width: 1240px;
-    margin: 0 10px 0 10px;
-    padding-right: 10px;
-    box-shadow: 1px 1px 8px lightgrey;
-    background-color: var(--text-bright-color);
-    border-radius: var(--card-border-size);
-  }
-
-  .rowShowcaseItemArea {
-    display: flex;
-    flex-direction: row;
-    height: auto;
-    width: auto;
-    margin: 10px 0px;
-  }
-
-  .rowShowcaseItem {
-    width: 200px;
-    margin: 0px 0 0 10px;
-    padding: 5px 10px;
-    border-radius: var(--card-border-size);
-    transition: 0.3ms;
-    text-decoration: none;
-    border: 1px solid lightgrey;
-  }
-
-  .rowShowcaseItem:hover {
-    /* box-shadow: 1px 1px 8px lightgrey; */
-    border: 1px solid var(--secondary-color);
-  }
-
-  .rowShowcaseItemImage {
-    height: 160px;
-    background-position: center;
-    background-size: 70%;
-    background-repeat: no-repeat;
-  }
-
-  .rowShowcaseItemTitle {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    font-size: 15px;
-    text-align: center;
-    color: var(--main-color);
-  }
-
-  .rowShowcaseItemDescription {
-    height: 20px;
-    font-size: 15px;
-    text-align: center;
-    font-weight: 600;
-    color: var(--secondary-color);
-  }
-
-  #rowShowcaseItemImage-1 {
-    background-image: url(../images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png);
-  }
-
-  #rowShowcaseItemImage-2 {
-    background-image: url(../images/products/fabrica-produtos-pet-shop-01-removebg-preview.png);
-  }
-
-  #rowShowcaseItemImage-3 {
-    background-image: url(../images/products/fornecedores-produtos-pet-shop-01-removebg-preview.png);
-  }
-
-  #rowShowcaseItemImage-4 {
-    background-image: url(../images/products/fornecedores-produtos-pet-shop-atacado-01-removebg-preview.png);
-  }
-
-  #rowShowcaseItemImage-5 {
-    background-image: url(../images/products/Pet-Shop-Produtos-Pet-Pet-Alimentador-Autom-tico-De-Comida-Auto-Beber-gua-C-o-Gato-removebg-preview.png);
-  }
-
-  #rowShowcaseItemImage-6 {
-    background-image: url(../images/products/Ração_Seca_Balance_Frango_e_Vegetais_para_Cães_Adultos_de_Raças_Médias_e_Grandes_2272198_10kg-removebg-preview.png);
   }
   
   .addsShowcase {
@@ -310,8 +365,6 @@
 }
 
 #carousel {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   margin: 20px 0;
   width: 100%;
@@ -320,10 +373,28 @@
 #carouselShowcase {
   display: flex;
   flex-direction: row;
-  background-color: var(--main-color);
-  width: 100%;
-  height: 320px;
+  width: 1280px;
+  height: 240px;
   border-radius: var(--card-border-size);
+  overflow: scroll;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.carouselBanner {
+  display: flex;
+  flex-direction: row;
+  width: 1280px;
+  height: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+}
+
+.carouselImage {
+  position: relative;
+  width: 1280px;
+  height: 100%;
 }
 
 .carouselButton {
@@ -366,6 +437,32 @@
   background-color: var(--secondary-color);
 }
 
+.featuresShowcase {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.featureHolder {
+  margin: 0 30px 0 30px;
+  padding-left: 10px;
+  border-left: 5px solid var(--secondary-color);
+}
+
+.featureTitle {
+  color: var(--main-color);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.featureMore {
+  color: var(--secondary-color);
+  font-size: 12px;
+  font-weight: 300;
+}
+
 .squareShowcase {
   height: 300px;
   width: 295px;
@@ -402,38 +499,6 @@
   margin: 10px 0 0 0;
 }
 
-#nutritionImage {
-  background-image: url(../images/banners/nutrition-banner.jpg);
-}
-
-#bedImage {
-  background-image: url(../images/banners/bed-bath-banner.jpg);
-}
-
-#beautyImage {
-  background-image: url(../images/banners/beauty-banner.jpg);
-}
-
-#toyImage {
-  background-image: url(../images/banners/toy-banner.jpg);
-}
-
-#firstBrandImage {
-  background-image: url(../images/logos/pedigree-logo.png);
-}
-
-#secondBrandImage  {
-  background-image: url(../images/logos/purina-logo.png);
-}
-
-#thirdBrandImage  {
-  background-image: url(../images/logos/royal-canin-logo.png);
-}
-
-#fourthBrandImage {
-  background-image: url(../images/logos/whiskas-logo.png);
-}
-
 .showcaseDescription {
   margin: 10px 0 0 10px;
   color: var(--main-color);
@@ -446,4 +511,60 @@
   color: var(--secondary-color);
   font-size: 15px;
   font-weight: 300;
+}
+.rowShowcase {
+  margin: 0 10px 0 10px;
+  padding-right: 10px;
+  box-shadow: 1px 1px 8px lightgrey;
+  background-color: var(--text-bright-color);
+  border-radius: var(--card-border-size);
+}
+
+.rowShowcaseItemArea {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: auto;
+  margin: 10px 0px;
+  overflow: scroll;
+}
+
+.rowShowcaseItem {
+  width: 200px;
+  margin: 0px 0 0 10px;
+  padding: 5px 10px;
+  border-radius: var(--card-border-size);
+  transition: 0.3ms;
+  text-decoration: none;
+  border: 1px solid lightgrey;
+}
+
+.rowShowcaseItem:hover {
+  border: 1px solid var(--secondary-color);
+}
+
+.rowShowcaseItemImage {
+  height: 160px;
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+}
+
+.rowShowcaseItemTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 15px;
+  text-align: center;
+  color: var(--main-color);
+}
+
+.rowShowcaseItemDescription {
+  height: 20px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--secondary-color);
 }

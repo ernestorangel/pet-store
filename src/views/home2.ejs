@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title><%- title %></title>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/generalStyle.css"/>
+    <link rel="stylesheet" href="/stylesheets/headerStyle.css"/>
+    <link rel="stylesheet" href="/stylesheets/homeStyle.css"/>
+    <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
+  </head>
+ <body>
+  <div id="headerHolder">
+    <%- include('./partials/loggedHeader') %>
+  </div>
+  <main>
+    <div id="banner">
+      <section id="carousel">
+        <div id="carouselShowcase">
+          <% for (let i = 1; i <= bannerImages.length; i++) {%>
+            <div class="carouselBanner" id="slide-<%= i %>">
+              <img class="carouselImage" src="<%= bannerImages[i - 1] %>">
+              <a class="carouselButton" id="carouselLeftButton" href="#slide-<%= i - 1 %>"></a>
+              <a class="carouselButton" id="carouselRightButton" href="#slide-<%= i + 1 %>"></a>
+            </div>
+          <% } %>
+        </div>
+        <div id="carouselPosition">
+          <% for(let i = 1; i <= bannerImages.length; i++) { %>
+            <a id="banner-position-<%= i %>" class="bannerPosition" href="#slide-<%= i %>"></a>
+          <% } %>
+        </div>
+      </section>
+      <section class="featuresShowcase">
+        <% for(let i = 0; i < features.length; i++) { %>
+          <div class="featureHolder">
+            <div class="featureTitle"><%= features[i] %></div>
+            <div class="featureMore">saiba mais</div>
+          </div>
+        <% } %>
+      </section>
+      <section class="showcase">
+        <div class="middleShowcase">
+          <% for(let i=1; i <= 2; i++)  {%>
+            <a href="/products/search/produto" class="squareShowcase">
+              <div class="showcaseTitle"><%= categoriesTitles[i - 1] %></div>
+              <img class="showcaseImage" src="<%= categoriesImages[i - 1] %>">
+              <div class="seeMore">Veja mais ></div>
+            </a>
+          <% } %>
+        </div>
+        <div class="middleShowcase">
+          <% for(let i=3; i <= 4; i++)  {%>
+            <a href="/products/search/produto" class="squareShowcase">
+              <div class="showcaseTitle"><%= categoriesTitles[i - 1] %></div>
+              <img class="showcaseImage" src="<%= categoriesImages[i - 1] %>">
+              <div class="seeMore">Veja mais ></div>
+            </a>
+          <% } %>
+        </div>
+      </section>
+      <section class="showcase">
+        <div class="rowShowcase">
+          <div class="showcaseTitle"><%= productsShowcaseTitle1 %></div>
+          <div class="rowShowcaseItemArea">
+            <% for (let i = 1; i <= products1.length; i++) { %>
+              <a href="/products/2" class="rowShowcaseItem">
+                <img class="rowShowcaseItemImage" src="<%= products1[i - 1].image %>">
+                <div class="rowShowcaseItemTitle"><%= products1[i - 1].name %></div>
+                <div class="rowShowcaseItemDescription"><%= products1[i - 1].price %></div>
+              </a>
+            <% } %>
+          </div>
+        </div>
+      </section>
+      <section class="showcase">
+        <div class="rowShowcase">
+          <div class="showcaseTitle"><%= productsShowcaseTitle2 %></div>
+          <div class="rowShowcaseItemArea">
+            <% for (let i = 1; i <= products2.length; i++) { %>
+              <a href="/products/2" class="rowShowcaseItem">
+                <img class="rowShowcaseItemImage" src="<%= products2[i - 1].image %>">
+                <div class="rowShowcaseItemTitle"><%= products2[i - 1].name %></div>
+                <div class="rowShowcaseItemDescription"><%= products2[i - 1].price %></div>
+              </a>
+            <% } %>
+          </div>
+        </div>
+      </section>
+      <section class="showcase">
+        <div class="middleShowcase">
+          <% for(let i=1; i <= 2; i++)  {%>
+            <a href="/products/search/brand" class="squareShowcase">
+              <div class="showcaseTitle"><%= brandsShowcaseTitle1 %></div>
+              <img class="showcaseImage" src="<%= brands1[i - 1].image %>">
+              <div class="seeMore">Clique e descubra</div>
+            </a>
+          <% } %>
+        </div>
+        <div class="middleShowcase">
+          <% for(let i=3; i <= 4; i++)  {%>
+            <a href="/products/search/brand" class="squareShowcase">
+              <div class="showcaseTitle"><%= brandsShowcaseTitle1 %></div>
+              <img class="showcaseImage" src="<%= brands1[i - 1].image %>">
+              <div class="seeMore">Clique e descubra</div>
+            </a>
+          <% } %>
+        </div>
+      </section>
+      <section class="doubleShowcase">
+        <div class="bigShowcase">
+          <div class="showcaseTitle">Pet Store Ensina</div>
+          <div id="videoPlayer">
+            <iframe width="925" height="500" src="https://www.youtube.com/embed/jEGivfKnkTE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="longShowcase">
+          <div class="showcaseTitle">Acaba em 00:03:14</div>
+          <div class="rowShowcaseItem">
+            <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-1"></div>
+            <div class="rowShowcaseItemTitle">Nome do Item</div>
+            <div class="rowShowcaseItemDescription">R$ 19,90</div>
+          </div>
+          <div class="rowShowcaseItem">
+            <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-2"></div>
+            <div class="rowShowcaseItemTitle">Nome do Item</div>
+            <div class="rowShowcaseItemDescription">R$ 19,90</div>
+          </div>
+        </div>
+      </section>
+      <section class="showcase">
+        <div class="rowShowcase">
+          <div class="showcaseTitle">Produto Recomendado</div>
+          <div class="rowShowcaseItemArea">
+            <div class="rowShowcaseItem">
+              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-1"></div>
+              <div class="rowShowcaseItemTitle">Nome do Item</div>
+              <div class="rowShowcaseItemDescription">R$ 19,90</div>
+            </div>
+            <div class="rowShowcaseItem">
+              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-2"></div>
+              <div class="rowShowcaseItemTitle">Nome do Item</div>
+              <div class="rowShowcaseItemDescription">R$ 19,90</div>
+            </div>
+            <div class="rowShowcaseItem">
+              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-3"></div>
+              <div class="rowShowcaseItemTitle">Nome do Item</div>
+              <div class="rowShowcaseItemDescription">R$ 19,90</div>
+            </div>
+            <div class="rowShowcaseItem">
+              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-4"></div>
+              <div class="rowShowcaseItemTitle">Nome do Item</div>
+              <div class="rowShowcaseItemDescription">R$ 19,90</div>
+            </div>
+            <div class="rowShowcaseItem">
+              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-5"></div>
+              <div class="rowShowcaseItemTitle">Nome do Item</div>
+              <div class="rowShowcaseItemDescription">R$ 19,90</div>
+            </div>
+            <div class="rowShowcaseItem">
+              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-6"></div>
+              <div class="rowShowcaseItemTitle">Nome do Item</div>
+              <div class="rowShowcaseItemDescription">R$ 19,90</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="showcase">
+        <div class="addsShowcase"></div>
+      </section>
+      <section class="showcase">
+        <div class="middleShowcase">
+          <div class="squareShowcase">
+            <div class="showcaseTitle">Marca em destaque</div>
+            <div class="showcaseLogo" id="firstBrandImage"></div>
+            <div class="seeMore">Confira ></div>
+          </div>
+          <div class="squareShowcase">
+            <div class="showcaseTitle">Marca em destaque</div>
+            <div class="showcaseLogo" id="secondBrandImage"></div>
+            <div class="seeMore">Confira ></div>
+          </div>
+        </div>
+        <div class="middleShowcase">
+          <div class="squareShowcase">
+            <div class="showcaseTitle">Marca em destaque</div>
+            <div class="showcaseLogo" id="thirdBrandImage"></div>
+            <div class="seeMore">Confira ></div>
+          </div>
+          <div class="squareShowcase">
+            <div class="showcaseTitle">Marca em destaque</div>
+            <div class="showcaseLogo" id="fourthBrandImage"></div>
+            <div class="seeMore">Confira ></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <%- include('./partials/footer') %>
+ </body>
+</html>
