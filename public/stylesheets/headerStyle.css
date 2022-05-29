@@ -663,7 +663,7 @@ header {
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1280px){
+@media (min-width: 1025px) and (max-width: 1280px) {
   .menu {
     display: flex;
     flex-direction: row;
