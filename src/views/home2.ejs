@@ -60,7 +60,7 @@
       </section>
       <section class="showcase">
         <div class="rowShowcase">
-          <div class="showcaseTitle"><%= productsShowcaseTitle1 %></div>
+          <div class="showcaseTitleProducts"><%= productsShowcaseTitle1 %></div>
           <div class="rowShowcaseItemArea">
             <% for (let i = 1; i <= products1.length; i++) { %>
               <a href="/products/2" class="rowShowcaseItem">
@@ -74,7 +74,7 @@
       </section>
       <section class="showcase">
         <div class="rowShowcase">
-          <div class="showcaseTitle"><%= productsShowcaseTitle2 %></div>
+          <div class="showcaseTitleProducts"><%= productsShowcaseTitle2 %></div>
           <div class="rowShowcaseItemArea">
             <% for (let i = 1; i <= products2.length; i++) { %>
               <a href="/products/2" class="rowShowcaseItem">
@@ -91,7 +91,7 @@
           <% for(let i=1; i <= 2; i++)  {%>
             <a href="/products/search/brand" class="squareShowcase">
               <div class="showcaseTitle"><%= brandsShowcaseTitle1 %></div>
-              <img class="showcaseImage" src="<%= brands1[i - 1].image %>">
+              <img class="showcaseBrandImage" src="<%= brands1[i - 1].image %>">
               <div class="seeMore">Clique e descubra</div>
             </a>
           <% } %>
@@ -100,7 +100,7 @@
           <% for(let i=3; i <= 4; i++)  {%>
             <a href="/products/search/brand" class="squareShowcase">
               <div class="showcaseTitle"><%= brandsShowcaseTitle1 %></div>
-              <img class="showcaseImage" src="<%= brands1[i - 1].image %>">
+              <img class="showcaseBrandImage" src="<%= brands1[i - 1].image %>">
               <div class="seeMore">Clique e descubra</div>
             </a>
           <% } %>
@@ -164,7 +164,7 @@
           </div>
         </div>
       </section>
-      <section class="showcase">
+      <section class="addsShowcaseHolder">
         <div class="addsShowcase"></div>
       </section>
       <section class="showcase">

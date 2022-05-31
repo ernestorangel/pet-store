@@ -9,8 +9,8 @@
     display: none;
   }
 
-  .featureTitle {
-    font-size: 14px;
+  .featuresShowcase {
+    display: none;
   }
 
   .showcase {
@@ -20,6 +20,22 @@
     align-items: center;
     height: auto;
     background-color: transparent;
+    padding: 10px 0 10px 0;
+  }
+  
+  .showcaseTitleProducts {
+    display: none;
+  }
+
+  .showcaseTitle {
+    margin: 15px 0 0 15px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .addsShowcaseHolder {
+    display: none;
   }
 
   .middleShowcase {
@@ -33,21 +49,22 @@
   
   .rowShowcase {
     display: flex;
+    flex-direction: column;
     height: 300px;
     width: 295px;
     min-width: 295px;
     margin: 10px;
-    background-color: #FFD8BE;
+    background-color: var(--text-bright-color);
     box-shadow: 1px 1px 8px lightgrey;
+    padding: 10px 0 10px 0;
+  }
+
+  section.addsShowcaseHolder {
+    display: none;
   }
   
   .addsShowcase {
-    height: 300px;
-    width: 295px;
-    min-width: 295px;
-    margin: 10px;
-    background-color: #FFD8BE;
-    box-shadow: 1px 1px 8px lightgrey;
+    display: none;
   }
   
   .bigShowcase {
@@ -80,8 +97,8 @@
     display: none;
   }
 
-  .featureTitle {
-    font-size: 16px;
+  .featuresShowcase {
+    display: none;
   }
 
   .showcase {
@@ -91,6 +108,22 @@
     align-items: center;
     height: auto;
     background-color: transparent;
+    padding: 10px 0 10px 0;
+  }
+
+  .showcaseTitleProducts {
+    display: none;
+  }
+
+  .showcaseTitle {
+    margin: 15px 0 0 15px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  section.addsShowcaseHolder {
+    display: none;
   }
 
   .middleShowcase {
@@ -108,7 +141,7 @@
     width: 295px;
     min-width: 295px;
     margin: 10px;
-    background-color: #FFD8BE;
+    background-color: var(--text-bright-color);
     box-shadow: 1px 1px 8px lightgrey;
   }
   
@@ -151,8 +184,8 @@
     display: none;
   }
 
-  .featureTitle {
-    font-size: 18px;
+  .featuresShowcase {
+    display: none;
   }
 
   .showcase {
@@ -162,6 +195,25 @@
     align-items: center;
     height: auto;
     background-color: transparent;
+    padding: 10px 0 10px 0;
+  }
+
+  .showcaseTitle {
+    margin: 15px 0 0 15px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .showcaseTitleProducts {
+    margin: 15px 0 0 15px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  section.addsShowcaseHolder {
+    display: none;
   }
 
   .middleShowcase {
@@ -170,13 +222,7 @@
   }
   
   .doubleShowcase{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
-    margin: 10px;
-    background-color: transparent;
+    display: none;
   }
   
   .rowShowcase {
@@ -184,7 +230,7 @@
     width: 610px;
     min-width: 610px;
     margin: 10px;
-    background-color: #FFD8BE;
+    background-color: var(--text-bright-color);
     box-shadow: 1px 1px 8px lightgrey;
   }
   
@@ -216,6 +262,18 @@
     width: 100%;
   }
 
+  #carousel {
+    display: none;
+  }
+
+  .featuresShowcase {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+  }
+
   .featureTitle {
     font-size: 20px;
   }
@@ -227,6 +285,21 @@
     align-items: center;
     height: auto;
     background-color: transparent;
+    padding: 10px 0 10px 0;
+  }
+
+  .showcaseTitle {
+    margin: 15px 0 0 15px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .showcaseTitleProducts {
+    margin: 15px 0 0 15px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
   }
 
   .middleShowcase {
@@ -235,13 +308,7 @@
   }
   
   .doubleShowcase{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
-    margin: 10px;
-    background-color: transparent;
+    display: none;
   }
   
   .rowShowcase {
@@ -258,12 +325,7 @@
   }
   
   .bigShowcase {
-    height: 600px;
-    width: 610px;
-    min-width: 610px;
-    margin: 10px;
-    background-color: #FFD8BE;
-    box-shadow: 1px 1px 8px lightgrey;
+    display: none;
   }
   
   .longShowcase {
@@ -286,11 +348,43 @@
     flex-direction: column;
   }
 
+  .featuresShowcase {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+  }
+
   .featureTitle {
     font-size: 22px;
   }
 
+  .showcaseTitleProducts {
+    margin: 15px 0 0 15px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
   .showcase {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 305px;
+    margin: 20px 0 20px 0;
+    background-color: transparent;
+  }
+
+  .showcaseTitle {
+    margin: 15px 0 0 15px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .addsShowcaseHolder {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -437,14 +531,6 @@
   background-color: var(--secondary-color);
 }
 
-.featuresShowcase {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-}
-
 .featureHolder {
   margin: 0 30px 0 30px;
   padding-left: 10px;
@@ -474,13 +560,6 @@
   text-decoration: none;
 }
 
-.showcaseTitle {
-  margin: 15px 0 0 15px;
-  color: var(--main-color);
-  font-size: 20px;
-  font-weight: 600;
-}
-
 .showcaseImage {
   background-size: cover;
   background-position: center;
@@ -488,6 +567,16 @@
   width: 100%;
   height: 210px;
   margin: 10px 0 0 0;
+}
+
+.showcaseBrandImage {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 210px;
+  margin: 10px 0 0 0;
+  padding: 50px 20px;
 }
 
 .showcaseLogo {
@@ -527,10 +616,11 @@
   width: auto;
   margin: 10px 0px;
   overflow: scroll;
+  scrollbar-width: none;
 }
 
 .rowShowcaseItem {
-  width: 200px;
+  min-width: 200px;
   margin: 0px 0 0 10px;
   padding: 5px 10px;
   border-radius: var(--card-border-size);
