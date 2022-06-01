@@ -2,7 +2,7 @@ const path = require('path')
 const homeProperties = {
     homeTitle: "PET STORE | Tudo para o seu pet",
     bannerImages: [
-        "/images/banners/carousel-banner-1.jpg",
+        "/images/banners/carousel-banner-1.png",
         "/images/banners/carousel-banner-2.jpg",
         "/images/banners/carousel-banner-3.jpg"
     ],
