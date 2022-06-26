@@ -468,7 +468,7 @@
   display: flex;
   flex-direction: row;
   width: 1280px;
-  height: 240px;
+  height: 192px;
   border-radius: var(--card-border-size);
   overflow: scroll;
   scrollbar-width: none;
