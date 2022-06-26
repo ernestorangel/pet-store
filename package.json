@@ -6,13 +6,17 @@
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^3.1.7",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.16",
+    "sequelize": "^6.21.1",
+    "sequelize-cli": "^6.4.1",
     "serve-favicon": "^2.5.0"
   }
 }

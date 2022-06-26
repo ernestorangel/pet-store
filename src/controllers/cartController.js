@@ -14,20 +14,20 @@ const produtosDestaque = [{
 const produtos = [{
     titulo: "Casinha Luxo Preta",
     descricao: "Esteja Sempre Pronto para levar seu Pet com voce",
-    quantidade: 2,
+    quantidade: 1,
     preco: 150,
     imagen: "casinhaLuxoPreta.png"
 },
 {
     titulo: "Tapete Higienico",
     descricao: "Local Adequado para seu Pet Fazer necessidade",
-    quantidade: 1,
+    quantidade: 2,
     preco: 50,
     imagen: "fornecedores-produtos-pet-shop-atacado-01-removebg-preview.png"
 },{
     titulo: "Comedouro",
     descricao: "Pote Ideal para seu pet se alimentar",
-    quantidade: 1,
+    quantidade: 3,
     preco: 20,
     imagen: "fabrica-produtos-pet-shop-01-removebg-preview.png"
 }]
