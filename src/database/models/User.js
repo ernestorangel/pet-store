@@ -35,6 +35,13 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     let User = sequelize.define(alias, cols, config)
+
+    User.associate = (models) =>{
+        User.hasMany(models.Adress, {
+            foreignKey: 'id_user',
+            as: 'adress'
+        })
+    }
     
 
     return User

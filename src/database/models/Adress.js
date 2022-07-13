@@ -50,6 +50,13 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     let Adress = sequelize.define(alias, cols, config)
+
+    Adress.associate = (models) => {
+        Adress.belongsTo(models.User, {
+            foreignKey: 'id_user',
+            as: 'user'
+        })
+    }
     
 
     return Adress

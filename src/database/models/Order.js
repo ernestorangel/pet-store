@@ -38,6 +38,16 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     let Order = sequelize.define(alias, cols, config)
+
+    Order.associate = (models) => {
+        Order.belongsToMany(models.Product, {
+            as: 'product',
+            through: 'products_in_orders',
+            foreignKey: 'id_order',
+            otherKey: 'id_product',
+            timesstamps: false
+        })
+    }
     
 
     return Order
