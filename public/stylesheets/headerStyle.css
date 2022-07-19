@@ -211,7 +211,7 @@ header {
     background-image: url(../images/logos/pet-store-logo.svg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     height: 76px;
     min-width: 350px;
   }

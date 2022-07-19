@@ -16,17 +16,17 @@
     <div id="banner">
       <section id="carousel">
         <div id="carouselShowcase">
-          <% for (let i = 1; i <= bannerImages.length; i++) {%>
-            <div class="carouselBanner" id="slide-<%= i %>">
-              <img class="carouselImage" src="<%= bannerImages[i - 1] %>">
-              <a class="carouselButton" id="carouselLeftButton" href="#slide-<%= i - 1 %>"></a>
-              <a class="carouselButton" id="carouselRightButton" href="#slide-<%= i + 1 %>"></a>
-            </div>
-          <% } %>
+          <div id="carouselBannersContainer">
+            <% for (let i = 1; i <= bannerImages.length; i++) {%>
+              <div class="carouselBanner" id="slide-<%= i %>">
+                <img class="carouselImage" src="<%= bannerImages[i - 1] %>">
+              </div>
+            <% } %>
+          </div>
         </div>
         <div id="carouselPosition">
           <% for(let i = 1; i <= bannerImages.length; i++) { %>
-            <a id="banner-position-<%= i %>" class="bannerPosition" href="#slide-<%= i %>"></a>
+            <a id="banner-position-<%= i %>" class="bannerPosition"></a>
           <% } %>
         </div>
       </section>
@@ -197,4 +197,5 @@
   </main>
   <%- include('./partials/footer') %>
  </body>
+ <script src="javascripts/home.js"></script>
 </html>

@@ -470,9 +470,15 @@
   width: 1280px;
   height: 192px;
   border-radius: var(--card-border-size);
-  overflow: scroll;
+  overflow: hidden;
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
+}
+
+#carouselBannersContainer {
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }
 
 .carouselBanner {
@@ -525,6 +531,7 @@
   margin: 0 5px;
   border-radius: var(--card-border-size);
   background-color: var(--main-color);
+  cursor: pointer;
 }
 
 .bannerPosition:hover {
