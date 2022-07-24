@@ -471,8 +471,8 @@
   height: 192px;
   border-radius: var(--card-border-size);
   overflow: hidden;
-  scrollbar-width: none;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 #carouselBannersContainer {
@@ -523,12 +523,32 @@
   background-color: var(--secondary-color);
 }
 
-#carouselLeftButton {
+#carouselLeftButton1 {
   background-image: url(../images/icons/left-arrow-icon.svg);
   left: calc((100vw - 1280px)/2);
 }
 
-#carouselRightButton {
+#carouselLeftButton2 {
+  background-image: url(../images/icons/left-arrow-icon.svg);
+  left: calc((100vw - 1280px)/2);
+}
+
+#carouselLeftButton3 {
+  background-image: url(../images/icons/left-arrow-icon.svg);
+  left: calc((100vw - 1280px)/2);
+}
+
+#carouselRightButton1 {
+  background-image: url(../images/icons/right-arrow-icon.svg);
+  left: calc(((100vw + 1160px)/2));
+}
+
+#carouselRightButton2 {
+  background-image: url(../images/icons/right-arrow-icon.svg);
+  left: calc(((100vw + 1160px)/2));
+}
+
+#carouselRightButton3 {
   background-image: url(../images/icons/right-arrow-icon.svg);
   left: calc(((100vw + 1160px)/2));
 }
@@ -577,7 +597,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 300px;
   width: 295px;
   min-width: 295px;
@@ -641,8 +661,10 @@
   flex-direction: row;
   width: 100%;
   height: 100%;
+  padding-right: 10px;
   overflow-x: scroll;
   overflow-y: hidden;
+  scroll-behavior: smooth;
 }
 
 .rowShowcaseItemAreaContainer::-webkit-scrollbar {

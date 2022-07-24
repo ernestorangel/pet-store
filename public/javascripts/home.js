@@ -1,38 +1,44 @@
 window.addEventListener('load', () => {
 
     let numberOfSlides = document.getElementById("carouselPosition").childElementCount;
-
-    let bannersContainer = document.getElementById("carouselBannersContainer");
+    let bannersContainer = document.getElementById("carouselShowcase");
 
     for (let i=0; i < numberOfSlides; i++) {
 
-        let slideNumber = i + 1;
-        let componentID = `banner-position-${slideNumber}`;
+        let componentID = `banner-position-${i + 1}`;
         let component = document.getElementById(componentID);
-        let mathSignal = -1
-        let wantedPos = mathSignal * i * 1280
+        let wantedPos =  i * 1280
 
         component.addEventListener('click', () => {
 
             for (let j=0; j < numberOfSlides; j++) {
-                let slideNumber = j + 1;
-                let componentID = `banner-position-${slideNumber}`;
+                let componentID = `banner-position-${j + 1}`;
                 let component = document.getElementById(componentID);
                 component.style.backgroundColor = '#3CACF6';
             }
 
-            bannersContainer.style.left = wantedPos + 'px';
+            let currentScroll = bannersContainer.scrollLeft;
+            let dif = wantedPos - currentScroll;
+            bannersContainer.scrollLeft += dif;
             component.style.backgroundColor = '#FF470A';
         })
 
     };
 
-    document.getElementById('carouselLeftButton').addEventListener('click', ()=>{
-        document.querySelector('#rowShowcaseItemAreaContainer').scrollLeft -= 50;
+    document.getElementById('carouselLeftButton1').addEventListener('click', ()=>{
+        document.querySelector('#rowShowcaseItemAreaContainer1').scrollLeft -= 50;
     });
 
-    document.getElementById('carouselRightButton').addEventListener('click', ()=>{
-        document.querySelector('#rowShowcaseItemAreaContainer').scrollLeft += 50;
+    document.getElementById('carouselRightButton1').addEventListener('click', ()=>{
+        document.querySelector('#rowShowcaseItemAreaContainer1').scrollLeft += 50;
+    });
+
+    document.getElementById('carouselLeftButton2').addEventListener('click', ()=>{
+        document.querySelector('#rowShowcaseItemAreaContainer2').scrollLeft -= 50;
+    });
+
+    document.getElementById('carouselRightButton2').addEventListener('click', ()=>{
+        document.querySelector('#rowShowcaseItemAreaContainer2').scrollLeft += 50;
     });
 
 });

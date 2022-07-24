@@ -61,14 +61,20 @@
       <section class="showcase">
         <div class="rowShowcase">
           <div class="showcaseTitleProducts"><%= productsShowcaseTitle1 %></div>
-          <div class="rowShowcaseItemArea">
-            <% for (let i = 1; i <= products1.length; i++) { %>
-              <a href="/products/2" class="rowShowcaseItem">
-                <img class="rowShowcaseItemImage" src="<%= products1[i - 1].image %>">
-                <div class="rowShowcaseItemTitle"><%= products1[i - 1].name %></div>
-                <div class="rowShowcaseItemDescription"><%= products1[i - 1].price %></div>
-              </a>
-            <% } %>
+          <div class="rowShowcaseCarouselContainer">
+            <div class="carouselButton" id="carouselLeftButton1"></div>
+            <div class="rowShowcaseItemAreaContainer" id="rowShowcaseItemAreaContainer1">
+              <div class="rowShowcaseItemArea" id="rowShowcaseItemArea" style="left:0px">
+                <% for (let i = 1; i <= products1.length; i++) { %>
+                  <a href="/products/2" class="rowShowcaseItem">
+                    <img class="rowShowcaseItemImage" src="<%= products1[i - 1].image %>">
+                    <div class="rowShowcaseItemTitle"><%= products1[i - 1].name %></div>
+                    <div class="rowShowcaseItemDescription"><%= products1[i - 1].price %></div>
+                  </a>
+                <% } %>
+              </div>
+            </div>
+            <div class="carouselButton" id="carouselRightButton1"></div>
           </div>
         </div>
       </section>
@@ -76,8 +82,8 @@
         <div class="rowShowcase">
           <div class="showcaseTitleProducts"><%= productsShowcaseTitle2 %></div>
           <div class="rowShowcaseCarouselContainer">
-            <div class="carouselButton" id="carouselLeftButton"></div>
-            <div class="rowShowcaseItemAreaContainer" id="rowShowcaseItemAreaContainer">
+            <div class="carouselButton" id="carouselLeftButton2"></div>
+            <div class="rowShowcaseItemAreaContainer" id="rowShowcaseItemAreaContainer2">
               <div class="rowShowcaseItemArea" id="rowShowcaseItemArea" style="left:0px">
                 <% for (let i = 1; i <= products2.length; i++) { %>
                   <a href="/products/2" class="rowShowcaseItem">
@@ -88,7 +94,7 @@
                 <% } %>
               </div>
             </div>
-            <div class="carouselButton" id="carouselRightButton"></div>
+            <div class="carouselButton" id="carouselRightButton2"></div>
           </div>
         </div>
       </section>

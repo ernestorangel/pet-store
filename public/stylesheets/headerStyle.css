@@ -19,7 +19,7 @@ header {
   }
   
   #logo {
-    background-image: url(../images/logos/pet-store-logo.svg);
+    background-image: url(images/logos/pet-store-logo.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -983,7 +983,7 @@ header {
   }
   
   #logo {
-    background-image: url(../images/logos/pet-store-logo.svg);
+    background-image: url(../images/logos/pet-store-logo.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -992,7 +992,7 @@ header {
   }
   
   #searchBar {
-    height: 56px;
+    height: 46px;
     width: 100%;
     padding-right: 30px;
   }
@@ -1001,7 +1001,7 @@ header {
     display: flex;
     align-items: center;
     background-color: var(--text-bright-color);
-    height: 56px;
+    height: 46px;
     border-radius: var(--big-border-size);
   }
   
@@ -1029,6 +1029,7 @@ header {
     height: 100%;
     width: 60px;
     border-radius: var(--big-border-size);
+    cursor: pointer;
   }
   
   #searchButton:hover {
