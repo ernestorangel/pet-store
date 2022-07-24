@@ -1,4 +1,5 @@
-const path = require('path')
+const path = require('path');
+const {Product} = require('../database/models');
 const homeProperties = {
     homeTitle: "PET STORE | Tudo para o seu pet",
     bannerImages: [
@@ -30,65 +31,65 @@ const homeProperties = {
         {
             image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
             name: "Snack Petiscão Palito",
-            price: "R$ 19.90"
+            price: "R$ 199,90"
         },
         {
             image: "/images/products/fornecedores-produtos-pet-shop-01-removebg-preview.png",
             name: "Casinha Pet Rosa",
-            price: "R$ 119.90"
+            price: "R$ 199,90"
         },
         {
-            image: "",
+            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
-            image: "",
+            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
-            image: "",
+            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
-            image: "",
+            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         }
     ],
     productsShowcaseTitle2: "Produtos Recomendados",
     products2: [
         {
-            image: "",
+            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
-            image: "",
+            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
-            image: "",
+            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
-            image: "",
+            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
-            image: "",
+            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
-            image: "",
+            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         }
     ],
     brandsShowcaseTitle1: "Marcas em Destaque",
@@ -117,39 +118,39 @@ const homeProperties = {
         {
             image: "",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
             image: "",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
             image: "",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
             image: "",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
             image: "",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         },
         {
             image: "",
             name: "Snack Petiscão Palito",
-            price: 19.90
+            price: "R$ 199,90"
         }
     ],
     brandsShowcaseTitle2: "Marcas Mais Vendidas",
     brands2: [
 
     ],
-}
+};
 
 const mainController = {
     home: (req, res) => {
@@ -168,4 +169,4 @@ const mainController = {
         });
     }
 }
-module.exports = mainController
+module.exports = mainController;

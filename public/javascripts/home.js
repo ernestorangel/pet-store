@@ -27,4 +27,12 @@ window.addEventListener('load', () => {
 
     };
 
+    document.getElementById('carouselLeftButton').addEventListener('click', ()=>{
+        document.querySelector('#rowShowcaseItemAreaContainer').scrollLeft -= 50;
+    });
+
+    document.getElementById('carouselRightButton').addEventListener('click', ()=>{
+        document.querySelector('#rowShowcaseItemAreaContainer').scrollLeft += 50;
+    });
+
 });
