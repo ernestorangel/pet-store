@@ -1110,6 +1110,7 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: var(--card-border-size);
+    cursor: pointer;
   }
   
   .headerOptionsIcon:hover {
@@ -1149,6 +1150,7 @@ header {
     white-space: nowrap;
     border-top-left-radius: var(--card-border-size);
     border-top-right-radius: var(--card-border-size);
+    cursor: pointer;
   }
   
   .secondMenuButton:hover {
@@ -1167,6 +1169,7 @@ header {
     font-size: 20px;
     color: var(--text-bright-color);
     white-space: nowrap;
+    cursor: pointer;
   }
   
   #secondSectionLeftSide {
@@ -1222,6 +1225,7 @@ header {
     color: var(--text-bright-color);
     white-space: nowrap;
     border-bottom: 5px solid var(--secondary-color);
+    cursor: pointer;
   }
   
   .thirdMenuButton:hover {
@@ -1241,6 +1245,7 @@ header {
     color: var(--text-bright-color);
     white-space: nowrap;
     border-bottom: 2px solid var(--secondary-color);
+    cursor: pointer;
   }
   
   #thirdSectionLeftSide {

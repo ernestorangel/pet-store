@@ -640,6 +640,7 @@
     font-size: 20px;
     font-weight: 800;
     white-space: nowrap;
+    cursor: default;
   }
   
   .footerMenuOption {
@@ -648,10 +649,12 @@
     font-size: 15px;
     font-weight: 300;
     white-space: nowrap;
+    cursor: pointer;
   }
   
   .footerMenuOption:hover {
-    color: var(--secondary-color);
+    font-weight: 800;
+    border-bottom: 2px solid var(--text-bright-color);
   }
   
   #footerSecondSection {
@@ -666,7 +669,7 @@
   }
   
   #footerLogo {
-    background-image: url(../images/logos/pet-store-logo.svg);
+    background-image: url(../images/logos/pet-store-logo.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -681,6 +684,11 @@
     justify-content: center;
     align-items: center;
     width: 880px;
+    cursor: pointer;
+  }
+
+  #footerAccessibiltyHolder:hover {
+    background-color: #d83d0a;
   }
   
   #accessibilityIcon {

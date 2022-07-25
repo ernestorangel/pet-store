@@ -452,10 +452,35 @@
     width: 295px;
     min-width: 295px;
     margin: 0 10px 0 10px;
+    padding: 20px 20px;
     background-color: var(--text-bright-color);
     box-shadow: 1px 1px 8px lightgrey;
     border-radius: var(--card-border-size);
   }
+}
+
+.showcaseTimer {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+.longShowcaseItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--card-border-size);
+  transition: 0.3ms;
+  text-decoration: none;
+  border: 1px solid lightgrey;
+}
+
+.longShowcaseItem:hover {
+  border: 1px solid var(--secondary-color);
 }
 
 #carousel {
@@ -644,7 +669,7 @@
 }
 
 .seeMore {
-  margin: 10px 0 0 15px;
+  margin: 10px 0 10px 15px;
   color: var(--secondary-color);
   font-size: 15px;
   font-weight: 300;
@@ -733,10 +758,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 50px;
   font-size: 15px;
   text-align: center;
   color: var(--main-color);
+  margin-top: 5px;
 }
 
 .rowShowcaseItemDescription {
@@ -745,4 +770,5 @@
   text-align: center;
   font-weight: 600;
   color: var(--secondary-color);
+  margin-bottom: 5px;
 }

@@ -44,7 +44,7 @@
             <a href="/products/search/produto" class="squareShowcase">
               <div class="showcaseTitle"><%= categoriesTitles[i - 1] %></div>
               <img class="showcaseImage" src="<%= categoriesImages[i - 1] %>">
-              <div class="seeMore">Veja mais ></div>
+              <div class="seeMore">Clique e descubra</div>
             </a>
           <% } %>
         </div>
@@ -53,7 +53,7 @@
             <a href="/products/search/produto" class="squareShowcase">
               <div class="showcaseTitle"><%= categoriesTitles[i - 1] %></div>
               <img class="showcaseImage" src="<%= categoriesImages[i - 1] %>">
-              <div class="seeMore">Veja mais ></div>
+              <div class="seeMore">Clique e descubra</div>
             </a>
           <% } %>
         </div>
@@ -64,7 +64,7 @@
           <div class="rowShowcaseCarouselContainer">
             <div class="carouselButton" id="carouselLeftButton1"></div>
             <div class="rowShowcaseItemAreaContainer" id="rowShowcaseItemAreaContainer1">
-              <div class="rowShowcaseItemArea" id="rowShowcaseItemArea" style="left:0px">
+              <div class="rowShowcaseItemArea" id="rowShowcaseItemArea">
                 <% for (let i = 1; i <= products1.length; i++) { %>
                   <a href="/products/2" class="rowShowcaseItem">
                     <img class="rowShowcaseItemImage" src="<%= products1[i - 1].image %>">
@@ -84,7 +84,7 @@
           <div class="rowShowcaseCarouselContainer">
             <div class="carouselButton" id="carouselLeftButton2"></div>
             <div class="rowShowcaseItemAreaContainer" id="rowShowcaseItemAreaContainer2">
-              <div class="rowShowcaseItemArea" id="rowShowcaseItemArea" style="left:0px">
+              <div class="rowShowcaseItemArea" id="rowShowcaseItemArea">
                 <% for (let i = 1; i <= products2.length; i++) { %>
                   <a href="/products/2" class="rowShowcaseItem">
                     <img class="rowShowcaseItemImage" src="<%= products2[i - 1].image %>">
@@ -102,18 +102,15 @@
         <div class="middleShowcase">
           <% for(let i=1; i <= 2; i++)  {%>
             <a href="/products/search/brand" class="squareShowcase">
-              <!-- <div class="showcaseTitle"><%= brandsShowcaseTitle1 %></div> -->
               <img class="showcaseBrandImage" src="<%= brands1[i - 1].image %>">
-              <!-- <div class="seeMore">Clique e descubra</div> -->
+
             </a>
           <% } %>
         </div>
         <div class="middleShowcase">
           <% for(let i=3; i <= 4; i++)  {%>
             <a href="/products/search/brand" class="squareShowcase">
-              <!-- <div class="showcaseTitle"><%= brandsShowcaseTitle1 %></div> -->
               <img class="showcaseBrandImage" src="<%= brands1[i - 1].image %>">
-              <!-- <div class="seeMore">Clique e descubra</div> -->
             </a>
           <% } %>
         </div>
@@ -126,53 +123,33 @@
           </div>
         </div>
         <div class="longShowcase">
-          <div class="showcaseTitle">Acaba em 00:03:14</div>
-          <div class="rowShowcaseItem">
-            <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-1"></div>
-            <div class="rowShowcaseItemTitle">Nome do Item</div>
-            <div class="rowShowcaseItemDescription">R$ 19,90</div>
-          </div>
-          <div class="rowShowcaseItem">
-            <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-2"></div>
-            <div class="rowShowcaseItemTitle">Nome do Item</div>
-            <div class="rowShowcaseItemDescription">R$ 19,90</div>
-          </div>
+          <div class="showcaseTimer" id="<%= promotionTimer.value %>">Acaba em 00:00:00</div>
+          <% for (let i = 1; i <= promotionProducts.length; i++) { %>
+            <a href="/products/2" class="longShowcaseItem">
+              <img class="rowShowcaseItemImage" src="<%= promotionProducts[i - 1].image %>">
+              <div class="rowShowcaseItemTitle"><%= promotionProducts[i - 1].name %></div>
+              <div class="rowShowcaseItemDescription"><%= promotionProducts[i - 1].price %></div>
+            </a>
+          <% } %>
         </div>
       </section>
       <section class="showcase">
         <div class="rowShowcase">
-          <div class="showcaseTitle">Produto Recomendado</div>
-          <div class="rowShowcaseItemArea">
-            <div class="rowShowcaseItem">
-              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-1"></div>
-              <div class="rowShowcaseItemTitle">Nome do Item</div>
-              <div class="rowShowcaseItemDescription">R$ 19,90</div>
+          <div class="showcaseTitleProducts"><%= productsShowcaseTitle3 %></div>
+          <div class="rowShowcaseCarouselContainer">
+            <div class="carouselButton" id="carouselLeftButton3"></div>
+            <div class="rowShowcaseItemAreaContainer" id="rowShowcaseItemAreaContainer3">
+              <div class="rowShowcaseItemArea" id="rowShowcaseItemArea">
+                <% for (let i = 1; i <= products3.length; i++) { %>
+                  <a href="/products/2" class="rowShowcaseItem">
+                    <img class="rowShowcaseItemImage" src="<%= products3[i - 1].image %>">
+                    <div class="rowShowcaseItemTitle"><%= products3[i - 1].name %></div>
+                    <div class="rowShowcaseItemDescription"><%= products3[i - 1].price %></div>
+                  </a>
+                <% } %>
+              </div>
             </div>
-            <div class="rowShowcaseItem">
-              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-2"></div>
-              <div class="rowShowcaseItemTitle">Nome do Item</div>
-              <div class="rowShowcaseItemDescription">R$ 19,90</div>
-            </div>
-            <div class="rowShowcaseItem">
-              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-3"></div>
-              <div class="rowShowcaseItemTitle">Nome do Item</div>
-              <div class="rowShowcaseItemDescription">R$ 19,90</div>
-            </div>
-            <div class="rowShowcaseItem">
-              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-4"></div>
-              <div class="rowShowcaseItemTitle">Nome do Item</div>
-              <div class="rowShowcaseItemDescription">R$ 19,90</div>
-            </div>
-            <div class="rowShowcaseItem">
-              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-5"></div>
-              <div class="rowShowcaseItemTitle">Nome do Item</div>
-              <div class="rowShowcaseItemDescription">R$ 19,90</div>
-            </div>
-            <div class="rowShowcaseItem">
-              <div class="rowShowcaseItemImage" id="rowShowcaseItemImage-6"></div>
-              <div class="rowShowcaseItemTitle">Nome do Item</div>
-              <div class="rowShowcaseItemDescription">R$ 19,90</div>
-            </div>
+            <div class="carouselButton" id="carouselRightButton3"></div>
           </div>
         </div>
       </section>
