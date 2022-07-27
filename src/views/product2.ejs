@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Produto | PET STORE</title>
+    <title><%= prod.name %> | PET STORE</title>
     <%- include('./partials/head') %>
     <link rel="stylesheet" href="/stylesheets/generalStyle.css"/>
     <link rel="stylesheet" href="/stylesheets/headerStyle.css"/>
@@ -20,9 +20,9 @@
             <div class="previewImage" id="preview-1"></div>
             <div class="previewImage" id="preview-2"></div>
           </div>
-          <div class="mainPhoto"></div>
+          <img class="mainPhoto" src="<%= prod.img %>">
           <div class="infoHolder">
-            <div class="productTitle">Ração Golden Special Sabor Frango e Carne para Cães Adultos</div>
+            <div class="productTitle"><%= prod.name %></div>
             <div class="productInfo">
               <div class="productCode">Código: 10002310000032</div>
               <div class="productInfoWord">Ver descrição completa</div>
@@ -57,7 +57,7 @@
               </div>
               <div class="priceArea">
                 <div>Preço Unítário:</div>
-                <div class="unityPrice">R$ 142,90</div>
+                <div class="unityPrice"><%= prod.price %></div>
               </div>
               <div class="priceArea">
                 <div id="fullPrice">Preço Total:</div>

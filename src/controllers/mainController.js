@@ -3,6 +3,19 @@ const {Product} = require('../database/models');
 
 let finishDate = new Date(2022, 6, 25, 15, 30, 0);
 
+async function getArrayOfProducts(maxNumberOfProducts) {
+    let products = [];
+    await Product.findAll({
+        attributes: ['id_product', 'name', 'price', 'img'],
+        limit: maxNumberOfProducts
+    }).then((data)=>{
+        data.forEach((item) => {
+            products.push(item.dataValues);
+        });
+    });
+    return products
+}
+
 const homeProperties = {
     homeTitle: "PET STORE | Tudo para o seu pet",
     bannerImages: [
@@ -30,118 +43,6 @@ const homeProperties = {
         "/images/banners/toy-banner.png"
     ],
     productsShowcaseTitle1: "Continue Comprando",
-    products1: [
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/fornecedores-produtos-pet-shop-01-removebg-preview.png",
-            name: "Casinha Pet Rosa",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        },
-        {
-            image: "/images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png",
-            name: "Snack Petiscão Palito",
-            price: "R$ 199,90"
-        }
-    ],
     productsShowcaseTitle2: "Produtos Recomendados",
     products2: [
         {
@@ -319,7 +220,10 @@ const homeProperties = {
 };
 
 const mainController = {
-    home: (req, res) => {
+    home: async (req, res) => {
+        let prod1 = await getArrayOfProducts(10);
+        let prod2 = await getArrayOfProducts(10);
+        let prod3 = await getArrayOfProducts(10);
         res.render('home2', {
             title: homeProperties.homeTitle,
             bannerImages: homeProperties.bannerImages,
@@ -327,15 +231,15 @@ const mainController = {
             categoriesTitles: homeProperties.categoriesTitles,
             categoriesImages: homeProperties.categoriesImages,
             productsShowcaseTitle1: homeProperties.productsShowcaseTitle1,
-            products1: homeProperties.products1,
+            products1: prod1,
             productsShowcaseTitle2: homeProperties.productsShowcaseTitle2,
-            products2: homeProperties.products2,
+            products2: prod2,
             brandsShowcaseTitle1: homeProperties.brandsShowcaseTitle1,
             brands1: homeProperties.brands1,
             promotionTimer: homeProperties.promotionTimer,
             promotionProducts: homeProperties.promotionProducts,
             productsShowcaseTitle3: homeProperties.productsShowcaseTitle3,
-            products3: homeProperties.products3,
+            products3: prod3,
         });
     }
 }

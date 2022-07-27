@@ -539,9 +539,10 @@
   background-size: 40%;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 50%;
+  border-radius: var(--card-border-size);
   z-index: 999;
   cursor: pointer;
+  box-shadow: 1px 1px 8px lightgrey;
 }
 
 .carouselButton:hover {
@@ -550,32 +551,32 @@
 
 #carouselLeftButton1 {
   background-image: url(../images/icons/left-arrow-icon.svg);
-  left: calc((100vw - 1280px)/2);
+  left: calc((100vw - 1380px)/2);
 }
 
 #carouselLeftButton2 {
   background-image: url(../images/icons/left-arrow-icon.svg);
-  left: calc((100vw - 1280px)/2);
+  left: calc((100vw - 1380px)/2);
 }
 
 #carouselLeftButton3 {
   background-image: url(../images/icons/left-arrow-icon.svg);
-  left: calc((100vw - 1280px)/2);
+  left: calc((100vw - 1380px)/2);
 }
 
 #carouselRightButton1 {
   background-image: url(../images/icons/right-arrow-icon.svg);
-  left: calc(((100vw + 1160px)/2));
+  left: calc(((100vw + 1260px)/2));
 }
 
 #carouselRightButton2 {
   background-image: url(../images/icons/right-arrow-icon.svg);
-  left: calc(((100vw + 1160px)/2));
+  left: calc(((100vw + 1260px)/2));
 }
 
 #carouselRightButton3 {
   background-image: url(../images/icons/right-arrow-icon.svg);
-  left: calc(((100vw + 1160px)/2));
+  left: calc(((100vw + 1260px)/2));
 }
 
 #carouselPosition {

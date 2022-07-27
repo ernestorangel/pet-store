@@ -54,7 +54,7 @@ window.addEventListener('load', () => {
     let carouselSlideInterval = setInterval(()=>{
         if(count < numberOfSlides) {
             resetCarouselButtonsColors();
-            setCarouselSlide(count * 1280);
+            setCarouselSlide(count * bannerWidth);
             setCarouselButtonColor(count + 1, secondaryColor);
             count++;
         } else {

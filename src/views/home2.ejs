@@ -66,8 +66,8 @@
             <div class="rowShowcaseItemAreaContainer" id="rowShowcaseItemAreaContainer1">
               <div class="rowShowcaseItemArea" id="rowShowcaseItemArea">
                 <% for (let i = 1; i <= products1.length; i++) { %>
-                  <a href="/products/2" class="rowShowcaseItem">
-                    <img class="rowShowcaseItemImage" src="<%= products1[i - 1].image %>">
+                  <a href="/products/<%= products1[i - 1].id_product %>" class="rowShowcaseItem">
+                    <img class="rowShowcaseItemImage" src="<%= products1[i - 1].img %>">
                     <div class="rowShowcaseItemTitle"><%= products1[i - 1].name %></div>
                     <div class="rowShowcaseItemDescription"><%= products1[i - 1].price %></div>
                   </a>
@@ -87,7 +87,7 @@
               <div class="rowShowcaseItemArea" id="rowShowcaseItemArea">
                 <% for (let i = 1; i <= products2.length; i++) { %>
                   <a href="/products/2" class="rowShowcaseItem">
-                    <img class="rowShowcaseItemImage" src="<%= products2[i - 1].image %>">
+                    <img class="rowShowcaseItemImage" src="<%= products2[i - 1].img %>">
                     <div class="rowShowcaseItemTitle"><%= products2[i - 1].name %></div>
                     <div class="rowShowcaseItemDescription"><%= products2[i - 1].price %></div>
                   </a>
@@ -126,7 +126,7 @@
           <div class="showcaseTimer" id="<%= promotionTimer.value %>">Acaba em 00:00:00</div>
           <% for (let i = 1; i <= promotionProducts.length; i++) { %>
             <a href="/products/2" class="longShowcaseItem">
-              <img class="rowShowcaseItemImage" src="<%= promotionProducts[i - 1].image %>">
+              <img class="rowShowcaseItemImage" src="<%= promotionProducts[i - 1].img %>">
               <div class="rowShowcaseItemTitle"><%= promotionProducts[i - 1].name %></div>
               <div class="rowShowcaseItemDescription"><%= promotionProducts[i - 1].price %></div>
             </a>
@@ -142,7 +142,7 @@
               <div class="rowShowcaseItemArea" id="rowShowcaseItemArea">
                 <% for (let i = 1; i <= products3.length; i++) { %>
                   <a href="/products/2" class="rowShowcaseItem">
-                    <img class="rowShowcaseItemImage" src="<%= products3[i - 1].image %>">
+                    <img class="rowShowcaseItemImage" src="<%= products3[i - 1].img %>">
                     <div class="rowShowcaseItemTitle"><%= products3[i - 1].name %></div>
                     <div class="rowShowcaseItemDescription"><%= products3[i - 1].price %></div>
                   </a>
