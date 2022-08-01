@@ -16,17 +16,25 @@
                 </div>
                 <div class="signupFormsHolder">
                     <h2>Cadastro</h2>
-                   <form action="" method="POST">
-                       <input type="text" id="usuarioName" placeholder="Digite aqui seu nome">
-                       <input type="email" id="usuarioEmail" placeholder="Digite aqui seu e-mail">
-                       <input type="password" id="senha" placeholder="Digite aqui sua senha">
-                       <input type="password" id="confirmSenha" placeholder="Confirme sua senha">
-                       <input type="phone" id="telefone" placeholder="Digite aqui seu telefone">
+                   <form action="/users/store" method="POST">
+                       <input value="<%= locals.old && old.first_name %>" type="text" name="first_name" id="usuarioName" placeholder="Digite aqui seu nome">
+                       <input value="<%= locals.old && old.last_name %>" type="text" name="last_name" id="usuarioName" placeholder="Digite aqui seu Sobrenome">
+                       <input value="<%= locals.old && old.email %>" type="email" name="email" id="usuarioEmail" placeholder="Digite aqui seu e-mail">
+                       <input value="<%= locals.old && old.password %>" type="password" name="password" id="senha" placeholder="Digite aqui sua senha">                       
+                       
                        <button id="registerButton" type="submit">Cadastrar</button>
                        <div class="fazerLogin">
                         <label>Voce ja tem uma conta?</label>
                         <button type="submit">Clique aqui.</button>
                        </div>
+                       <% if (typeof(errors) != "undefined") { %>
+                             
+                        <ul>
+                            <% for(let error in errors){ %>
+                                <li> <%= errors[error].msg %></li>
+                            <% } %>            
+                        </ul>
+                    <% } %>
                    </form>
                 </div>
             </div>
