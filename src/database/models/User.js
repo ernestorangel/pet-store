@@ -42,7 +42,5 @@ module.exports = (sequelize, DataTypes) => {
             as: 'adress'
         })
     }
-    
-
     return User
 }

@@ -22,7 +22,11 @@ module.exports = (sequelize, DataTypes) => {
         price:{
             type: DataTypes.DECIMAL(10,0),
             allowNull: false
-        },        
+        },
+        img:{
+            type: DataTypes.STRING(45),
+            allowNull: true
+        }        
     };
 
     let config = {

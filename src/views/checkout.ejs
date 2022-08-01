@@ -18,19 +18,19 @@
             <div class="resumo-pedido">
                 <h2 class="titulo">Resumo Do Pedido</h2>
                 
-                    <% produtos.forEach(function(produto){ %>
+                    <% product.forEach(function(produto){ %>
                         
                             <div class="resumo-produto">                            
-                                <img class="resumo-imagen" src="\images\products\<%= produto.imagen %>" alt="Produto Pet">
+                                <img class="resumo-imagen" src="<%= produto.img %>" alt="Produto Pet">
                                 <div class="resumo-descricao">
-                                    <h3><%= produto.titulo %></h3>
-                                    <p class="resumo-texto-descricao"><%= produto.descricao %></p>
+                                    <h3><%= produto.name %></h3>
+                                    <p class="resumo-texto-descricao"><%= produto.description %></p>
                                 </div>
                                 <div class="resumo-qtd">
-                                    <p class="resumo-qtd-font"> Qtd : <%= produto.quantidade %> </p>
+                                    <p class="resumo-qtd-font"> Qtd : 1 </p>
                                 </div>
                                 <div class="resumo-preco">
-                                    <p class="resumo-preco-font">   R$ <%= produto.preco %>,00</p>
+                                    <p class="resumo-preco-font">   R$ <%= produto.price %>,00</p>
                                 </div>                        
                             </div>
                         

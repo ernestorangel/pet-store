@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
             through: 'products_in_orders',
             foreignKey: 'id_order',
             otherKey: 'id_product',
-            timesstamps: false
+            timestamps: false
         })
     }
     

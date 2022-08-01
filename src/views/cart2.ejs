@@ -44,19 +44,19 @@
                         <p><strong>Preço</strong></p>
                         <p><strong>Remover</strong></p>
                     </div>
-                    <% produtos.forEach(function(produto){ %>
+                    <% product.forEach(function(produto){ %>
                         <div class="pedido-produto">
-                            <img class="pedido-imagen" src="/images/products/<%= produto.imagen %>" alt="">
+                            <img class="pedido-imagen" src="/images/products/semImagen.jpg" alt="">
                             <div class="pedido-info">
-                                <h3 class="pedido-info-texto"> <%= produto.titulo %> </h3>
-                                <p class="pedido-info-texto"> <%= produto.descricao %> </p>
+                                <h3 class="pedido-info-texto"> <%= produto.name %> </h3>
+                                <p class="pedido-info-texto"> <%= produto.description %> </p>
                                 <p class="pedido-info-texto"><strong> Em Estoque </strong></p>
                             </div>
                             <div class="pedido-quantidade"> 
                                 + 1 -
                             </div>
                             <div class="pedido-preco"> 
-                                <%= produto.preco %>,00 
+                                <%= produto.price %>,00 
                             </div>
                             <div class="pedido-remover">
                                 <div class="lixeira">
