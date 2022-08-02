@@ -14,14 +14,22 @@
                 <a href="/" id="logo"></a>
             </div>
             <div id="loginFormsHolder">
-                <form action="" method="POST">
-                    <input type="email" name="email" id="email" placeholder="Digite aqui seu e-mail ou CPF">
-                    <input type="password" name="password" id="password" placeholder="Digite aqui sua senha">
-                    <button id="loginButton">Entrar</button>
+                <form action="/users/logar" method="POST">
+                    <input value="<%= locals.old && old.email %>" type="email" name="email" id="email" placeholder="Digite aqui seu e-mail">
+                    <input value="<%= locals.old && old.password %>" type="password" name="password" id="password" placeholder="Digite aqui sua senha">                    
+                    <button type="submit" id="loginButton">Entrar</button>
                     <div class="forgotArea">
                         <label>Problemas para entrar?</label>
                         <button id="forgotButton" type="submit">Clique aqui.</button>
                     </div>
+                    <% if (typeof(errors) != "undefined") { %>
+                             
+                        <ul>
+                            <% for(let error in errors){ %>
+                                <li> <%= errors[error].msg %></li>
+                            <% } %>            
+                        </ul>
+                    <% } %>
                 </form>
                 <form action="/users/signup" method="GET">
                     <button id="signupButton">Cadastre-se</button>
