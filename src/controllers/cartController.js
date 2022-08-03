@@ -35,11 +35,11 @@ const produtos = [{
 
 const cartController = {
     carrinho: async (req, res) => {
-        let product = await Product.findAll();
+        let product = await Cart.findAll();
         res.render('cart', { title: 'Carrinho', product:product});
     },
     carrinho2: async (req,res)=>{
-        let product = await Product.findAll();
+        let product = await Cart.findAll();
         res.render('cart2', { title: 'Carrinho', produtosDestaque: produtosDestaque , produtos: produtos , product:product });
     },
     checkout: async (req,res,next) =>{

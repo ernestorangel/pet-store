@@ -42,8 +42,10 @@
               </div>
               <div class="productStockInfo">Em estoque</div>
             </div>
-            <form action="" method="GET" class="inputForm">
+            <form action="/products/addCart" method="POST" class="inputForm">
               <div class="productOptionHolder">
+                <input readonly name="id" value="<%= prod.id_product %>" type="text" style="display:none">
+
                 <select name="qtd" class="productQuantity">
                   <% for(let i=1; i < 13; i++) { %>
                     <option value="<%= i %>"><%= i %> un.</option>
@@ -58,7 +60,7 @@
               <div class="priceArea">
                 <div>Preço Unítário:</div>
                 <div class="unityPrice"><%= prod.price %></div>
-              </div>
+              </div>              
               <div class="priceArea">
                 <div id="fullPrice">Preço Total:</div>
                 <div class="productPrice">R$ 428,70</div>

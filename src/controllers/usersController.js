@@ -23,10 +23,9 @@ const usersController = {
           console.log(errors.mapped())
           return res.render('login', {errors: errors.mapped(), old: req.body});
       }
-
-      console.log('Usuarios ', user)
+      
       if(user == null){
-        return res.send("Usuario Nao Encontrado")        
+        return res.send("Usuario Nao Encontrado")
       }
 
       if(email != user.email){
@@ -39,9 +38,9 @@ const usersController = {
 
       req.session.user = user
 
-      if(logado != undefined){
-        res.cookie('logado', user.email, {maxAge:600000})
-      }
+      // if(logado == undefined){
+      //   res.cookie('logado', user.email, {maxAge:600000})
+      // }
 
       res.redirect('/')
     },
