@@ -11,7 +11,7 @@ const auth = require('../middlewares/auth');
 
 // Rotas Carrinho De Compra
 router.get("/2", cartController.carrinho)
-router.get("/",auth, cartController.carrinho2)
+router.get("/", cartController.carrinho2)
 
 // Rotas Paginas Forma Pagamento
 router.get("/checkout", cartController.checkout)

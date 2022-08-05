@@ -1,5 +1,5 @@
 const path = require('path')
-const {Product} = require('../database/models');
+const {Product, Cart} = require('../database/models');
 const produtosDestaque = [{
     titulo: "Alimentador Automatico",
     descricao: "Coloque até 4 Litros de Agua e Deixe seu pet sempre hidratado",
@@ -40,11 +40,11 @@ const cartController = {
     },
     carrinho2: async (req,res)=>{
         let product = await Cart.findAll();
-        res.render('cart2', { title: 'Carrinho', produtosDestaque: produtosDestaque , produtos: produtos , product:product });
+        res.render('cart2', { title:'Carrinho', product:product});
     },
     checkout: async (req,res,next) =>{
         let product = await Product_in_Order.findAll();
-        res.render('checkout', { title: 'Checkout', produtos: produtos , product:product });
+        res.render('checkout', { title: 'Checkout', product:product });
     },
 }
 module.exports = cartController

@@ -14,9 +14,10 @@ const usersController = {
       let user = await User.findOne({        
         raw: true,
         where: {
-          email: email,          
+          email: email,
         }
-      })     
+      })    
+          
       let errors = validationResult(req)
         if(errors.isEmpty()){            
         }else{

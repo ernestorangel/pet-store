@@ -98,8 +98,7 @@ main{
 
 .pedido-pai{
     display: flex;
-    flex-direction: column;
-    background-color: ;
+    flex-direction: column;    
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     justify-content: center;
 }
@@ -283,4 +282,12 @@ main{
 .links{
     text-decoration: none;
     color: #fff;
+}
+
+#rowShowcaseItemAreaContainer{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: row;
 }
