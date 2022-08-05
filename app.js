@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const favicon = require('serve-favicon');
 const session = require('express-session');
+const methodOverride = require("method-override");
 
 const mainRouter = require('./src/routes/main');
 const usersRouter = require('./src/routes/users');
@@ -32,6 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'favicon.ico')))
 app.use(cookieMiddleware);
+app.use(methodOverride('_method'))
 
 app.use('/', mainRouter);
 app.use('/users', usersRouter);

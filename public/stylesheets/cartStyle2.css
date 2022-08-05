@@ -21,12 +21,13 @@ main{
     margin: 10px;
 }
 
-.produtos-destaque-mae{
+.produtos-destaque-mae{    
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-left: 22px;
-    flex-wrap: wrap;
+    /* margin-left: 22px; */
+    
 }
 
 .vector{
@@ -34,10 +35,11 @@ main{
     position: relative;
     justify-content: center;
     align-items: center;
+    margin: 10px;
     border-radius: 30px;
     background-color:#8D8D8D9E;
-    width: 39px;
-    height: 39px;
+    width: 67px;
+    height: 37px;
     cursor: pointer;
 }
 
@@ -54,10 +56,10 @@ main{
 
 .produtos-destaque{
     display: flex;
-    align-items: center;
+    align-items: center;       
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
-    width: 35%;
+    width: 100%;   
     margin: 10px;
     margin-left: 30px;
     margin-right: 30px;
@@ -69,8 +71,9 @@ main{
     border-radius: 6px 0px 0px 6px;
 }
 
-.produtos-destaque-infos{
+.produtos-destaques-infos{
     align-items: center;
+    width: 250px;
 }
 
 .produtos-destaque-textos{
@@ -174,7 +177,7 @@ main{
 .lixeira-icon{
     align-items: center;
     width: 20px;
-    height: 28px;
+    height: 28px;    
 }
 
 .finalizar-compra-pai{
@@ -284,10 +287,13 @@ main{
     color: #fff;
 }
 
-#rowShowcaseItemAreaContainer{
+#rowShowcaseItemAreaContainer1{
     overflow-x: scroll;
     overflow-y: hidden;
     scroll-behavior: smooth;
     display: flex;
     flex-direction: row;
 }
+#rowShowcaseItemAreaContainer1::-webkit-scrollbar {
+    display: none;
+  }

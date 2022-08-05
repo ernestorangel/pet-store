@@ -13,6 +13,9 @@ const auth = require('../middlewares/auth');
 router.get("/2", cartController.carrinho)
 router.get("/", auth, cartController.carrinho2)
 
+//Rotas Deleção
+router.delete('/delete/:id', cartController.destroy)
+
 // Rotas Paginas Forma Pagamento
 router.get("/checkout", cartController.checkout)
 
