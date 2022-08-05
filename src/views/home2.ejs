@@ -123,7 +123,7 @@
           </div>
         </div>
         <div class="longShowcase">
-          <div class="showcaseTimer" id="<%= promotionTimer.value %>">Acaba em 00:00:00</div>
+          <div class="showcaseTimer" id="<%= promotionTimer.value %>"></div>
           <% for (let i = 1; i <= promotionProducts.length; i++) { %>
             <a href="/products/2" class="longShowcaseItem">
               <img class="rowShowcaseItemImage" src="<%= promotionProducts[i - 1].img %>">
@@ -160,5 +160,5 @@
   </main>
   <%- include('./partials/footer') %>
  </body>
- <script src="javascripts/home.js"></script>
+ <script type="module" src="javascripts/home.js"></script>
 </html>

@@ -44,8 +44,16 @@ function setProductsCarouselButtons(number) {
     });
 };
 
+function fixTimeUnitForShowcasing(number) {
+    let string = number + '';
+    if (string.length == 1) string = '0' + string;
+    return string;
+}
+
 // page setup
 window.addEventListener('load', () => {
+
+    let numberOfSlides;
 
     // making toast show
     let toastStatus = document.querySelector('.toast-area').id;
@@ -55,9 +63,7 @@ window.addEventListener('load', () => {
             document.querySelector('.toast-area').style.display = 'none';
             clearInterval(toastInterval);
         }, 5 * 1000);
-    } else if (toastStatus == 'no-show') {
-        document.querySelector('.toast-area').style.display = 'none';
-    };
+    }
 
     // making the main carousel move on its own
     setCarouselButtonColor(1, secondaryColor);
@@ -100,13 +106,12 @@ window.addEventListener('load', () => {
     // making the countdown work
     let countdownInterval = setInterval(()=>{
         let showcaseTimer = document.querySelector('.showcaseTimer');
-        console.log(showcaseTimer.id)
         let startDate = new Date();
         let endDate = new Date(showcaseTimer.id);
         let timeDiff = endDate.getTime() - startDate.getTime();
-        let h = Math.round(timeDiff / 3600000);
-        let m = Math.round((timeDiff / 60000) - (h * 60));
-        let s = Math.round((timeDiff / 1000) - (h * 3600) - (m * 60));
+        let h = fixTimeUnitForShowcasing(Math.floor(timeDiff / 3600000));
+        let m = fixTimeUnitForShowcasing(Math.floor((timeDiff / 60000) - (h * 60)));
+        let s = fixTimeUnitForShowcasing(Math.floor((timeDiff / 1000) - (h * 3600) - (m * 60)));
         showcaseTimer.innerHTML = `Acaba em ${h}h ${m}m ${s}s`;
     }, 1000);
 

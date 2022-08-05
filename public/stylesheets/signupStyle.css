@@ -25,7 +25,7 @@ main {
 .logo-signup {
     width: 400px;
     height: 100%;
-    background-image: url(../images/logos/pet-store-logo.svg);
+    background-image: url(../images/logos/pet-store-logo.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -46,7 +46,7 @@ h2 {
 }
 
 form {
-    padding: 0 20px;
+    padding: 0 20px 20px;
 }
 
 input {
@@ -60,7 +60,7 @@ input {
 }
 
 input:focus {
-    outline: none;
+    outline: 1px solid var(--main-color);
 }
 
 #registerButton {
@@ -72,6 +72,11 @@ input:focus {
     color: var(--text-bright-color);
     font-size: 20px;
     font-weight: 600;
+    cursor: pointer;
+}
+
+#registerButton:hover {
+    background-color: var(--secondary-color-darker);
 }
 
 .fazerLogin {
@@ -82,10 +87,32 @@ input:focus {
     margin-bottom: 15px;
 }
 
-.fazerLogin button {
+.fazerLogin a {
     background-color: transparent;
     color: var(--secondary-color);
     font-size: 15px;
     margin-left: 5px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
+.fazerLogin a:hover {
+    color: var(--secondary-color-darker);
+}
+
+.list-of-errors {
+    list-style: none;
+
+    margin-top: 15px;
+}
+
+.error-item {
+    font-size: 12px;
+
+    margin-top: 5px;
+    padding: 5px;
+
+    color:red;
+
+    border-radius: var(--card-border-size);
+}

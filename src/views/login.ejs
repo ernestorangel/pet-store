@@ -23,10 +23,9 @@
                         <button id="forgotButton" type="submit">Clique aqui.</button>
                     </div>
                     <% if (typeof(errors) != "undefined") { %>
-                             
-                        <ul>
+                        <ul class="list-of-errors">
                             <% for(let error in errors){ %>
-                                <li> <%= errors[error].msg %></li>
+                                <li class="error-item"> <%= errors[error].msg %></li>
                             <% } %>            
                         </ul>
                     <% } %>

@@ -15,7 +15,7 @@ body {
 #logo {
     width: 400px;
     height: 100%;
-    background-image: url(../images/logos/pet-store-logo.svg);
+    background-image: url(../images/logos/pet-store-logo.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,7 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 395px;
+    height: auto;
     background-color: var(--main-color);
 }
 
@@ -51,7 +51,7 @@ input {
 }
 
 input:focus {
-    outline: none;
+    outline: 1px solid var(--main-color);
 }
 
 #loginButton {
@@ -63,6 +63,11 @@ input:focus {
     color: var(--text-bright-color);
     font-size: 20px;
     font-weight: 600;
+    cursor: pointer;
+}
+
+#loginButton:hover {
+    background-color: var(--main-color-darker);
 }
 
 .forgotArea {
@@ -84,7 +89,28 @@ input:focus {
     color: var(--secondary-color);
     font-size: 15px;
     margin: 0 0 0 5px;
+    cursor: pointer;
+}
 
+#forgotButton:hover {
+    color: var(--secondary-color-darker);
+}
+
+.list-of-errors {
+    list-style: none;
+
+    margin-top: 15px;
+}
+
+.error-item {
+    font-size: 12px;
+
+    margin-top: 5px;
+    padding: 5px;
+
+    color:red;
+
+    border-radius: var(--card-border-size);
 }
 
 #signupButton {
@@ -96,4 +122,9 @@ input:focus {
     color: var(--text-bright-color);
     font-size: 20px;
     font-weight: 600;
+    cursor: pointer;
+}
+
+#signupButton:hover {
+    background-color: var(--secondary-color-darker);
 }

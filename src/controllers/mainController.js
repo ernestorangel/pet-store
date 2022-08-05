@@ -1,7 +1,7 @@
 const path = require('path');
 const {Product} = require('../database/models');
 
-let finishDate = new Date(2022, 6, 25, 15, 30, 0);
+let finishDate = new Date(2022, 7, 8, 15, 30, 0);
 
 async function getArrayOfProducts(maxNumberOfProducts) {
     let products = [];
@@ -13,8 +13,22 @@ async function getArrayOfProducts(maxNumberOfProducts) {
             products.push(item.dataValues);
         });
     });
-    return products
+    return products;
 }
+
+function setPriceAsCurrency(value) {
+    let splited = value.split('.');
+    splited.push('00');
+    let valueAsCurrency = "R$ " + splited[0] + "," + splited[1];
+    return valueAsCurrency;
+};
+
+function fixPricesOfProducts(arrayOfProducts) {
+    arrayOfProducts.forEach((product)=>{
+        product.price = setPriceAsCurrency(product.price);
+    });
+    return arrayOfProducts;
+};
 
 const homeProperties = {
     homeTitle: "PET STORE | Tudo para o seu pet",
@@ -241,10 +255,9 @@ const mainController = {
             isLogged = true;
             user = req.session.user;
         }
-        console.log('sessao usuario: ', req.session.user);
-        let prod1 = await getArrayOfProducts(10);
-        let prod2 = await getArrayOfProducts(10);
-        let prod3 = await getArrayOfProducts(10);
+        let prod1 = fixPricesOfProducts(await getArrayOfProducts(10));
+        let prod2 = fixPricesOfProducts(await getArrayOfProducts(10));
+        let prod3 = fixPricesOfProducts(await getArrayOfProducts(10));
         res.render('home2', {
             title: homeProperties.homeTitle,
             toastStatus: toastStatus,

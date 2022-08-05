@@ -25,13 +25,13 @@
                        <button id="registerButton" type="submit">Cadastrar</button>
                        <div class="fazerLogin">
                         <label>Voce ja tem uma conta?</label>
-                        <button type="submit">Clique aqui.</button>
+                        <a href="/users/login">Clique aqui.</a>
                        </div>
                        <% if (typeof(errors) != "undefined") { %>
                              
-                        <ul>
+                        <ul class="list-of-errors">
                             <% for(let error in errors){ %>
-                                <li> <%= errors[error].msg %></li>
+                                <li class="error-item"> <%= errors[error].msg %></li>
                             <% } %>            
                         </ul>
                     <% } %>
