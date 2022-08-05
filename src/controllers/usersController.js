@@ -3,12 +3,14 @@ const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
 const salt = bcrypt.genSaltSync(10)
 
+async function getUserById(user_id) {
+  return await User.findByPk(user_id);
+};
 
 const usersController = {
     login: (req, res) => {
       res.render('login');
     },
-
     logarUser: async (req, res) => {
       const {email, password, logado } = req.body
       let user = await User.findOne({        
@@ -45,8 +47,6 @@ const usersController = {
 
       res.redirect('/')
     },
-
-
     signup: (req, res) => {
       res.render('signup');
     },
@@ -70,9 +70,26 @@ const usersController = {
 
       return res.redirect('/users/login')
     },
-
-    enter: (req, res) => {
-      res.render('userPanel2');
+    enter: async (req, res) => {
+      let toastStatus = "no-show";
+        if(req.query.login == 'error') {
+            toastStatus = "show";
+        }
+      let isLogged = false;
+      let user;
+      if (req.session.user == undefined) {
+          isLogged = false;
+      } else {
+          isLogged = true;
+          user = req.session.user;
+      }
+      console.log(user);
+      res.render('userPanel2', {
+        showModal: false,
+        toastStatus: toastStatus,
+        user: user,
+        isLogged: isLogged
+      });
     }
 };
 module.exports = usersController;

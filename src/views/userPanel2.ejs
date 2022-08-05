@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="/stylesheets/headerStyle.css"/>
     <link rel="stylesheet" href="/stylesheets/userPanelStyle2.css"/>
     <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
+    <script type="text/javascript" src="../../javascripts/panel.js"></script>
   </head>
   <body>
-    <%- include('./partials/loggedHeader') %>
+    <div id="blur-page" style="display:none"></div>
+    <%- include('./partials/header') %>
+    <!-- <div id="blur-page" style="display:none"></div> -->
     <main>
+      <div class="fade-in fade-out" id="edit-profile-modal" style="display:none">
+        <div id="close-edit-modal"></div>
+      </div>
       <div id="optionsPanel">
         <div class="profileCard">
-          <div class="profilePhoto"></div>
-          <div class="userName">Ernesto Rangel</div>
-          <div class="userInfo">ernestojrcjunior@gmail.com</div>
+          <a class="profilePhoto" href="<%= user.avatar %>"></a>
+          <div class="userName"><%= user.first_name + " " + user.last_name %></div>
+          <div class="userInfo"><%= user.email %></div>
           <div class="profileConfig">
-            <div class="profileConfigButton">
+            <div class="profileConfigButton" id="profileEditButton">
               <div class="profileIcon" id="editIcon"></div>
               <div class="profileOption">Editar</div>
             </div>
