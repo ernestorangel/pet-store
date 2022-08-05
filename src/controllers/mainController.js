@@ -219,13 +219,37 @@ const homeProperties = {
     ]
 };
 
+let isLogged = true;
+
+const user = {
+    avatar: '/images/profile/pp.jpg',
+    first_name: 'Ernesto',
+    id_user: '2'
+};
+
 const mainController = {
     home: async (req, res) => {
+        let toastStatus = "no-show";
+        if(req.query.login == 'error') {
+            toastStatus = "show";
+        }
+        let isLogged = false;
+        let user;
+        if (req.session.user == undefined) {
+            isLogged = false;
+        } else {
+            isLogged = true;
+            user = req.session.user;
+        }
+        console.log('sessao usuario: ', req.session.user);
         let prod1 = await getArrayOfProducts(10);
         let prod2 = await getArrayOfProducts(10);
         let prod3 = await getArrayOfProducts(10);
         res.render('home2', {
             title: homeProperties.homeTitle,
+            toastStatus: toastStatus,
+            isLogged: isLogged,
+            user: user,
             bannerImages: homeProperties.bannerImages,
             features: homeProperties.features,
             categoriesTitles: homeProperties.categoriesTitles,

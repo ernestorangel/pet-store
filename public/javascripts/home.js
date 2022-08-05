@@ -47,6 +47,18 @@ function setProductsCarouselButtons(number) {
 // page setup
 window.addEventListener('load', () => {
 
+    // making toast show
+    let toastStatus = document.querySelector('.toast-area').id;
+    if(toastStatus == 'show') {
+        document.querySelector('.toast-area').style.display = 'flex';
+        let toastInterval = setInterval(() => {
+            document.querySelector('.toast-area').style.display = 'none';
+            clearInterval(toastInterval);
+        }, 5 * 1000);
+    } else if (toastStatus == 'no-show') {
+        document.querySelector('.toast-area').style.display = 'none';
+    };
+
     // making the main carousel move on its own
     setCarouselButtonColor(1, secondaryColor);
     numberOfSlides = getNumberOfSlides();

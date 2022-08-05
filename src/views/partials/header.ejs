@@ -1,4 +1,5 @@
 <header>
+  <div class="toast-area" id="<%= toastStatus %>" >Faça login para acessar esse recurso.</div>
   <div id="headerFirstSection" class="menu">
     <a href="/" id="logo"></a>
     <div id="searchBar">
@@ -9,11 +10,19 @@
     </div>
     <div id="infoHolder">
       <div id="login">
-        <div id="userPhoto"></div>
-        <div id="profileSection">
-          <div id="userGreeting">Olá, Ernesto!</div>
-          <a href="/users/enter/1" id="accountAccess">Acesse sua conta</a>
-        </div>
+        <% if(!isLogged) {%>
+          <img id="userPhoto" src="/images/profile/std-pp.png">
+          <div id="profileSection">
+            <div id="userGreeting">Olá, <a class="userGreetingLogin" href="/users/login">Faça Login</a></div>
+            <div class="userGreetingLogin">ou <a href="/users/signup" id="accountAccess">cadastre-se</a></div>
+          </div>
+        <% } else { %>
+          <img id="userPhoto" src="<%= user.avatar %>">
+          <div id="profileSection">
+            <div id="userGreeting">Olá, <%= user.first_name %></div>
+            <div><a href="/users/enter/<%= user.id_user %>" id="accountAccess">Acesse sua conta</a></div>
+          </div>
+        <% } %>
       </div>
       <div id="cart">
         <div class="headerOptionsIcon" id="favoritesIcon"></div>

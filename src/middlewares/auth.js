@@ -1,9 +1,13 @@
+const express = require('express');
+const router = express.Router();
+const mainController = require('../controllers/mainController');
+
 function auth(req,res,next){
     if(typeof(req.session.user) != "undefined"){
-        return next()
+        return next();
     }else{
-        return res.send('Voce precisa estar Logado para ter acesso')
+        return res.redirect('/?login=error');
     }
-}
+};
 
-module.exports = auth
+module.exports = auth;
