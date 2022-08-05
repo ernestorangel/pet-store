@@ -233,14 +233,6 @@ const homeProperties = {
     ]
 };
 
-let isLogged = true;
-
-const user = {
-    avatar: '/images/profile/pp.jpg',
-    first_name: 'Ernesto',
-    id_user: '2'
-};
-
 const mainController = {
     home: async (req, res) => {
         let toastStatus = "no-show";
