@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
     </head>
     <body>
-	    <%- include('./partials/loggedHeader') %>
+	    <%- include('./partials/header') %>
             <main>
                 <h1 class="titulo">Produtos em Destaque</h1>
                 <div class="produtos-destaque-mae">  
@@ -24,7 +24,8 @@
                                     <p class="produtos-destaque-textos"> <%= produto.description %> </p>
                                     <p class="produtos-destaque-textos"> Preço: <%= produto.price %>,00 </p>
                                     <p class="produtos-destaque-textos"> <strong> Em Estoque </strong></p>
-                                    <form class="produtos-destaque-form" action="">
+                                    <form method="POST" class="produtos-destaque-form" action="/products/addCart">
+                                        <input readonly name="id" value="<%= produto.id_cart %>" type="text" style="display:none">
                                         <button class="adicionar-carrinho" type="submit">
                                             Adicionar Ao Carrinho 
                                         </button>
@@ -49,7 +50,7 @@
                     <% product.forEach(function(produto){ %>
                         <div class="pedido-produto">
                             <img class="pedido-imagen" src="<%= produto.img %>" alt="">
-                            <div class="pedido-info">
+                            <div class="pedido-info">                                
                                 <h3 class="pedido-info-texto"> <%= produto.name %> </h3>
                                 <p class="pedido-info-texto"> <%= produto.description %> </p>
                                 <p class="pedido-info-texto"><strong> Em Estoque </strong></p>
@@ -60,10 +61,12 @@
                             <div class="pedido-preco"> 
                                 <%= produto.price %>,00 
                             </div>
-                            <div class="pedido-remover">
-                                <div class="lixeira">
-                                    <img class="lixeira-icon" src="/images/icons/lixeira.png" alt="">
-                                </div>                    
+                            <div class="pedido-remover">                                
+                                    <form class="lixeira" action="/cart/delete/<%= produto.id_cart %>?_method=DELETE" method="post">
+                                        <button class="lixeira" type="submit">
+                                            <img class="lixeira-icon" src="/images/icons/lixeira.png" alt="">
+                                        </button>
+                                    </form>                                                   
                             </div>                        
                         </div>
                     <% }) %>                    

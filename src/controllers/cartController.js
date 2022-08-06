@@ -1,37 +1,5 @@
 const path = require('path')
 const {Product, Cart} = require('../database/models');
-const produtosDestaque = [{
-    titulo: "Alimentador Automatico",
-    descricao: "Coloque até 4 Litros de Agua e Deixe seu pet sempre hidratado",
-    preco: 75,
-    imagen: "Pet-Shop-Produtos-Pet-Pet-Alimentador-Autom-tico-De-Comida-Auto-Beber-gua-C-o-Gato-removebg-preview.png"
-},
-{
-    titulo: "Caixa Transporte",
-    descricao: "Esteja Sempre Pronto para levar seu Pet com voce",
-    preco: 75,
-    imagen: "casinhaLuxoPreta.png"
-}]
-const produtos = [{
-    titulo: "Casinha Luxo Preta",
-    descricao: "Esteja Sempre Pronto para levar seu Pet com voce",
-    quantidade: 1,
-    preco: 150,
-    imagen: "casinhaLuxoPreta.png"
-},
-{
-    titulo: "Tapete Higienico",
-    descricao: "Local Adequado para seu Pet Fazer necessidade",
-    quantidade: 2,
-    preco: 50,
-    imagen: "fornecedores-produtos-pet-shop-atacado-01-removebg-preview.png"
-},{
-    titulo: "Comedouro",
-    descricao: "Pote Ideal para seu pet se alimentar",
-    quantidade: 3,
-    preco: 20,
-    imagen: "fabrica-produtos-pet-shop-01-removebg-preview.png"
-}]
 
 const cartController = {
     carrinho: async (req, res) => {
@@ -39,13 +7,41 @@ const cartController = {
         res.render('cart', { title: 'Carrinho', product:product});
     },
     carrinho2: async (req,res)=>{
+        let toastStatus = "no-show";
+        let isLogged = false;
+        let user;
+        if (req.session.user == undefined) {
+            isLogged = false;
+        } else {
+            isLogged = true;
+            user = req.session.user;
+        }
         let product = await Cart.findAll();
-        res.render('cart2', { title:'Carrinho', product:product});
+        res.render('cart2', { 
+            title:'Carrinho',
+            product:product,
+            isLogged: isLogged,
+            user: user,
+            toastStatus: toastStatus,
+        });
     },
+
+    destroy: async (req,res)=>{
+        let id = req.params.id
+
+        const resultado = await Cart.destroy({
+            where:{
+                id_cart:id
+            }
+        })
+        res.redirect('/cart')
+    },
+
     checkout: async (req,res,next) =>{
         let product = await Product_in_Order.findAll();
         res.render('checkout', { title: 'Checkout', product:product });
     },
+    
 }
 module.exports = cartController
 // const cartController = {
