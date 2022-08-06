@@ -75,8 +75,8 @@ main {
   left: 0;
   right: 0;
 
-  /* min-width: 100%;
-  min-height: 100%; */
+  min-width: 100%;
+  min-height: 171vh;
 
   background-color: black;
   opacity: 0.4;
@@ -89,23 +89,38 @@ main {
   left: calc((100vw - 600px)/2);
 
   width: 600px;
-  height: 400px;
+  height: auto;
 
   border-radius: var(--card-border-size);
-
+  border-top: 10px solid var(--main-color);
   background-color: var(--text-bright-color);
 }
 
+#edit-form-top-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#edit-form-title {
+  font-size: 20px;
+  font-weight: 600;
+
+  margin: 20px;
+
+  width: 100%;
+
+  color: var(--main-color);
+}
+
 #close-edit-modal {
-  position: relative;
-  left: 560px;
-  margin-top: 10px;
+  margin: 0px 20px 0px 0px;
   cursor: pointer;
   background-image: url(../images/icons/cross-icon.svg);
   background-size: 60%;
   background-position: center;
   background-repeat: no-repeat;
-  width: 30px;
+  min-width: 30px;
   height: 30px;
   border-radius: 50%;
 }
@@ -113,6 +128,73 @@ main {
 #close-edit-modal:hover {
   background-color: var(--text-bright-color-darker);
   background-image: url(../images/icons/cross-icon-hover.svg);
+}
+
+#edit-modal-main-content-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: auto;
+
+  padding: 0px 20px 20px;
+
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+
+#edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form-label {
+  margin-top: 20px;
+  color: var(--main-color);
+}
+
+.edit-form-input {
+  height: 40px;
+  border: 1px solid lightgray;
+
+  border-radius: var(--card-border-size);
+
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+.edit-form-input:focus {
+  outline: 1px solid var(--main-color);
+}
+
+.edit-form-error {
+  font-size: 10px;
+
+  margin-top: 5px;
+
+  color: red;
+}
+
+#edit-form-button {
+  width: 200px;
+  height: 60px;
+  padding: 5px 10px;
+  margin: 20px;
+  align-self: flex-end;
+
+  border-radius: var(--card-border-size);
+
+  background-color: var(--main-color);
+  color: var(--text-bright-color);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+#edit-form-button:hover {
+  background-color: var(--main-color-darker);
 }
 
 #optionsPanel {
