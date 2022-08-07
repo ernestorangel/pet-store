@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
   </head>
   <body>
-    <%- include('./partials/loggedHeader') %>
+    <%- include('./partials/header') %>
     <main>
       <section class="productSession">
         <div class="productPathText">
@@ -45,25 +45,24 @@
             <form action="/products/addCart" method="POST" class="inputForm">
               <div class="productOptionHolder">
                 <input readonly name="id" value="<%= prod.id_product %>" type="text" style="display:none">
-
                 <select name="qtd" class="productQuantity">
                   <% for(let i=1; i < 13; i++) { %>
                     <option value="<%= i %>"><%= i %> un.</option>
                   <% } %>
                 </select>
-                <select name="qtd" class="productOption">
+                <select name="opt" class="productOption">
                   <option value="1">2,5 kg</option>
                   <option value="2">5,0 kg</option>
                   <option value="3">10,0 kg</option>
                 </select>
               </div>
               <div class="priceArea">
-                <div>Preço Unítário:</div>
+                <div>Preço Unitário:</div>
                 <div class="unityPrice"><%= prod.price %></div>
               </div>              
               <div class="priceArea">
                 <div id="fullPrice">Preço Total:</div>
-                <div class="productPrice">R$ 428,70</div>
+                <div class="productPrice"></div>
               </div>
               <div class="productButtons">
                 <button type="submit" class="addToCartButton">Adicionar ao carrinho</button>
@@ -146,4 +145,5 @@
     </main>
     <%- include('./partials/footer') %>
   </body>
+  <script type="text/javascript" src="../../javascripts/product.js"></script>
 </html>

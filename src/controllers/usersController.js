@@ -106,12 +106,9 @@ const usersController = {
       });
     },
     update: async (req, res) => {
-      console.log("body: ", req.body);
       let dataToUpdate = await excludeEmptyProperties(await encryptPassword(req.body));
-      console.log("dataToUpdate: ", dataToUpdate);
       await User.update(dataToUpdate, {where: {id_user: req.params.id}});
       req.session.user = await User.findByPk(req.params.id);
-      console.log("req.session.user: ", req.session.user);
       return res.redirect(`/users/enter/${req.params.id}`);
     }
 };
