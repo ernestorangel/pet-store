@@ -15,4 +15,6 @@ usersRouter.post("/store", signupAuth, usersController.store);
 
 usersRouter.get("/enter/:id", auth, usersController.enter);
 
+usersRouter.post("/edit/:id", auth, usersController.update);
+
 module.exports = usersRouter;
