@@ -69,14 +69,10 @@ main {
 #blur-page {
   z-index: 2;
 
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: fixed;
 
   min-width: 100%;
-  min-height: 171vh;
+  min-height: 100%;
 
   background-color: black;
   opacity: 0.4;
@@ -217,7 +213,7 @@ main {
 .profilePhoto {
   height: 200px;
   width: 200px;
-  background-color: black;
+  background-color: var(--text-bright-color-darker);
   border-radius: 50%;
   margin: 30px 0 20px 0;
 }

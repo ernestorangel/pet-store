@@ -12,7 +12,6 @@
   <body>
     <div id="blur-page" style="display:none"></div>
     <%- include('./partials/header') %>
-    <!-- <div id="blur-page" style="display:none"></div> -->
     <main>
       <div class="fade-in fade-out" id="edit-profile-modal" style="display:none">
         <div id="edit-form-top-bar"> 
@@ -23,16 +22,16 @@
           <div id="edit-modal-main-content-container">
             <label class="edit-form-label">Nome</label>
             <input class="edit-form-input" type="text">
-            <div class="edit-form-error" id="name-error">Aqui vai a informação do erro.</div>
+            <div class="edit-form-error" id="name-error" style="display:none;">Aqui vai a informação do erro.</div>
             <label class="edit-form-label">Sobrenome</label>
             <input class="edit-form-input" type="text">
-            <div class="edit-form-error" id="surname-error">Aqui vai a informação do erro.</div>
-            <label class="edit-form-label">e-mail</label>
+            <div class="edit-form-error" id="surname-error"  style="display:none;">Aqui vai a informação do erro.</div>
+            <label class="edit-form-label">E-mail</label>
             <input class="edit-form-input" type="email">
-            <div class="edit-form-error" id="email-error">Aqui vai a informação do erro.</div>
-            <label class="edit-form-label">Nova senha</label>
+            <div class="edit-form-error" id="email-error"  style="display:none;">Aqui vai a informação do erro.</div>
+            <label class="edit-form-label">Senha</label>
             <input class="edit-form-input" type="password">
-            <div class="edit-form-error" id="password-error">Aqui vai a informação do erro.</div>
+            <div class="edit-form-error" id="password-error"  style="display:none;">Aqui vai a informação do erro.</div>
           </div>
           <button id="edit-form-button">Editar</button>
         </form>
