@@ -6,6 +6,10 @@ function setPriceAsCurrency(value) {
 };
 
 window.addEventListener("load", ()=>{
+    let unityPrice = parseInt(document.querySelector(".unityPrice").innerHTML.slice(3).split(",").join("."));
+    let selectedQuantity = document.querySelector(".productQuantity").value;
+    let productPrice = unityPrice * selectedQuantity;
+    document.querySelector(".productPrice").innerHTML = setPriceAsCurrency(productPrice + '');
     document.querySelector(".productQuantity").addEventListener("change", ()=>{
         let unityPrice = parseInt(document.querySelector(".unityPrice").innerHTML.slice(3).split(",").join("."));
         let selectedQuantity = document.querySelector(".productQuantity").value;
