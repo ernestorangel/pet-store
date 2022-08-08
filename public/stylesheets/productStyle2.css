@@ -39,19 +39,10 @@ main {
     border: 1px solid lightgray;
 }
 
-#preview-1 {
-    background-image: url(../images/products/Ração_Premier2.jpg);
-}
-
-#preview-2 {
-    background-image: url(../images/products/Ração_Premier3.jpg);
-}
-
 .mainPhoto {
     width: 500px;
     height: 500px;
     margin-left: 20px;
-    background-image: url(../images/products/Ração_Premier1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80%;
@@ -305,30 +296,6 @@ main {
     text-align: center;
     font-weight: 600;
     color: var(--secondary-color);
-}
-
-#rowShowcaseItemImage-1 {
-    background-image: url(../images/products/D_NQ_NP_624383-MLB47345286826_092021-W-removebg-preview.png);
-}
-
-#rowShowcaseItemImage-2 {
-    background-image: url(../images/products/fabrica-produtos-pet-shop-01-removebg-preview.png);
-}
-
-#rowShowcaseItemImage-3 {
-    background-image: url(../images/products/fornecedores-produtos-pet-shop-01-removebg-preview.png);
-}
-
-#rowShowcaseItemImage-4 {
-    background-image: url(../images/products/fornecedores-produtos-pet-shop-atacado-01-removebg-preview.png);
-}
-
-#rowShowcaseItemImage-5 {
-    background-image: url(../images/products/Pet-Shop-Produtos-Pet-Pet-Alimentador-Autom-tico-De-Comida-Auto-Beber-gua-C-o-Gato-removebg-preview.png);
-}
-
-#rowShowcaseItemImage-6 {
-    background-image: url(../images/products/Ração_Seca_Balance_Frango_e_Vegetais_para_Cães_Adultos_de_Raças_Médias_e_Grandes_2272198_10kg-removebg-preview.png);
 }
 
 .descriptionSection {

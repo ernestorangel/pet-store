@@ -7,6 +7,20 @@ async function getUserById(user_id) {
   return await User.findByPk(user_id);
 };
 
+function excludeEmptyProperties(user) {
+  for (let property in user) {
+    if (user[property] == '') {
+      delete user[property];
+    };
+  }
+  return user;
+};
+
+function encryptPassword(user) {
+  if (user.password != undefined) user.password = bcrypt.hashSync(user.password, salt);
+  return user;
+};
+
 const usersController = {
     login: (req, res) => {
       res.render('login');
@@ -90,6 +104,12 @@ const usersController = {
         user: user,
         isLogged: isLogged
       });
+    },
+    update: async (req, res) => {
+      let dataToUpdate = await excludeEmptyProperties(await encryptPassword(req.body));
+      await User.update(dataToUpdate, {where: {id_user: req.params.id}});
+      req.session.user = await User.findByPk(req.params.id);
+      return res.redirect(`/users/enter/${req.params.id}`);
     }
 };
 module.exports = usersController;

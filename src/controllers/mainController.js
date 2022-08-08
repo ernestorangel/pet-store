@@ -30,6 +30,20 @@ function fixPricesOfProducts(arrayOfProducts) {
     return arrayOfProducts;
 };
 
+function setStandardProductImage(arrayOfProducts) {
+    arrayOfProducts.forEach((product)=>{
+        if (product.img == null) product.img = '/images/products/std-no-photo-img.jpg';
+    });
+    return arrayOfProducts;
+};
+
+function setStandardUserImage(user) {
+    if (user != undefined && user.avatar == undefined) {
+        user.avatar = "/images/profile/std-pp.png"
+    };
+    return user;
+};
+
 const homeProperties = {
     homeTitle: "PET STORE | Tudo para o seu pet",
     bannerImages: [
@@ -247,9 +261,11 @@ const mainController = {
             isLogged = true;
             user = req.session.user;
         }
-        let prod1 = fixPricesOfProducts(await getArrayOfProducts(10));
-        let prod2 = fixPricesOfProducts(await getArrayOfProducts(10));
-        let prod3 = fixPricesOfProducts(await getArrayOfProducts(10));
+        let prod1 = setStandardProductImage(fixPricesOfProducts(await getArrayOfProducts(10)));
+        let prod2 = setStandardProductImage(fixPricesOfProducts(await getArrayOfProducts(10)));
+        let prod3 = setStandardProductImage(fixPricesOfProducts(await getArrayOfProducts(10)));
+        user = setStandardUserImage(user);
+        console.log(user);
         res.render('home2', {
             title: homeProperties.homeTitle,
             toastStatus: toastStatus,

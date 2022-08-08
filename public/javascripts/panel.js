@@ -13,4 +13,6 @@ window.addEventListener("load", ()=>{
         document.getElementById("blur-page").style.display = "none";
         document.getElementById("edit-profile-modal").style.display = "none";
     });
+
+    
 });
