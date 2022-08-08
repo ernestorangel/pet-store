@@ -31,11 +31,8 @@ const productController = {
         description: prod.description,
         price: prod.price,
         img: prod.img
-      })
-      
-      console.log('Teste Price', prod)
-        return res.send('ok')
-      
+      })     
+      res.redirect('/cart')  
     }
 }
 module.exports = productController
