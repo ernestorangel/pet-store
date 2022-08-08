@@ -193,6 +193,7 @@ main {
     margin-top: 20px;
     height: 50px;
     border-radius: var(--card-border-size);
+    cursor: pointer;
 }
 
 .addToCartButton:hover {
@@ -227,6 +228,7 @@ main {
     margin-top: 10px;
     height: 50px;
     border-radius: var(--card-border-size);
+    cursor: pointer;
 }
 
 #calculateShippingButton:hover {

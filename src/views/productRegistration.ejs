@@ -11,17 +11,21 @@
  <body>
   <main>
     <h1 id="title">PET STORE - PRODUCT REGISTRATION</h1>
-    <form id="reg-prod-form">
-        <label>Name</label>
-        <input class="reg-prod-field">
-        <label>Description</label>
-        <input class="reg-prod-field">
-        <label>Price</label>
-        <input class="reg-prod-field">
-        <label>Images</label>
-        <input type="file" class="reg-prod-field" multiple="multiple">
+    <form id="reg-prod-form" method="POST" action="/products/addProd">
+        <label for="name">Name</label>
+        <input class="reg-prod-field" type="text" name="name" id="name">
+
+        <label for="description">Description</label>
+        <input class="reg-prod-field" type="textarea" name="description" id="description">
+
+        <label for="price">Price</label>
+        <input class="reg-prod-field" type="text" name="price" id="price">
+
+        <!-- <label>Images</label>
+        <input type="file" class="reg-prod-field" multiple="multiple"> -->
+
         <div  id="reg-prod-button-container">
-            <button id="reg-prod-button">Cadastrar Produto</button>
+            <button id="reg-prod-button" type="submit">Cadastrar Produto</button>
         </div>
     </form>
   </main>

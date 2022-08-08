@@ -33,7 +33,6 @@ const productController = {
           toastStatus = "show";
       }
       let isLogged = false;
-      let user;
       if (req.session.user == undefined) {
           isLogged = false;
       } else {
@@ -62,6 +61,15 @@ const productController = {
       console.log('Teste Price', prod)
         return res.send('ok')
       
+    },
+    addProd: async (req, res) => {
+      await Product.create({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price
+      });
+      return res.redirect("/products/register");
     }
-}
-module.exports = productController
+};
+
+module.exports = productController;
