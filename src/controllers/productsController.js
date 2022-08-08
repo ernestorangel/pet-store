@@ -58,8 +58,7 @@ const productController = {
         img: prod.img
       })
       
-      console.log('Teste Price', prod)
-        return res.send('ok')
+      res.redirect('/cart');
       
     },
     addProd: async (req, res) => {
