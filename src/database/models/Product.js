@@ -11,6 +11,14 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             allowNull: false
         },
+        id_brand:{
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        },
+        id_category:{
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        },
         name:{
             type: DataTypes.STRING(100),
             allowNull: false
@@ -20,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         price:{
-            type: DataTypes.DECIMAL(10,0),
+            type: DataTypes.DECIMAL(6,2),
             allowNull: false
         },
         img:{
@@ -48,6 +56,21 @@ module.exports = (sequelize, DataTypes) => {
         Product.belongsToMany(models.User, {
             through: 'cart',
             foreignKey: 'id_user',
+            timestamps: false
+        });
+
+        Product.belongsTo(models.Category,{
+            foreignKey: 'id_category',
+            timestamps: false
+        });
+
+        Product.belongsTo(models.Brand,{
+            foreignKey: 'id_brand',
+            timestamps: false
+        });
+
+        Product.hasMany(models.Product_image,{
+            foreignKey: 'id_product',
             timestamps: false
         });
     }

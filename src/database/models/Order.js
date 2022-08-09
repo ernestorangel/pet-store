@@ -19,16 +19,20 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER(11),
             allowNull: false
         },
-        update_at:{
+        updated_at:{
             type: DataTypes.DATE,
             allowNull: true            
         },
-        create_at:{
+        created_at:{
             type: DataTypes.DATE,
             allowNull: true
         },
+        shipping:{
+            type: DataTypes.DECIMAL(6,2),
+            allowNull: true
+        },
         total:{
-            type: DataTypes.DECIMAL(10,0)
+            type: DataTypes.DECIMAL(6,2)
         }
     };
 
