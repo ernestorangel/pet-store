@@ -85,6 +85,7 @@ const cartController = {
         res.render('checkout', { title: 'Checkout', product:product });
     },
     update: async (req, res) => {
+        console.log('entrou no update')
 
         let product = await Cart.findOne({
             where: {
@@ -94,7 +95,7 @@ const cartController = {
         });
 
         await product.set({
-            qtd: req.body.qtd
+            qtd: req.query.new_qtd
         });
 
         await product.save();

@@ -56,9 +56,19 @@
                                 <p class="pedido-info-texto"><strong> Em Estoque </strong></p>
                             </div>
                             <div class="pedido-quantidade">
-                                <img class="add-qtd-button" id="less-qtd-button" src="/images/icons/minus-icon.svg">
+                                <form class="add-qtd-button-container" method="POST" action="/cart/update?new_qtd=<%= parseInt(item.qtd) - 1 %>">
+                                    <input readonly name="id_product" value="<%= item.id_product %>" type="text" style="display:none">
+                                    <button class="add-qtd-button" id="less-qtd-button" type="submit">
+                                        <img src="/images/icons/minus-icon.svg">
+                                    </button>
+                                </form>
                                 <div class="qtd-button" id="<%= item.id_product %>"><%= item.qtd %></div>
-                                <img class="add-qtd-button" id="more-qtd-button" src="/images/icons/plus-icon.svg">
+                                <form class="add-qtd-button-container" method="POST" action="/cart/update?new_qtd=<%= parseInt(item.qtd) + 1 %>">
+                                    <input readonly name="id_product" value="<%= item.id_product %>" type="text" style="display:none">
+                                    <button class="add-qtd-button" id="more-qtd-button" type="submit">
+                                        <img src="/images/icons/plus-icon.svg">
+                                    </button>
+                                </form>
                             </div>
                             <div class="pedido-preco"><%= item.product_total %></div>
                             <div class="pedido-remover">                                
