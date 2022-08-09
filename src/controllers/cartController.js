@@ -1,6 +1,20 @@
 const path = require('path')
 const {Product, Cart, sequelize} = require('../database/models');
 
+function setPriceAsCurrency(value) {
+    let splited = value.split('.');
+    splited.push('00');
+    let valueAsCurrency = "R$ " + splited[0] + "," + splited[1];
+    return valueAsCurrency;
+};
+
+function fixPricesOfProducts(arrayOfProducts) {
+    arrayOfProducts.forEach((product)=>{
+        product.price = setPriceAsCurrency(product.price);
+    });
+    return arrayOfProducts;
+};
+
 const cartController = {
     carrinho: async (req, res) => {
         let product = await Cart.findAll();
@@ -37,11 +51,19 @@ const cartController = {
             products.push(item.dataValues);
         });
 
-        console.log(products);
+        console.log(products)
+        let productsDetails = [];
+        products.forEach((item)=>{
+            let values = item.products[0].dataValues;
+            values.qtd = item.qtd;
+            productsDetails.push(values);
+        });
+        
+        let finalProductOnCart = fixPricesOfProducts(productsDetails);
 
         res.render('cart2', { 
             title:'Carrinho',
-            products: products,
+            products: finalProductOnCart,
             isLogged: isLogged,
             user: user,
             toastStatus: toastStatus,

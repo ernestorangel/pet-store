@@ -18,14 +18,14 @@
                     <div id="rowShowcaseItemAreaContainer1">
                         <% products.forEach(function(item){ %>
                             <div class="produtos-destaque">
-                                <img class="produtos-destaque-imagens" src="<%= item.products[0].img %>" alt="">
+                                <img class="produtos-destaque-imagens" src="<%= item.img %>" alt="">
                                 <div class="produtos-destaques-infos">
-                                    <h3 class="produtos-destaque-textos"> <%= item.products[0].name %> </h3>
-                                    <p class="produtos-destaque-textos"> <%= item.products[0].description %> </p>
-                                    <p class="produtos-destaque-textos"> Preço: <%= item.products[0].price %>,00 </p>
+                                    <h3 class="produtos-destaque-textos"> <%= item.name %> </h3>
+                                    <p class="produtos-destaque-textos"> <%= item.description %> </p>
+                                    <p class="produtos-destaque-textos"> Preço: <%= item.price %></p>
                                     <p class="produtos-destaque-textos"> <strong> Em Estoque </strong></p>
                                     <form method="POST" class="produtos-destaque-form" action="/products/addCart">
-                                        <input readonly name="id" value="<%= item.products[0].id_product %>" type="text" style="display:none">
+                                        <input readonly name="id" value="<%= item.id_product %>" type="text" style="display:none">
                                         <button class="adicionar-carrinho" type="submit">
                                             Adicionar Ao Carrinho 
                                         </button>
@@ -49,24 +49,22 @@
                     </div>
                     <% products.forEach(function(item){ %>
                         <div class="pedido-produto">
-                            <img class="pedido-imagen" src="<%= item.products[0].img %>" alt="">
+                            <img class="pedido-imagen" src="<%= item.img %>" alt="">
                             <div class="pedido-info">                                
-                                <h3 class="pedido-info-texto"> <%= item.products[0].name %> </h3>
-                                <p class="pedido-info-texto"> <%= item.products[0].description %> </p>
+                                <h3 class="pedido-info-texto"> <%= item.name %> </h3>
+                                <p class="pedido-info-texto"> <%= item.description %> </p>
                                 <p class="pedido-info-texto"><strong> Em Estoque </strong></p>
                             </div>
                             <div class="pedido-quantidade">
-                                <a class="add-qtd-button" id="less-qtd-button"> - </a>
-                                <div class="qtd-button" id="<%= item.products[0].id_product %>"><%= item.qtd %></div>
-                                <a class="add-qtd-button" id="more-qtd-button"> + </a>
+                                <img class="add-qtd-button" id="less-qtd-button" src="/images/icons/minus-icon.svg">
+                                <div class="qtd-button" id="<%= item.id_product %>"><%= item.qtd %></div>
+                                <img class="add-qtd-button" id="more-qtd-button" src="/images/icons/plus-icon.svg">
                             </div>
-                            <div class="pedido-preco"> 
-                                <%= item.products[0].price %>,00 
-                            </div>
+                            <div class="pedido-preco"><%= item.price %></div>
                             <div class="pedido-remover">                                
-                                    <form class="lixeira" action="/cart/delete/<%= item.products[0].id_product %>?_method=DELETE" method="post">
+                                    <form class="lixeira" action="/cart/delete/<%= item.id_product %>?_method=DELETE" method="post">
                                         <button class="lixeira" type="submit">
-                                            <img class="lixeira-icon" src="/images/icons/lixeira.png" alt="">
+                                            <img class="lixeira-icon" src="/images/icons/trash-icon.svg" alt="">
                                         </button>
                                     </form>                                                   
                             </div>                        
@@ -76,30 +74,30 @@
                 <div class="finalizar-compra-pai">
                     <div class="finalizar-compra-filha">                        
                         <form class="cep-form">
-                            <label class="info-cep" for="CEP">CEP:
-                            <input class="cep-5" name="CEP" id="CEP" required pattern="\d{5}-\d{3}"/>
-                            -
-                            <input class="cep-3" name="CEP" id="CEP" required pattern="\d{5}-\d{3}"/>
-                            </label>
-                            <button class="adicionar-carrinho" type="submit">
+                            <!-- <label class="info-cep" for="CEP">CEP</label> -->
+                            <input class="cep-5" name="CEP" id="CEP" required pattern="\d{5}-\d{3}" placeholder="Digite aqui o seu CEP"/>
+                            <!-- -
+                            <input class="cep-3" name="CEP" id="CEP" required pattern="\d{5}-\d{3}"/> -->
+                            
+                            <button class="calcular-frete-bt" type="submit">
                                 Calcular Frete 
                             </button>
                         </form>
                         <div class="info-valores">
-                            <p>Subtotal</p>
-                            <p>R$200,00</p>
+                            <p class="info-valores-titulo">Subtotal</p>
+                            <p class="info-valores-value" id="subtotal-value"></p>
                         </div>
                         <div class="info-valores">
-                            <p>Frete</p>
-                            <p class="frete-valor">Gratis</p>
+                            <p class="info-valores-titulo">Frete</p>
+                            <p class="info-valores-value" id="shipping-value">R$ 9,90</p>
                         </div>
                         <div class="info-valores">
-                            <p>Total</p>
-                            <p>R$ 500,00</p>
+                            <p class="info-valores-titulo">Total</p>
+                            <p class="info-valores-value" id="total-value"></p>
                         </div>
                         <form class="finalizar-form" action="">
-                            <button class="finalizar-compra" type="submit">
-                                <a class="links" href="/cart/checkout/">Finalizar Compra</a> 
+                            <button class="finalizar-compra links" type="submit" method="POST" action="/cart/checkout/" disabled>
+                                Finalizar Compra
                             </button>
                         </form>
                     </div>
