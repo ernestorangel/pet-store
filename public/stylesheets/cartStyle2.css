@@ -213,7 +213,7 @@ main{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 25px;
+    width: 35px;
     height: 100%;
 
     text-align: center;
@@ -222,8 +222,8 @@ main{
     font-size: 20px;
     font-weight: 600;
     background-color: white;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+    /* border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray; */
 }
 
 .pedido-preco{
@@ -245,6 +245,7 @@ main{
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    padding: 5px;
     background-color:#ff470a;
     width: 30px;
     height: 30px;
@@ -258,8 +259,9 @@ main{
 
 .lixeira-icon{
     align-items: center;
-    width: 20px;
-    height: 28px;    
+    padding: 2px;
+    width: 100%;
+    height: 100%;    
 }
 
 .finalizar-compra-pai{

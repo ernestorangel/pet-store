@@ -72,7 +72,7 @@
                             </div>
                             <div class="pedido-preco"><%= item.product_total %></div>
                             <div class="pedido-remover">                                
-                                    <form class="lixeira" action="/cart/delete/<%= item.id_product %>?_method=DELETE" method="post">
+                                    <form action="/cart/delete/<%= item.id_product %>?_method=DELETE" method="post">
                                         <button class="lixeira" type="submit">
                                             <img class="lixeira-icon" src="/images/icons/trash-icon.svg" alt="">
                                         </button>
