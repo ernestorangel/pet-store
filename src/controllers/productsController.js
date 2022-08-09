@@ -49,13 +49,29 @@ const productController = {
     register: async (req, res) => {
       res.render('productRegistration');
     },
-    addCart: async (req,res) => {      
+    addCart: async (req,res) => {
+      let product = await Cart.findOne({
+        where: {
+          id_product: req.body.id,
+          id_user: req.session.user.id_user,
+        }
+      });
 
-      await Cart.create({
-        id_product: req.body.id,
-        id_user: req.session.user.id_user,
-        qtd: req.body.qtd
-      })
+      if (product === null) {
+        await Cart.create({
+          id_product: req.body.id,
+          id_user: req.session.user.id_user,
+          qtd: req.body.qtd
+        });
+      } else {
+        await product.set({
+          qtd: (parseInt(product.qtd) + parseInt(req.body.qtd)) + ''
+      });
+
+      await product.save();
+      }
+
+
       
       res.redirect('/cart');
       

@@ -86,7 +86,7 @@
             <div class="rowShowcaseItemAreaContainer" id="rowShowcaseItemAreaContainer2">
               <div class="rowShowcaseItemArea" id="rowShowcaseItemArea">
                 <% for (let i = 1; i <= products2.length; i++) { %>
-                  <a href="/products/2" class="rowShowcaseItem">
+                  <a href="/products/view/2" class="rowShowcaseItem">
                     <img class="rowShowcaseItemImage" src="<%= products2[i - 1].img %>">
                     <div class="rowShowcaseItemTitle"><%= products2[i - 1].name %></div>
                     <div class="rowShowcaseItemDescription"><%= products2[i - 1].price %></div>
@@ -125,7 +125,7 @@
         <div class="longShowcase">
           <div class="showcaseTimer" id="<%= promotionTimer.value %>"></div>
           <% for (let i = 1; i <= promotionProducts.length; i++) { %>
-            <a href="/products/2" class="longShowcaseItem">
+            <a href="/products/view/2" class="longShowcaseItem">
               <img class="rowShowcaseItemImage" src="<%= promotionProducts[i - 1].img %>">
               <div class="rowShowcaseItemTitle"><%= promotionProducts[i - 1].name %></div>
               <div class="rowShowcaseItemDescription"><%= promotionProducts[i - 1].price %></div>
