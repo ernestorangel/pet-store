@@ -85,20 +85,27 @@ const cartController = {
         res.render('checkout', { title: 'Checkout', product:product });
     },
     update: async (req, res) => {
-        console.log('entrou no update')
-
-        let product = await Cart.findOne({
-            where: {
-                id_user: req.session.user.id_user,
-                id_product: req.body.id_product
-            }
-        });
-
-        await product.set({
-            qtd: req.query.new_qtd
-        });
-
-        await product.save();
+        if (req.query.new_qtd == 0) {
+            await Cart.destroy({
+                where: {
+                    id_user: req.session.user.id_user,
+                    id_product: req.body.id_product
+                }
+            });
+        } else {
+            let product = await Cart.findOne({
+                where: {
+                    id_user: req.session.user.id_user,
+                    id_product: req.body.id_product
+                }
+            });
+    
+            await product.set({
+                qtd: req.query.new_qtd
+            });
+    
+            await product.save();
+        }
 
         res.redirect("/cart");
     }
