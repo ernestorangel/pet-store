@@ -52,7 +52,7 @@
                             <img class="pedido-imagen" src="<%= item.img %>" alt="">
                             <div class="pedido-info">                                
                                 <h3 class="pedido-info-texto"> <%= item.name %> </h3>
-                                <p class="pedido-info-texto"> <%= item.description %> </p>
+                                <p class="pedido-info-texto"> Preço un.: <%= item.price %> </p>
                                 <p class="pedido-info-texto"><strong> Em Estoque </strong></p>
                             </div>
                             <div class="pedido-quantidade">
@@ -60,7 +60,7 @@
                                 <div class="qtd-button" id="<%= item.id_product %>"><%= item.qtd %></div>
                                 <img class="add-qtd-button" id="more-qtd-button" src="/images/icons/plus-icon.svg">
                             </div>
-                            <div class="pedido-preco"><%= item.price %></div>
+                            <div class="pedido-preco"><%= item.product_total %></div>
                             <div class="pedido-remover">                                
                                     <form class="lixeira" action="/cart/delete/<%= item.id_product %>?_method=DELETE" method="post">
                                         <button class="lixeira" type="submit">

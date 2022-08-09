@@ -11,6 +11,7 @@ function setPriceAsCurrency(value) {
 function fixPricesOfProducts(arrayOfProducts) {
     arrayOfProducts.forEach((product)=>{
         product.price = setPriceAsCurrency(product.price);
+        product.product_total = setPriceAsCurrency(product.product_total + '');
     });
     return arrayOfProducts;
 };
@@ -56,6 +57,7 @@ const cartController = {
         products.forEach((item)=>{
             let values = item.products[0].dataValues;
             values.qtd = item.qtd;
+            values.product_total = parseInt(item.qtd) * parseFloat(values.price);
             productsDetails.push(values);
         });
         
