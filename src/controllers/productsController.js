@@ -50,12 +50,11 @@ const productController = {
       res.render('productRegistration');
     },
     addCart: async (req,res) => {      
-      let prod = await getProduct(req.body.id)
+
       await Cart.create({
-        name:prod.name,
-        description: prod.description,
-        price: prod.price,
-        img: prod.img
+        id_product: req.body.id,
+        id_user: req.session.user.id_user,
+        qtd: req.body.qtd
       })
       
       res.redirect('/cart');

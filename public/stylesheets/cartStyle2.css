@@ -104,19 +104,24 @@ main{
     flex-direction: column;    
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     justify-content: center;
+    border-radius: var(--card-border-size);
 }
 
 .descricao{
     display: flex;
     justify-content: space-around;
-    height: 40px;
-    background-color: #f5f5f5;
+    height: 60px;
+    background-color: var(--text-bright-color);
+    color: var(--secondary-color);
     align-items: center;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    border-top: solid 1px black;
-    border-left: solid 1px black;
-    border-right: solid 1px black;
-   
+    /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
+    border-top: solid 10px var(--secondary-color);
+    border-bottom: solid 1px var(--secondary-color);
+    /* border-left: solid 1px black;
+    border-right: solid 1px black; */
+    border-top-left-radius: var(--card-border-size);
+    border-top-right-radius: var(--card-border-size);
+    z-index: 3;
 }
 
 .pedido-produto{
@@ -124,9 +129,15 @@ main{
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    border-bottom: solid 1px black;
+    padding: 10px 0px;
+    background-color: var(--text-bright-color);
+    z-index: 2;
+    border-top: 1px solid lightgray;
+    /* border-bottom: solid 1px black;
     border-left: solid 1px black;
-    border-right: solid 1px black;
+    border-right: solid 1px black; */
+    border-bottom-left-radius: var(--card-border-size);
+    border-bottom-right-radius: var(--card-border-size);
 }
 
 .pedido-imagen{
@@ -142,8 +153,44 @@ main{
     margin: 5px;
 }
 
-.pedido-quantidade{
+.pedido-quantidade {
     width: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.add-qtd-button {
+    width: 25px;
+    height: 25px;
+
+    padding: 2px;
+    margin: 2px;
+    border-radius: 50%;
+    text-align: center;
+
+    background-color: var(--secondary-color);
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-qtd-button:hover {
+    background-color: var(--main-color);
+}
+
+.qtd-button {
+    width: 25px;
+    height: 25px;
+
+    padding: 2px;
+    margin: 2px;
+    border-radius: 50%;
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .pedido-preco{

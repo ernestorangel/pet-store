@@ -1,11 +1,11 @@
 <html lang="pt-br">
     <head>
-			<title>Carrinho | PET STORE</title>
-      <%- include('./partials/head') %>
-			<link rel="stylesheet" href="/stylesheets/generalStyle.css"/>
-      <link rel="stylesheet" href="/stylesheets/headerStyle.css"/>
-      <link rel="stylesheet" href="/stylesheets/cartStyle2.css"/>
-      <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
+		<title><%= title %> | PET STORE</title>
+        <%- include('./partials/head') %>
+	    <link rel="stylesheet" href="/stylesheets/generalStyle.css"/>
+        <link rel="stylesheet" href="/stylesheets/headerStyle.css"/>
+        <link rel="stylesheet" href="/stylesheets/cartStyle2.css"/>
+        <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
     </head>
     <body>
 	    <%- include('./partials/header') %>
@@ -16,16 +16,16 @@
                         <img class="vector-arrow" src="/images/icons/vectorLeft.png" alt="">
                     </div> 
                     <div id="rowShowcaseItemAreaContainer1">
-                        <% product.forEach(function(produto){ %>
+                        <% products.forEach(function(item){ %>
                             <div class="produtos-destaque">
-                                <img class="produtos-destaque-imagens" src="<%= produto.img %>" alt="">
+                                <img class="produtos-destaque-imagens" src="<%= item.products[0].img %>" alt="">
                                 <div class="produtos-destaques-infos">
-                                    <h3 class="produtos-destaque-textos"> <%= produto.name %> </h3>
-                                    <p class="produtos-destaque-textos"> <%= produto.description %> </p>
-                                    <p class="produtos-destaque-textos"> Preço: <%= produto.price %>,00 </p>
+                                    <h3 class="produtos-destaque-textos"> <%= item.products[0].name %> </h3>
+                                    <p class="produtos-destaque-textos"> <%= item.products[0].description %> </p>
+                                    <p class="produtos-destaque-textos"> Preço: <%= item.products[0].price %>,00 </p>
                                     <p class="produtos-destaque-textos"> <strong> Em Estoque </strong></p>
                                     <form method="POST" class="produtos-destaque-form" action="/products/addCart">
-                                        <input readonly name="id" value="<%= produto.id_cart %>" type="text" style="display:none">
+                                        <input readonly name="id" value="<%= item.products[0].id_product %>" type="text" style="display:none">
                                         <button class="adicionar-carrinho" type="submit">
                                             Adicionar Ao Carrinho 
                                         </button>
@@ -47,22 +47,24 @@
                         <p><strong>Preço</strong></p>
                         <p><strong>Remover</strong></p>
                     </div>
-                    <% product.forEach(function(produto){ %>
+                    <% products.forEach(function(item){ %>
                         <div class="pedido-produto">
-                            <img class="pedido-imagen" src="<%= produto.img %>" alt="">
+                            <img class="pedido-imagen" src="<%= item.products[0].img %>" alt="">
                             <div class="pedido-info">                                
-                                <h3 class="pedido-info-texto"> <%= produto.name %> </h3>
-                                <p class="pedido-info-texto"> <%= produto.description %> </p>
+                                <h3 class="pedido-info-texto"> <%= item.products[0].name %> </h3>
+                                <p class="pedido-info-texto"> <%= item.products[0].description %> </p>
                                 <p class="pedido-info-texto"><strong> Em Estoque </strong></p>
                             </div>
-                            <div class="pedido-quantidade"> 
-                                + 1 -
+                            <div class="pedido-quantidade">
+                                <a class="add-qtd-button" id="less-qtd-button"> - </a>
+                                <div class="qtd-button" id="<%= item.products[0].id_product %>"><%= item.qtd %></div>
+                                <a class="add-qtd-button" id="more-qtd-button"> + </a>
                             </div>
                             <div class="pedido-preco"> 
-                                <%= produto.price %>,00 
+                                <%= item.products[0].price %>,00 
                             </div>
                             <div class="pedido-remover">                                
-                                    <form class="lixeira" action="/cart/delete/<%= produto.id_cart %>?_method=DELETE" method="post">
+                                    <form class="lixeira" action="/cart/delete/<%= item.products[0].id_product %>?_method=DELETE" method="post">
                                         <button class="lixeira" type="submit">
                                             <img class="lixeira-icon" src="/images/icons/lixeira.png" alt="">
                                         </button>

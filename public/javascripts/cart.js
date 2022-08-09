@@ -14,4 +14,25 @@ window.addEventListener('load', () => {
 
     setProductsCarouselButtons(1);
 
+    document.getElementById("more-qtd-button").addEventListener("click", async ()=>{
+        let id_product = document.querySelector(".qtd-button").id;
+        let qtd = document.querySelector(".qtd-button").innerHTML;
+        let newQtd = parseInt(qtd) + 1;
+        console.log(id_product, qtd, newQtd);
+        await fetch("/cart/update", {
+            method: 'POST',
+            headers: new Headers({
+                'Content-type': 'text/plain'
+            }),
+            body: JSON.stringify({
+                id_product: id_product,
+                qtd: newQtd
+            })
+        });
+    });
+
+    document.getElementById("less-qtd-button").addEventListener("click", ()=>{
+
+    });
+
 })

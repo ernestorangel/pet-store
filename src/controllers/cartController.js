@@ -1,5 +1,5 @@
 const path = require('path')
-const {Product, Cart} = require('../database/models');
+const {Product, Cart, sequelize} = require('../database/models');
 
 const cartController = {
     carrinho: async (req, res) => {
@@ -16,32 +16,67 @@ const cartController = {
             isLogged = true;
             user = req.session.user;
         }
-        let product = await Cart.findAll();
+
+        // let product = await Cart.findAll();
+        // res.render('cart2', { 
+        //     title:'Carrinho',
+        //     product:product,
+        //     isLogged: isLogged,
+        //     user: user,
+        //     toastStatus: toastStatus,
+        // });
+
+        let carts = await Cart.findAll({
+            where: {id_user: req.session.user.id_user},
+            attributes: ['id_product', 'qtd'],
+            include: 'products'
+        });
+
+        let products = [];
+        carts.forEach((item) => {
+            products.push(item.dataValues);
+        });
+
+        console.log(products);
+
         res.render('cart2', { 
             title:'Carrinho',
-            product:product,
+            products: products,
             isLogged: isLogged,
             user: user,
             toastStatus: toastStatus,
         });
     },
-
     destroy: async (req,res)=>{
-        let id = req.params.id
-
         const resultado = await Cart.destroy({
             where:{
-                id_cart:id
+                id_user: req.session.user.id_user,
+                id_product: req.params.id
             }
-        })
-        res.redirect('/cart')
+        });
+        res.redirect('/cart');
     },
-
     checkout: async (req,res,next) =>{
         let product = await Product_in_Order.findAll();
         res.render('checkout', { title: 'Checkout', product:product });
     },
-    
+    update: async (req, res) => {
+
+        let product = await Cart.findOne({
+            where: {
+                id_user: req.session.user.id_user,
+                id_product: req.body.id_product
+            }
+        });
+
+        await product.set({
+            qtd: req.body.qtd
+        });
+
+        await product.save();
+
+        res.redirect("/cart");
+    }
 }
 module.exports = cartController
 // const cartController = {

@@ -40,6 +40,12 @@ module.exports = (sequelize, DataTypes) => {
         User.hasMany(models.Adress, {
             foreignKey: 'id_user',
             as: 'adress'
+        });
+
+        User.belongsToMany(models.Product, {
+            through: 'cart',
+            foreignKey: 'id_user',
+            timestamps: false
         })
     }
     return User
