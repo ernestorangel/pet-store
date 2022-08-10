@@ -10,13 +10,13 @@
     <body>
 	    <%- include('./partials/header') %>
             <main>
-                <h1 class="titulo">Produtos em Destaque</h1>
+                <h1 class="titulo">Produtos Mais Vendidos</h1>
                 <div class="produtos-destaque-mae">  
                     <div id="leftArrow1" class="vector">
                         <img class="vector-arrow" src="/images/icons/vectorLeft.png" alt="">
                     </div> 
                     <div id="rowShowcaseItemAreaContainer1">
-                        <% products.forEach(function(item){ %>
+                        <% bestSellers.forEach(function(item){ %>
                             <div class="produtos-destaque">
                                 <img class="produtos-destaque-imagens" src="<%= item.img %>" alt="">
                                 <div class="produtos-destaques-infos">
@@ -24,12 +24,12 @@
                                     <p class="produtos-destaque-textos"> <%= item.description %> </p>
                                     <p class="produtos-destaque-textos"> Preço: <%= item.price %></p>
                                     <p class="produtos-destaque-textos"> <strong> Em Estoque </strong></p>
-                                    <form method="POST" class="produtos-destaque-form" action="/products/addCart">
+                                    <!-- <form method="POST" class="produtos-destaque-form" action="/products/addCart">
                                         <input readonly name="id" value="<%= item.id_product %>" type="text" style="display:none">
                                         <button class="adicionar-carrinho" type="submit">
-                                            Adicionar Ao Carrinho 
+                                            Ir para Produto 
                                         </button>
-                                    </form>
+                                    </form> -->
                                 </div>
                             </div>
                         <% }) %>
@@ -105,8 +105,8 @@
                             <p class="info-valores-titulo">Total</p>
                             <p class="info-valores-value" id="total-value"></p>
                         </div>
-                        <form class="finalizar-form" action="">
-                            <button class="finalizar-compra links" type="submit" method="POST" action="/cart/checkout/" disabled>
+                        <form method="POST" action="/cart/checkout" class="finalizar-form">
+                            <button class="finalizar-compra links" type="submit">
                                 Finalizar Compra
                             </button>
                         </form>

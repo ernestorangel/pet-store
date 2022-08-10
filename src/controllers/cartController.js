@@ -1,5 +1,7 @@
+const { timeStamp } = require('console');
 const path = require('path')
-const {Product, Cart, sequelize} = require('../database/models');
+const {Product ,Cart ,BestSellers ,Order ,Product_in_order ,sequelize} = require('../database/models');
+
 
 function setPriceAsCurrency(value) {
     let splited = value.split('.');
@@ -30,16 +32,9 @@ const cartController = {
         } else {
             isLogged = true;
             user = req.session.user;
-        }
+        }        
 
-        // let product = await Cart.findAll();
-        // res.render('cart2', { 
-        //     title:'Carrinho',
-        //     product:product,
-        //     isLogged: isLogged,
-        //     user: user,
-        //     toastStatus: toastStatus,
-        // });
+        let bestSellers = await BestSellers.findAll();
 
         let carts = await Cart.findAll({
             where: {id_user: req.session.user.id_user},
@@ -69,6 +64,7 @@ const cartController = {
             isLogged: isLogged,
             user: user,
             toastStatus: toastStatus,
+            bestSellers: bestSellers,
         });
     },
     destroy: async (req,res)=>{
@@ -80,9 +76,50 @@ const cartController = {
         });
         res.redirect('/cart');
     },
-    checkout: async (req,res,next) =>{
-        let product = await Product_in_Order.findAll();
-        res.render('checkout', { title: 'Checkout', product:product });
+    checkout: async (req,res,next) =>{        
+
+        let carts = await Cart.findAll({
+            where: {id_user: req.session.user.id_user},
+            attributes: ['id_product', 'qtd'],
+            include: 'products'
+        });
+        
+        let products = [];
+        carts.forEach((item) => {
+            products.push(item.dataValues);
+        });       
+
+        let productsDetails = [];
+        products.forEach((item)=>{
+            let values = item.products[0].dataValues;
+            values.qtd = item.qtd;
+            values.product_total = parseInt(item.qtd) * parseFloat(values.price);
+            productsDetails.push(values);
+        });
+        
+        let productQtd = Object.keys(productsDetails).reduce(function (previous, key) {
+            return previous + productsDetails[key].qtd;
+        }, 0);
+        let productTotal = Object.keys(productsDetails).reduce(function (previous, key) {
+            return previous + productsDetails[key].product_total;
+        }, 0);
+
+        console.log('produtos detalhes ',productsDetails)
+        console.log('produtos total ',productTotal)
+        console.log('produtos Quantidade ',productQtd)
+
+
+        let order = await Order.create({
+            id_user: req.session.user.id_user,
+            id_adress: null,
+            created_at: timeStamp(),
+            updated_at: null,
+            shipping: 9.90,
+            qtd: productQtd,
+            total: productTotal
+        });
+
+        res.send('Adicionado Na Order')
     },
     update: async (req, res) => {
         if (req.query.new_qtd == 0) {
@@ -111,17 +148,3 @@ const cartController = {
     }
 }
 module.exports = cartController
-// const cartController = {
-//     add:(req, res) => {
-//         res.render('cart', {title: "Add"});
-//     },
-//     remove: (req, res) => {
-//         res.render('cart', {title: "Remove"});
-//     },
-//     erase: (req, res) => {
-//         res.render('cart', {title: "Erase"});
-//     },
-//     checkout: (req, res) => {
-//         res.render('checkout', {title: "Checkout"});
-//     }
-// }

@@ -11,7 +11,7 @@ const auth = require('../middlewares/auth');
 
 // Rotas Carrinho De Compra
 router.get("/2", cartController.carrinho)
-router.get("/", auth, cartController.carrinho2)
+router.get("/",auth, cartController.carrinho2)
 
 router.post("/update", auth, cartController.update);
 
@@ -19,6 +19,6 @@ router.post("/update", auth, cartController.update);
 router.delete('/delete/:id', cartController.destroy)
 
 // Rotas Paginas Forma Pagamento
-router.get("/checkout", cartController.checkout)
+router.post("/checkout", cartController.checkout)
 
 module.exports = router;

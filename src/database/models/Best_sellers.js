@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER(11),
             allowNull: false
         },
+        id_category:{
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        },
         name:{
             type: DataTypes.STRING(100),
             allowNull: false
