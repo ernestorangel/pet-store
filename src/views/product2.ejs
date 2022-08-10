@@ -15,17 +15,20 @@
         <!-- <div class="productPathText">Pet Shop > Cachorro > Ração > Ração Seca</div> -->
         <div class="productArea">
           <div class="photosPreview">
-            <div class="previewImage" id="preview-1"></div>
-            <div class="previewImage" id="preview-2"></div>
+            <img class="previewImage" id="preview-1" src="<%= prod.img %>">
+            <img class="previewImage" id="preview-2" src="/images/products/prod2-img1.png">
+            <img class="previewImage" id="preview-3">
           </div>
           <img class="mainPhoto" src="<%= prod.img %>">
           <div class="infoHolder">
             <div class="productTitle"><%= prod.name %></div>
             <div class="productInfo">
-              <div class="productCode">Código: 10002310000032</div>
-              <div class="productInfoWord">Ver descrição completa</div>
-              <div class="productInfoWord">Premier Pet</div>
-              <div class="productInfoWord">Golden</div>
+              <div class="productCode">Código: <%= prod.id_product %></div>
+              <a class="productInfoWord" href="#description">Ver descrição completa</a>
+              <a class="productInfoWord" href="../../products/search?word=<%= prod.brand.dataValues.name %>"><%= prod.brand.dataValues.name %></a>
+              <% prod.category.forEach((category) => { %>
+                <a class="productInfoWord" href="../../products/search?word=<%= category.dataValues.name %>"><%= category.dataValues.name %></a>
+              <% }); %>
             </div>
             <div class="productRate">
               <div class="productRating">
@@ -36,7 +39,7 @@
                   <div class="filledRateStar"></div>
                   <div class="emptyRateStar"></div>
                 </div>
-                <div class="productRatingCount">(43 avaliações)</div>
+                <div class="productRatingCount"></div>
               </div>
               <div class="productStockInfo">Em estoque</div>
             </div>
@@ -67,9 +70,7 @@
               </div>
             </form>
             <form>
-              <div id="postalTitle">
-                Calcular Frete
-              </div>
+              <div id="postalTitle">Calcular Frete</div>
               <input type="text" name="postalCode" id="postalCodeInput" placeholder="Digite aqui seu CEP.">
               <button type="submit" id="calculateShippingButton">Calcular</button>
             </form>
@@ -112,19 +113,10 @@
         </div>
       </section>
       <section class="descriptionSection">
-        <div class="descriptionSectionTitle">Descrição do Produto</div>
-        <div class="descriptionSectionText">
-          Filhotes que vivem dentro de casa têm necessidades nutricionais especiais. 
-          A Ração Premier Ambientes Internos para Cães Filhotes - Frango e Salmão 
-          é um alimento Super Premium específico para filhotes com este estilo de vida. 
-          Sua fórmula exclusiva contém somente ingredientes nobres, 
-          conferindo excelente sabor e pelagem muito mais bonita e saudável. 
-          É um alimento completo e balanceado que satisfaz 100% das necessidades 
-          nutricionais do seu filhote, proporcionando ossos, músculos e dentes mais fortes. 
-          Por isso, não é recomendado nenhum tipo de suplementação.
-        </div>
+        <div class="descriptionSectionTitle" id="description">Descrição do Produto</div>
+        <div class="descriptionSectionText"><%= prod.description %></div>
       </section>
-      <section class="specificationSection">
+      <!-- <section class="specificationSection">
         <div class="descriptionSectionTitle">Especificações Técnicas</div>
         <div class="specificationSectionText">
           Filhotes que vivem dentro de casa têm necessidades nutricionais especiais. 
@@ -136,9 +128,9 @@
           nutricionais do seu filhote, proporcionando ossos, músculos e dentes mais fortes. 
           Por isso, não é recomendado nenhum tipo de suplementação.
         </div>
-      </section>
+      </section> -->
       <section class="ratingSection">
-        <div class="descriptionSectionTitle">Avaliações de quem comprou (43)</div>
+        <div class="descriptionSectionTitle">Avaliações de quem comprou</div>
       </section>
     </main>
     <%- include('./partials/footer') %>

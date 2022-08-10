@@ -6,7 +6,8 @@ const Sequelize = require('sequelize');
 async function getProduct(id) {
   let product;
   await Product.findByPk(id, {
-      attributes: ['id_product','description', 'name', 'price', 'img'],
+      // attributes: ['id_product','description', 'name', 'price', 'img'],
+      include: ['brand', 'category']
   }).then((data)=>{
       product = data.dataValues;
   });
@@ -103,6 +104,7 @@ const productController = {
           user = req.session.user;
       }
       let prod = fixPriceOfProduct(await getProduct(req.params.id));
+      console.log(prod)
       res.render('product2', {
         toastStatus: toastStatus,
         isLogged: isLogged,

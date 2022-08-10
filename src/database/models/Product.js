@@ -15,10 +15,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER(11),
             allowNull: false
         },
-        id_category:{
-            type: DataTypes.INTEGER(11),
-            allowNull: false
-        },
         name:{
             type: DataTypes.STRING(100),
             allowNull: false
@@ -60,12 +56,14 @@ module.exports = (sequelize, DataTypes) => {
         });
 
         Product.belongsToMany(models.Category,{
+            as: 'category',
             through: 'categories_of_product',
             foreignKey: 'id_product',
             timestamps: false
         });
 
         Product.belongsTo(models.Brand,{
+            as: 'brand',
             foreignKey: 'id_brand',
             timestamps: false
         });
