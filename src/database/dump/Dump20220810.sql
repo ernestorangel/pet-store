@@ -4,7 +4,7 @@ USE `pet_store`;
 --
 -- Host: 127.0.0.1    Database: pet_store
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.24-MariaDB
+-- Server version	5.5.5-10.4.22-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -58,12 +58,13 @@ DROP TABLE IF EXISTS `best_sellers`;
 CREATE TABLE `best_sellers` (
   `id_best_sellers` int(11) NOT NULL AUTO_INCREMENT,
   `id_brand` int(11) NOT NULL,
+  `id_category` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` varchar(100) NOT NULL,
   `price` decimal(6,2) NOT NULL,
   `img` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_best_sellers`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,6 +73,7 @@ CREATE TABLE `best_sellers` (
 
 LOCK TABLES `best_sellers` WRITE;
 /*!40000 ALTER TABLE `best_sellers` DISABLE KEYS */;
+INSERT INTO `best_sellers` VALUES (1,1,1,'Ração Balance','Ração Balance 15kg Para seu Pet',120.00,'/images/products/prod1-img1.png'),(2,3,1,'Ração Premier','Ração Premier Raças Pequenas 2,5kg Para seu Pet',60.00,'/images/products/prod9-img1.jpg'),(3,4,2,'Casinha Luxo Preta','Casinha Para Seu Pet Ficar Confortavel',160.00,'/images/products/prod3-img1.png'),(4,8,10,'Alimentador Automatico','Fique Despreocupado Com esse Alimentador Automatico',110.00,'/images/products/prod4-img1.png'),(5,8,9,'Tapete Higienico','Tapete Higienico Pare seu Pet fazer suas necessidades',80.00,'/images/products/prod8-img1.png'),(6,7,1,'Petiscao','Alimente seu animalzinho com os nossos famosos Petiscao',10.00,'/images/products/prod5-img1.png'),(7,8,10,'Alimentador','Potes Para Agua e Ração do Seu pet Multicores',25.00,'/images/products/prod7-img1.png'),(8,7,1,'Bifinho','Bifinho Suprema Carne para Cães',16.00,'/images/products/prod10-img1.jpg'),(9,6,8,'Areia Para Gatos','Areia Sanitária Me.Au Pet Grãos Finos Perfume Floral para Gatos',14.00,'/images/products/prod11-img1.jpg'),(10,4,2,'Casinha Luxo Rosa','Casinha Para Seu Pet Ficar Confortavel',160.00,'/images/products/prod2-img1.png'),(11,5,1,'Golden Gatos Castrados','Ração Seca PremieR Pet Golden Gatos Adultos Castrados Frango',150.00,'/images/products/prod12-img1.jpg');
 /*!40000 ALTER TABLE `best_sellers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +121,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (4,2,1),(15,3,3);
+INSERT INTO `cart` VALUES (4,1,1),(4,2,1);
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -169,7 +171,6 @@ CREATE TABLE `categories_of_product` (
 
 LOCK TABLES `categories_of_product` WRITE;
 /*!40000 ALTER TABLE `categories_of_product` DISABLE KEYS */;
-INSERT INTO `categories_of_product` VALUES (1,1);
 /*!40000 ALTER TABLE `categories_of_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,14 +252,14 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `id_order` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
-  `id_adress` int(11) NOT NULL,
+  `id_adress` int(11) DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
   `created_at` date DEFAULT NULL,
   `shipping` decimal(6,2) DEFAULT NULL,
   `qtd` int(11) NOT NULL,
   `total` decimal(6,2) NOT NULL,
   PRIMARY KEY (`id_order`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -307,6 +308,7 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id_product` int(11) NOT NULL AUTO_INCREMENT,
   `id_brand` int(11) DEFAULT NULL,
+  `id_category` int(11) DEFAULT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `description` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `price` decimal(6,2) NOT NULL,
@@ -321,7 +323,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,1,'Ração Balance','Ração Balance 15kg Para seu Pet',120.00,'/images/products/prod1-img1.png'),(2,3,'Ração Premier','Ração Premier Raças Pequenas 2,5kg Para seu Pet',60.00,'/images/products/prod9-img1.jpg'),(3,4,'Casinha Luxo Preta','Casinha Para Seu Pet Ficar Confortavel',160.00,'/images/products/prod3-img1.png'),(4,8,'Alimentador Automatico','Fique Despreocupado Com esse Alimentador Automatico',110.00,'/images/products/prod4-img1.png'),(5,8,'Tapete Higienico','Tapete Higienico Pare seu Pet fazer suas necessidades',80.00,'/images/products/prod8-img1.png'),(6,7,'Petiscao','Alimente seu animalzinho com os nossos famosos Petiscao',10.00,'/images/products/prod5-img1.png'),(7,8,'Alimentador','Potes Para Agua e Ração do Seu pet Multicores',25.00,'/images/products/prod7-img1.png'),(8,7,'Bifinho','Bifinho Suprema Carne para Cães',16.00,'/images/products/prod10-img1.jpg'),(9,6,'Areia Para Gatos','Areia Sanitária Me.Au Pet Grãos Finos Perfume Floral para Gatos',14.00,'/images/products/prod11-img1.jpg'),(10,4,'Casinha Luxo Rosa','Casinha Para Seu Pet Ficar Confortavel',160.00,'/images/products/prod2-img1.png'),(11,5,'Golden Gatos Castrados','Ração Seca PremieR Pet Golden Gatos Adultos Castrados Frango',150.00,'/images/products/prod12-img1.jpg');
+INSERT INTO `products` VALUES (1,1,1,'Ração Balance','Ração Balance 15kg Para seu Pet',120.00,'/images/products/prod1-img1.png'),(2,3,1,'Ração Premier','Ração Premier Raças Pequenas 2,5kg Para seu Pet',60.00,'/images/products/prod9-img1.jpg'),(3,4,2,'Casinha Luxo Preta','Casinha Para Seu Pet Ficar Confortavel',160.00,'/images/products/prod3-img1.png'),(4,8,10,'Alimentador Automatico','Fique Despreocupado Com esse Alimentador Automatico',110.00,'/images/products/prod4-img1.png'),(5,8,9,'Tapete Higienico','Tapete Higienico Pare seu Pet fazer suas necessidades',80.00,'/images/products/prod8-img1.png'),(6,7,1,'Petiscao','Alimente seu animalzinho com os nossos famosos Petiscao',10.00,'/images/products/prod5-img1.png'),(7,8,10,'Alimentador','Potes Para Agua e Ração do Seu pet Multicores',25.00,'/images/products/prod7-img1.png'),(8,7,1,'Bifinho','Bifinho Suprema Carne para Cães',16.00,'/images/products/prod10-img1.jpg'),(9,6,8,'Areia Para Gatos','Areia Sanitária Me.Au Pet Grãos Finos Perfume Floral para Gatos',14.00,'/images/products/prod11-img1.jpg'),(10,4,2,'Casinha Luxo Rosa','Casinha Para Seu Pet Ficar Confortavel',160.00,'/images/products/prod2-img1.png'),(11,5,1,'Golden Gatos Castrados','Ração Seca PremieR Pet Golden Gatos Adultos Castrados Frango',150.00,'/images/products/prod12-img1.jpg');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -385,7 +387,7 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `avatar` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -394,7 +396,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Fernando','Stentzler','fernando@email.com','123456',NULL),(2,'Ernesto','Rangel','ernesto@email.com','123456',NULL),(3,'Renata','Rodrigues','renata@email.com','123456',NULL),(4,'Ernesto','Teste4','teste@teste.com','$2b$10$tvZlGHuhaAk0Rsw85mSwmuUhpSalQNLal3C3AD98hh5qykXr/rtqG',NULL),(14,'Teste Novamente','Novamente Teste','teste2@teste.com','$2b$10$vzoxoKD4vzS8QjIl1dOdF.x5gL4PTyZF5sKkDkMtEeAAXy4MC6i2O',NULL),(15,'Lais','Ribeiro','lais@teste.com','$2b$10$O6RWjWpaaZXzGFE51QOcuOdUVLGlb1.ZY49mSFvdbLPj/mD9CzkmO',NULL);
+INSERT INTO `users` VALUES (1,'Fernando','Stentzler','fernando@email.com','123456',NULL),(2,'Ernesto','Rangel','ernesto@email.com','123456',NULL),(3,'Renata','Rodrigues','renata@email.com','123456',NULL),(4,'teste 04','teste 004','teste@teste.com','$2b$10$XCoLhKQptr/iwxk./FSlZOp4Be0.VhVBqKFDsD70GyY28/WVAKfRu',NULL),(14,'Teste Novamente','Novamente Teste','teste2@teste.com','$2b$10$vzoxoKD4vzS8QjIl1dOdF.x5gL4PTyZF5sKkDkMtEeAAXy4MC6i2O',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -407,4 +409,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-10 11:43:23
+-- Dump completed on 2022-08-10 17:32:24
