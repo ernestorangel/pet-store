@@ -1,0 +1,104 @@
+@media (min-width: 1281px) {
+    main {
+        padding: 0 calc((100vw - 1280px) / 2);
+    }
+
+    #result-feedback-title {
+        padding: 20px 5px;
+        border-bottom: 1px solid lightgray;
+    }
+
+    #results-area-main-container {
+        min-height: 600px;
+
+        display: flex;
+        flex-direction: row;
+    }
+
+    #results-left-area {
+        min-width: 250px;
+        min-height: 100%;
+
+        padding: 0px 20px 20px 5px;
+
+        border-right: 1px solid lightgray;
+    }
+
+    .filter-portion-area-title {
+        padding: 20px 0 10px 0;
+        border-bottom: 1px solid lightgray;
+    }
+
+    .filter-portion-area-content {
+        min-height: 400px;
+    }
+
+    #results-right-area {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+
+        height: 200px;
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+
+        min-width: 230px;
+
+        margin: 20px 0 0 20px;
+
+        border: 1px solid lightgray;
+        border-radius: var(--card-border-size);
+
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .product-card:hover {
+        transform: scale(1.05);
+        transition: 0.02s;
+    }
+
+    .product-card-image-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        padding: 20px;
+
+        width: 100%;
+        height: 200px;
+
+        border-bottom: 1px solid lightgray;
+    }
+
+    .product-card-image {
+        height: 100%;
+        width: auto;
+    }
+
+    .product-card-info-container {
+        min-height: 100%;
+        padding: 20px;
+        background-color: var(--text-bright-color);
+        border-bottom-left-radius: var(--card-border-size);
+        border-bottom-right-radius: var(--card-border-size);
+    }
+
+    .product-card-info-name {
+        color: var(--main-color);
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .product-card-info-price {
+        color: var(--secondary-color);
+        font-size: 20px;
+        font-weight: 600;
+    }
+    
+}

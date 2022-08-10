@@ -1,7 +1,7 @@
 const path = require('path');
 const {Product} = require('../database/models');
 
-let finishDate = new Date(2022, 7, 10, 15, 30, 0);
+let finishDate = new Date(2022, 7, 12, 15, 30, 0);
 
 async function getArrayOfProducts(maxNumberOfProducts) {
     let products = [];

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title><%= title %> | PET STORE</title>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/generalStyle.css"/>
+    <link rel="stylesheet" href="/stylesheets/headerStyle.css"/>
+    <link rel="stylesheet" href="/stylesheets/productsListStyle2.css"/>
+    <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
+  </head>
+ <body>
+  <%- include('./partials/header') %>
+  <main>
+    <h1 id="result-feedback-title">Resultados para "<%= searched %>"</h1>
+    <div id="results-area-main-container">
+        <div id="results-left-area">
+            <div class="filter-portion-area">
+                <div class="filter-portion-area-title">Categorias</div>
+                <div class="filter-portion-area-content"></div>
+            </div>
+            <div class="filter-portion-area">
+                <div class="filter-portion-area-title">Marcas</div>
+                <div class="filter-portion-area-content"></div>
+            </div>
+        </div>
+        <div id="results-right-area">
+            <% products.forEach((product)=>{ %>
+                <a class="product-card" href="/products/view/<%= product.id_product %>">
+                    <div class="product-card-image-container">
+                        <img class="product-card-image" src="<%= product.img %>">
+                    </div>
+                    <div class="product-card-info-container">
+                        <div class="product-card-info-name"><%= product.name %></div>
+                        <div class="product-card-info-price"><%= product.price %></div>
+                    </div>
+                </a>
+            <% }); %>
+        </div>
+    </div>
+  </main>
+  <%- include('./partials/footer') %>
+ </body>
+</html>

@@ -59,8 +59,9 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false
         });
 
-        Product.belongsTo(models.Category,{
-            foreignKey: 'id_category',
+        Product.belongsToMany(models.Category,{
+            through: 'categories_of_product',
+            foreignKey: 'id_product',
             timestamps: false
         });
 

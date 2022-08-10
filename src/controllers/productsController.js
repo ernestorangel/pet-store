@@ -1,5 +1,7 @@
-const path = require('path')
-const {Product, Cart} = require('../database/models');
+const path = require('path');
+const { Product, Cart } = require('../database/models');
+const Sequelize = require('sequelize');
+
 
 async function getProduct(id) {
   let product;
@@ -9,6 +11,19 @@ async function getProduct(id) {
       product = data.dataValues;
   });
   return product
+}
+
+async function getArrayOfProducts(maxNumberOfProducts) {
+  let products = [];
+  await Product.findAll({
+      attributes: ['id_product', 'name', 'price', 'img'],
+      limit: maxNumberOfProducts
+  }).then((data)=>{
+      data.forEach((item) => {
+          products.push(item.dataValues);
+      });
+  });
+  return products;
 }
 
 function setPriceAsCurrency(value) {
@@ -23,9 +38,57 @@ function fixPriceOfProduct(product) {
   return product;
 };
 
+function fixPricesOfProducts(arrayOfProducts) {
+  arrayOfProducts.forEach((product)=>{
+      product.price = setPriceAsCurrency(product.price);
+  });
+  return arrayOfProducts;
+};
+
+function setStandardProductImage(arrayOfProducts) {
+  arrayOfProducts.forEach((product)=>{
+      if (product.img == null) product.img = '/images/products/std-no-photo-img.jpg';
+  });
+  return arrayOfProducts;
+};
+
 const productController = {
-    search: (req, res) => {
-      res.render('productsList',);
+    search: async (req, res) => {
+      let toastStatus = "no-show";
+      if(req.query.login == 'error') {
+          toastStatus = "show";
+      }
+      let isLogged = false;
+      if (req.session.user == undefined) {
+          isLogged = false;
+      } else {
+          isLogged = true;
+          user = req.session.user;
+      }
+
+      const sequelize = new Sequelize("pet_store", "root", null, {
+        dialect: "mysql"
+      });
+      
+      let products = await sequelize.query(
+        `SELECT * FROM pet_store.products AS p WHERE p.name LIKE :regex `, 
+        { 
+          type: sequelize.QueryTypes.SELECT,
+          replacements: {
+            regex: `%${req.query.word}%`
+          }
+        }
+      );
+
+      sequelize.close();
+
+      res.render('productsList2', {
+        title: 'Categorias',
+        toastStatus: toastStatus,
+        isLogged: isLogged,
+        searched: req.query.word,
+        products: setStandardProductImage(fixPricesOfProducts(products))
+      });
     },
     view: async (req, res) => {
       let toastStatus = "no-show";

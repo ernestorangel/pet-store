@@ -5,7 +5,7 @@ const auth = require('../middlewares/auth');
 
 router.get("/view/:id", productsController.view);
 router.post('/addCart', auth, productsController.addCart)
-router.get("/search/:word", productsController.search);
+router.get("/search", productsController.search);
 router.get("/register", productsController.register);
 router.post("/addProd", productsController.addProd);
 
