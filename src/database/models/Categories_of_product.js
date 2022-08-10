@@ -5,11 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     let cols = {  // nome das colunas
         id_product: {
             type: DataTypes.INTEGER(11),
+            primaryKey: true,
             allowNull: false
         },
         id_category: {
             type: DataTypes.INTEGER(11),
-            primaryKey: true,
             allowNull: false
         }        
     };
