@@ -11,7 +11,6 @@ const cookieLogin = (req,res,next) => {
                 email:email
             }
         })
-
         if(user.email == email){
             req.session.user = user
         }            

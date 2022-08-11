@@ -1,6 +1,6 @@
 const path = require('path');
 const { PassThrough } = require('stream');
-const { Product, Images_of_product } = require('../database/models');
+const { Product, Images_of_product, User } = require('../database/models');
 const Sequelize = require('sequelize');
 
 let finishDate = new Date(2022, 7, 12, 15, 30, 0);
@@ -136,8 +136,16 @@ const mainController = {
         if (req.session.user == undefined) {
             isLogged = false;
         } else {
-            isLogged = true;
             user = req.session.user;
+            let result = await User.findOne({
+                where: {
+                    id_user: req.session.user.id_user
+                }
+            })
+
+            console.log("result: ", result)
+            user.avatar = result.avatar;
+            isLogged = true;
         }
         let prod1 = await fixPricesOfProducts(await getArrayOfProducts());
         prod1.forEach((item)=>{
@@ -154,6 +162,7 @@ const mainController = {
             if (item.imgs == null) item.imgs = ['/images/products/std-no-photo-img.jpg'];
             else item.imgs = item.imgs.split(',');
         })
+        console.log("user: ", user)
         user = setStandardUserImage(user);
         res.render('home2', {
             title: homeProperties.homeTitle,

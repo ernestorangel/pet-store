@@ -100,51 +100,24 @@
           </form>
         </div>
         <div class="overviewInfoArea">
-          <div class="overviewOrderCard">
-            <div class="overviewOrderCardHeader">
-              <div class="overviewOrderCardHeaderIcon"></div>
-              <div class="overviewOrderCardHeaderTitle">Pedido Entregue</div>
-              <div class="overviewOrderCardHeaderInfo">Entregue dia:</div>
-              <div class="overviewOrderCardHeaderDate">10/mar</div>
-            </div>
-            <div class="overviewOrderCardBody">
-              <div class="overviewOrderCardBodyPic"></div>
-              <div class="overviewOrderCardBodyInfoHolder">
-                <div class="overviewOrderCardBodyName">Pestico Petiscão - 300g</div>
-                <div class="overviewOrderCardBodyDescription">12 unidades</div>
+          <% orders.forEach((order) => { %>
+            <div class="overviewOrderCard">
+              <div class="overviewOrderCardHeader">
+                <div class="overviewOrderCardHeaderTitle">Pedido Entregue</div>
+                <div class="overviewOrderCardHeaderInfo">Código do Pedido:</div>
+                <div class="overviewOrderCardHeaderDate"><%= order.id_order %></div>
               </div>
+              <%  order.products.forEach((product) => { %>
+                <div class="overviewOrderCardBody">
+                  <img class="overviewOrderCardBodyPic" src="<%= product.imgs[0] %>">
+                  <div class="overviewOrderCardBodyInfoHolder">
+                    <div class="overviewOrderCardBodyName"><%= product.name %></div>
+                    <div class="overviewOrderCardBodyDescription"><%= product.price %></div>
+                  </div>
+                </div>
+              <%  }); %>
             </div>
-          </div>
-          <div class="overviewOrderCard">
-            <div class="overviewOrderCardHeader">
-              <div class="overviewOrderCardHeaderIcon"></div>
-              <div class="overviewOrderCardHeaderTitle">Pedido Entregue</div>
-              <div class="overviewOrderCardHeaderInfo">Entregue dia:</div>
-              <div class="overviewOrderCardHeaderDate">07/fev</div>
-            </div>
-            <div class="overviewOrderCardBody">
-              <div class="overviewOrderCardBodyPic"></div>
-              <div class="overviewOrderCardBodyInfoHolder">
-                <div class="overviewOrderCardBodyName">Pestico Petiscão - 300g</div>
-                <div class="overviewOrderCardBodyDescription">12 unidades</div>
-              </div>
-            </div>
-          </div>
-          <div class="overviewOrderCard">
-            <div class="overviewOrderCardHeader">
-              <div class="overviewOrderCardHeaderIcon"></div>
-              <div class="overviewOrderCardHeaderTitle">Pedido Entregue</div>
-              <div class="overviewOrderCardHeaderInfo">Entregue dia:</div>
-              <div class="overviewOrderCardHeaderDate">12/jan</div>
-            </div>
-            <div class="overviewOrderCardBody">
-              <div class="overviewOrderCardBodyPic"></div>
-              <div class="overviewOrderCardBodyInfoHolder">
-                <div class="overviewOrderCardBodyName">Pestico Petiscão - 300g</div>
-                <div class="overviewOrderCardBodyDescription">12 unidades</div>
-              </div>
-            </div>
-          </div>
+          <% }); %>
         </div>
       </div>
     </main>

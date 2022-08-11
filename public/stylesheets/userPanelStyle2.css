@@ -397,7 +397,7 @@ main {
 
 .overviewOrderCard {
   width: 100%;
-  height: 200px;
+  height: auto;
   border: 1px solid lightgray;
   border-left: 10px solid green;
   border-radius: var(--card-border-size);
@@ -426,11 +426,15 @@ main {
 .overviewOrderCardHeaderTitle {
   padding: 0 0 0 5px;
   color: green;
-  width: 100%;
+  width: 640px;
 }
 
 .overviewOrderCardHeaderInfo {
   min-width: 110px;
+
+  margin-right: 5px;
+
+  white-space: nowrap;
 }
 
 .overviewOrderCardHeaderDate {
@@ -441,6 +445,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 20px 0;
   height: calc(100% - 50px);
 }
 
@@ -464,6 +469,7 @@ main {
   font-size: 20px;
   font-weight: 400;
   color: var(--main-color);
+  margin-right: 5px;
 }
 
 .overviewOrderCardBodyDescription {
