@@ -105,9 +105,9 @@ const cartController = {
             return previous + productsDetails[key].product_total;
         }, 0);
 
-        console.log('produtos detalhes ',productsDetails)
-        console.log('produtos total ',productTotal)
-        console.log('produtos Quantidade ',productQtd)
+        // console.log('produtos detalhes ',productsDetails)
+        // console.log('produtos total ',productTotal)
+        // console.log('produtos Quantidade ',productQtd)
 
 
         let order = await Order.create({
@@ -120,13 +120,14 @@ const cartController = {
             total: productTotal
         });
 
-        console.log('produto Order ',order)
+        // console.log('produto Order ',order)
 
 
         productsDetails.forEach((e)=>{
             Product_in_order.create({
                 id_product: e.id_product,
-                id_order: order.id_order
+                id_order: order.id_order,
+                product_qtd: e.qtd                
             })
         }) 
 
