@@ -32,7 +32,6 @@ module.exports = (sequelize, DataTypes) => {
     Cart.associate = (models) => {
 
         Cart.hasMany(models.User, {
-            as: 'users',
             foreignKey: 'id_user',
             timestamps: false
         });

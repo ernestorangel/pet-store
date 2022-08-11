@@ -67,7 +67,7 @@
               <div class="rowShowcaseItemArea" id="rowShowcaseItemArea">
                 <% for (let i = 1; i <= products1.length; i++) { %>
                   <a href="/products/view/<%= products1[i - 1].id_product %>" class="rowShowcaseItem">
-                    <img class="rowShowcaseItemImage" src="<%= products1[i - 1].img %>">
+                    <img class="rowShowcaseItemImage" src="<%= products1[i - 1].imgs[0] %>">
                     <div class="rowShowcaseItemTitle"><%= products1[i - 1].name %></div>
                     <div class="rowShowcaseItemDescription"><%= products1[i - 1].price %></div>
                   </a>
@@ -87,7 +87,7 @@
               <div class="rowShowcaseItemArea" id="rowShowcaseItemArea">
                 <% for (let i = 1; i <= products2.length; i++) { %>
                   <a href="/products/view/<%= products2[i - 1].id_product %>" class="rowShowcaseItem">
-                    <img class="rowShowcaseItemImage" src="<%= products2[i - 1].img %>">
+                    <img class="rowShowcaseItemImage" src="<%= products2[i - 1].imgs[0] %>">
                     <div class="rowShowcaseItemTitle"><%= products2[i - 1].name %></div>
                     <div class="rowShowcaseItemDescription"><%= products2[i - 1].price %></div>
                   </a>
@@ -142,7 +142,7 @@
               <div class="rowShowcaseItemArea" id="rowShowcaseItemArea">
                 <% for (let i = 1; i <= products3.length; i++) { %>
                   <a href="/products/2" class="rowShowcaseItem">
-                    <img class="rowShowcaseItemImage" src="<%= products3[i - 1].img %>">
+                    <img class="rowShowcaseItemImage" src="<%= products3[i - 1].imgs[0] %>">
                     <div class="rowShowcaseItemTitle"><%= products3[i - 1].name %></div>
                     <div class="rowShowcaseItemDescription"><%= products3[i - 1].price %></div>
                   </a>

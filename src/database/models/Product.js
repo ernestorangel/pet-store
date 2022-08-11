@@ -26,11 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         price:{
             type: DataTypes.DECIMAL(6,2),
             allowNull: false
-        },
-        img:{
-            type: DataTypes.STRING(45),
-            allowNull: true
-        }        
+        }     
     };
 
     let config = {
@@ -45,13 +41,28 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'id_product',
             as: 'order',
             through: models.Product_in_order,            
-            timesstamps: false
+            timestamps: false
         });
 
         Product.belongsToMany(models.User, {
+            as: 'products',
             through: 'cart',
-            foreignKey: 'id_user',
-            timestamps: false
+            foreignKey: 'id_product',
+            timestamps: false,
+        });
+
+        Product.belongsToMany(models.User, {
+            as: 'continue_buy_product',
+            through: 'continue_buy',
+            foreignKey: 'id_product',
+            timestamps: false,
+        });
+
+        Product.belongsToMany(models.User, {
+            as: 'recommended_product',
+            through: 'recommended',
+            foreignKey: 'id_product',
+            timestamps: false,
         });
 
         Product.belongsToMany(models.Category,{
@@ -67,7 +78,9 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false
         });
 
-        Product.hasMany(models.Product_image,{
+        Product.belongsToMany(models.Product_images,{
+            as: 'id_images',
+            through: 'images_of_product',
             foreignKey: 'id_product',
             timestamps: false
         });

@@ -24,7 +24,8 @@ function resetPreviewImagesBorders() {
 
 window.addEventListener("load", ()=>{
 
-    setPreviewImageBorder(1, secondaryColor);
+    // setPreviewImageBorder(1, secondaryColor);
+    document.querySelectorAll(".previewImage")[0].style.border = `1px solid ${secondaryColor}`;
     document.querySelectorAll(".previewImage").forEach((preview)=>{
         preview.addEventListener("click", ()=>{
             document.querySelector(".mainPhoto").src = preview.src;

@@ -4,13 +4,43 @@ const Sequelize = require('sequelize');
 
 
 async function getProduct(id) {
-  let product;
-  await Product.findByPk(id, {
-      // attributes: ['id_product','description', 'name', 'price', 'img'],
-      include: ['brand', 'category']
-  }).then((data)=>{
-      product = data.dataValues;
-  });
+  // let product;
+  // await Product.findByPk(id, {
+  //     // attributes: ['id_product','description', 'name', 'price', 'img'],
+  //     include: ['brand', 'category']
+  // }).then((data)=>{
+  //     product = data.dataValues;
+  // });
+
+  const sequelize = new Sequelize("pet_store", "root", null, {dialect: "mysql"});
+
+  let product = await sequelize.query(
+      `SELECT
+      p.id_product,
+      p.name,
+      p.description,
+      p.price,
+      group_concat(i.img) as imgs
+      FROM pet_store.products AS p
+      LEFT JOIN pet_store.images_of_product AS iop 
+      ON p.id_product = iop.id_product
+      LEFT JOIN pet_store.product_images AS i
+      ON iop.id_image = i.id_image
+      WHERE p.id_product = :id
+      GROUP BY 1, 2, 3, 4`,
+      { 
+        type: sequelize.QueryTypes.SELECT,
+        replacements: { id: id }
+      }
+  );
+
+  sequelize.close();
+
+  product = product[0]
+
+  if (product.imgs == null) product.imgs = ['/images/products/std-no-photo-img.jpg'];
+  else product.imgs = product.imgs.split(',');
+
   return product
 }
 
@@ -67,9 +97,7 @@ const productController = {
           user = req.session.user;
       }
 
-      const sequelize = new Sequelize("pet_store", "root", null, {
-        dialect: "mysql"
-      });
+      const sequelize = new Sequelize("pet_store", "root", null, {dialect: "mysql"});
       
       let products = await sequelize.query(
         `SELECT * FROM pet_store.products AS p WHERE p.name LIKE :regex `, 

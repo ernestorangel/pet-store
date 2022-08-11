@@ -43,10 +43,25 @@ module.exports = (sequelize, DataTypes) => {
         });
 
         User.belongsToMany(models.Product, {
+            as: 'cart_user',
             through: 'cart',
             foreignKey: 'id_user',
-            timestamps: false
-        })
+            timestamps: false,
+        });
+
+        User.belongsToMany(models.Product, {
+            as: 'continue_buy_user',
+            through: 'continue_buy',
+            foreignKey: 'id_user',
+            timestamps: false,
+        });
+
+        User.belongsToMany(models.Product, {
+            as: 'recommended_user',
+            through: 'recommended',
+            foreignKey: 'id_user',
+            timestamps: false,
+        });
     }
     return User
 }
