@@ -157,6 +157,7 @@ header {
     color: var(--text-bright-color);
     white-space: nowrap;
     border-bottom: 5px solid var(--secondary-color);
+    text-decoration: none;
   }
   
   .thirdMenuButton:hover {
@@ -1275,6 +1276,7 @@ header {
     white-space: nowrap;
     border-bottom: 5px solid var(--secondary-color);
     cursor: pointer;
+    text-decoration: none;
   }
   
   .thirdMenuButton:hover {

@@ -1,0 +1,23 @@
+main {
+    padding: 20px calc((100vw - 1280px) / 2);
+}
+
+.redirect-button {
+    text-decoration: none;
+
+    padding: 20px;
+
+    background-color: var(--secondary-color);
+    color: white;
+
+    font-size: 15;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    border-radius: var(--card-border-size);
+}
+
+.redirect-button:hover {
+    background-color: var(--secondary-color-darker);
+}

@@ -733,15 +733,26 @@
   justify-content: center;
   min-width: 200px;
   margin: 0px 0 0 10px;
-  padding: 5px 10px;
   border-radius: var(--card-border-size);
   transition: 0.3ms;
   text-decoration: none;
   border: 1px solid lightgrey;
+  background-color: white;
 }
 
 .rowShowcaseItem:hover {
+  transform: scale(1.05);
+  transition: 0.1s;
   border: 1px solid var(--secondary-color);
+}
+
+.rowShowcaseItemInfo {
+  width: 100%;
+  border-top: 1px solid lightgray;
+  background-color: var(--text-bright-color);
+  padding: 10px;
+  border-bottom-left-radius: var(--card-border-size);
+  border-bottom-right-radius: var(--card-border-size);
 }
 
 .rowShowcaseItemImage {
@@ -753,6 +764,7 @@
   background-position: center;
   background-size: 70%;
   background-repeat: no-repeat;
+  padding: 10px;
 }
 
 .rowShowcaseItemTitle {
@@ -764,6 +776,7 @@
   text-align: center;
   color: var(--main-color);
   margin-top: 5px;
+  white-space: nowrap;
 }
 
 .rowShowcaseItemDescription {

@@ -27,7 +27,7 @@
             <% products.forEach((product)=>{ %>
                 <a class="product-card" href="/products/view/<%= product.id_product %>">
                     <div class="product-card-image-container">
-                        <img class="product-card-image" src="<%= product.img %>">
+                        <img class="product-card-image" src="<%= product.imgs[0] %>">
                     </div>
                     <div class="product-card-info-container">
                         <div class="product-card-info-name"><%= product.name %></div>

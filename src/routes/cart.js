@@ -20,5 +20,6 @@ router.delete('/delete/:id', cartController.destroy)
 
 // Rotas Paginas Forma Pagamento
 router.post("/checkout", cartController.checkout)
+router.get("/checkoutTest", auth, cartController.test)
 
 module.exports = router;

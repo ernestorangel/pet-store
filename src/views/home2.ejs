@@ -41,7 +41,7 @@
       <section class="showcase">
         <div class="middleShowcase">
           <% for(let i=1; i <= 2; i++)  {%>
-            <a href="/products/search/produto" class="squareShowcase">
+            <a href="/products/search?word=<%= categoriesTitles[i - 1] %>" class="squareShowcase">
               <div class="showcaseTitle"><%= categoriesTitles[i - 1] %></div>
               <img class="showcaseImage" src="<%= categoriesImages[i - 1] %>">
               <div class="seeMore">Clique e descubra</div>
@@ -50,7 +50,7 @@
         </div>
         <div class="middleShowcase">
           <% for(let i=3; i <= 4; i++)  {%>
-            <a href="/products/search/produto" class="squareShowcase">
+            <a href="/products/search?word=<%= categoriesTitles[i - 1] %>" class="squareShowcase">
               <div class="showcaseTitle"><%= categoriesTitles[i - 1] %></div>
               <img class="showcaseImage" src="<%= categoriesImages[i - 1] %>">
               <div class="seeMore">Clique e descubra</div>
@@ -68,8 +68,10 @@
                 <% for (let i = 1; i <= products1.length; i++) { %>
                   <a href="/products/view/<%= products1[i - 1].id_product %>" class="rowShowcaseItem">
                     <img class="rowShowcaseItemImage" src="<%= products1[i - 1].imgs[0] %>">
-                    <div class="rowShowcaseItemTitle"><%= products1[i - 1].name %></div>
-                    <div class="rowShowcaseItemDescription"><%= products1[i - 1].price %></div>
+                    <div class="rowShowcaseItemInfo">
+                      <div class="rowShowcaseItemTitle"><%= products1[i - 1].name %></div>
+                      <div class="rowShowcaseItemDescription"><%= products1[i - 1].price %></div>
+                    </div>
                   </a>
                 <% } %>
               </div>
@@ -88,8 +90,10 @@
                 <% for (let i = 1; i <= products2.length; i++) { %>
                   <a href="/products/view/<%= products2[i - 1].id_product %>" class="rowShowcaseItem">
                     <img class="rowShowcaseItemImage" src="<%= products2[i - 1].imgs[0] %>">
-                    <div class="rowShowcaseItemTitle"><%= products2[i - 1].name %></div>
-                    <div class="rowShowcaseItemDescription"><%= products2[i - 1].price %></div>
+                    <div class="rowShowcaseItemInfo">
+                      <div class="rowShowcaseItemTitle"><%= products2[i - 1].name %></div>
+                      <div class="rowShowcaseItemDescription"><%= products2[i - 1].price %></div>
+                    </div>
                   </a>
                 <% } %>
               </div>
@@ -127,8 +131,10 @@
           <% for (let i = 1; i <= promotionProducts.length; i++) { %>
             <a href="/products/view/2" class="longShowcaseItem">
               <img class="rowShowcaseItemImage" src="<%= promotionProducts[i - 1].img %>">
-              <div class="rowShowcaseItemTitle"><%= promotionProducts[i - 1].name %></div>
-              <div class="rowShowcaseItemDescription"><%= promotionProducts[i - 1].price %></div>
+              <div class="rowShowcaseItemInfo">
+                <div class="rowShowcaseItemTitle"><%= promotionProducts[i - 1].name %></div>
+                <div class="rowShowcaseItemDescription"><%= promotionProducts[i - 1].price %></div>
+            </div>
             </a>
           <% } %>
         </div>
@@ -143,8 +149,10 @@
                 <% for (let i = 1; i <= products3.length; i++) { %>
                   <a href="/products/2" class="rowShowcaseItem">
                     <img class="rowShowcaseItemImage" src="<%= products3[i - 1].imgs[0] %>">
-                    <div class="rowShowcaseItemTitle"><%= products3[i - 1].name %></div>
-                    <div class="rowShowcaseItemDescription"><%= products3[i - 1].price %></div>
+                    <div class="rowShowcaseItemInfo">
+                      <div class="rowShowcaseItemTitle"><%= products3[i - 1].name %></div>
+                      <div class="rowShowcaseItemDescription"><%= products3[i - 1].price %></div>
+                  </div>
                   </a>
                 <% } %>
               </div>

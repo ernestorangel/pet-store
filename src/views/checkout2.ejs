@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title><%= title %> | Pet Store</title>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/generalStyle.css"/>
+    <link rel="stylesheet" href="/stylesheets/headerStyle.css"/>
+    <link rel="stylesheet" href="/stylesheets/checkoutStyle2.css"/>
+    <link rel="stylesheet" href="/stylesheets/footerStyle.css"/>
+  </head>
+ <body>
+  <div id="headerHolder">
+    <%- include('./partials/header') %>
+  </div>
+  <main>
+    <h1>Obrigado por comprar conosco!</h1>
+    <p>Logo logo os seus produtos estarão na sua casa.</p>
+    <div class="order-summary">
+        pedido
+    </div>
+    <div>
+        <a class="redirect-button" href="/">Voltar para Página Inicial</a>
+        <a class="redirect-button" href="/users/enter/<%= user.id_user %>">Acompanhar seus pedidos</a>
+    </div>
+  </main>
+  <%- include('./partials/footer') %>
+ </body>
+</html>

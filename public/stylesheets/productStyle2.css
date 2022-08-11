@@ -57,7 +57,7 @@ main {
     margin-bottom: 10px;
     padding: 20px;
     border-radius: var(--card-border-size);
-    background-color: var(--text-bright-color);
+    background-color: white;
     border: 1px solid lightgray;
     cursor: pointer;
 }
@@ -73,7 +73,7 @@ main {
     margin-left: 20px;
     padding: 50px;
     border-radius: var(--card-border-size);
-    background-color: var(--text-bright-color);
+    background-color: white;
     border: 1px solid lightgray;
 }
 
