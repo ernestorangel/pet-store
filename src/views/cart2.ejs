@@ -25,7 +25,7 @@
                                     <p class="produtos-destaque-textos"> Preço: <%= item.price %></p>
                                     <p class="produtos-destaque-textos"> <strong> Em Estoque </strong></p>
                                     <!-- <form method="POST" class="produtos-destaque-form" action="/products/addCart">
-                                        <input readonly name="id" value="<%= item.id_product %>" type="text" style="display:none">
+                                        <input readonly name="id" value="<%= // item.id_product %>" type="text" style="display:none">
                                         <button class="adicionar-carrinho" type="submit">
                                             Ir para Produto 
                                         </button>
@@ -49,7 +49,7 @@
                     </div>
                     <% products.forEach(function(item){ %>
                         <div class="pedido-produto">
-                            <img class="pedido-imagen" src="<%= item.img %>" alt="">
+                            <img class="pedido-imagen" src="<%= item.imgs %>" alt="">
                             <div class="pedido-info">                                
                                 <h3 class="pedido-info-texto"> <%= item.name %> </h3>
                                 <p class="pedido-info-texto"> Preço un.: <%= item.price %> </p>

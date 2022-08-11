@@ -45,6 +45,7 @@ const cartController = {
 
         let products = [];
         carts.forEach((item) => {
+            console.log(item.dataValues.products)
             products.push(item.dataValues);
         });
 
