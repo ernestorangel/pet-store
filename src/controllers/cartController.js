@@ -145,6 +145,24 @@ const cartController = {
         }
 
         res.redirect("/cart");
+    },
+    test: async (req, res) => {
+        let toastStatus = "no-show";
+        let isLogged = false;
+        let user;
+        if (req.session.user == undefined) {
+            isLogged = false;
+        } else {
+            isLogged = true;
+            user = req.session.user;
+        }  
+
+        res.render('checkout2', {
+            title: 'Checkout',
+            toastStatus: toastStatus,
+            isLogged: isLogged,
+            user: user
+        })
     }
 }
 module.exports = cartController

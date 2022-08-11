@@ -60,6 +60,7 @@
     .product-card:hover {
         transform: scale(1.05);
         transition: 0.02s;
+        border: 1px solid var(--secondary-color);
     }
 
     .product-card-image-container {

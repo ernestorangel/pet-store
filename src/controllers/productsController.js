@@ -100,16 +100,35 @@ const productController = {
       const sequelize = new Sequelize("pet_store", "root", null, {dialect: "mysql"});
       
       let products = await sequelize.query(
-        `SELECT * FROM pet_store.products AS p WHERE p.name LIKE :regex `, 
+        `SELECT 
+        p.id_product,
+        p.name,
+        p.description,
+        p.price,
+        group_concat(i.img) as imgs
+        FROM pet_store.products AS p
+        LEFT JOIN pet_store.images_of_product AS iop 
+        ON p.id_product = iop.id_product
+        LEFT JOIN pet_store.product_images AS i
+        ON iop.id_image = i.id_image
+        WHERE p.name LIKE :word 
+        GROUP BY 1, 2, 3, 4`, 
         { 
           type: sequelize.QueryTypes.SELECT,
           replacements: {
-            regex: `%${req.query.word}%`
+            word: `%${req.query.word}%`
           }
         }
       );
 
       sequelize.close();
+
+      products.forEach((product)=>{
+        if (product.imgs == null) product.imgs = ['/images/products/std-no-photo-img.jpg'];
+        else product.imgs = product.imgs.split(',');
+      });
+
+      console.log(products)
 
       res.render('productsList2', {
         title: 'Categorias',
