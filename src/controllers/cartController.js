@@ -1,5 +1,6 @@
 const { timeStamp } = require('console');
 const path = require('path')
+const Sequelize = require('sequelize');
 const {Product ,Cart ,BestSellers ,Order ,Product_in_order ,sequelize} = require('../database/models');
 
 
@@ -135,7 +136,7 @@ const cartController = {
             }
         });
 
-        res.send('Adicionado Na Order')
+        res.redirect(`/cart/checkoutTest?id=${order.id_order}`);
     },
     update: async (req, res) => {
         if (req.query.new_qtd == 0) {
@@ -171,13 +172,47 @@ const cartController = {
         } else {
             isLogged = true;
             user = req.session.user;
-        }  
+        }
+        
+        const sequelize = new Sequelize("pet_store", "root", null, {dialect: "mysql"});
+
+        let products = await sequelize.query(
+            `SELECT
+            o.id_order,
+            o.shipping,
+            o.total,
+            p.id_product,
+            p.name,
+            p.description,
+            p.price,
+            group_concat(i.img) as imgs
+            FROM pet_store.orders AS o
+            LEFT JOIN pet_store.products_in_orders AS pio
+            ON o.id_order = pio.id_order
+            LEFT JOIN pet_store.products AS p
+            ON pio.id_product = p.id_product
+            LEFT JOIN pet_store.images_of_product AS iop
+            ON iop.id_product = p.id_product
+            LEFT JOIN pet_store.product_images AS i
+            ON iop.id_image = i.id_image
+            WHERE o.id_order = :id
+            GROUP BY 1, 2, 3, 4, 5, 6`,
+            { 
+              type: sequelize.QueryTypes.SELECT,
+              replacements: { id: req.query.id }
+            }
+        );
+      
+        sequelize.close();
+
+        //res.send(products);
 
         res.render('checkout2', {
             title: 'Checkout',
             toastStatus: toastStatus,
             isLogged: isLogged,
-            user: user
+            user: user,
+            products: products
         })
     }
 }

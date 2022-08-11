@@ -13,12 +13,34 @@
     <%- include('./partials/header') %>
   </div>
   <main>
-    <h1>Obrigado por comprar conosco!</h1>
-    <p>Logo logo os seus produtos estarão na sua casa.</p>
+    <h1 class="checkout-greeting-main">Obrigado por comprar conosco!</h1>
+    <p class="checkout-greeting-sub">Logo logo os seus produtos estarão na sua casa.</p>
+    <p>Código do seu pedido: <%= products[0].id_order %></p>
     <div class="order-summary">
-        pedido
+        <div class="order-header">Itens comprados</div>
+        <div class="order-content">
+            <% products.forEach((product)=>{ %>
+                <div class="order-item">
+                    <img class="order-item-image" src="<%= product.imgs %>">
+                    <div class="order-item-info">
+                        <div class="order-item-unit-name"> <%= product.name %></div>
+                        <div class="order-item-unit-description"> <%= product.description %></div>
+                        <div class="order-item-unit-price"> <%= product.price %></div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        <div class="order-footer">
+            <div class="order-footer-title">Frete: </div>
+            <div class="order-footer-value"><%= products[0].shipping %></div>
+            <div class="order-footer-title">Total em produtos: </div>
+            <div class="order-footer-value"><%= products[0].total %></div>
+            <div class="order-footer-title">Total Pago: </div>
+            <div class="order-footer-value"><%= parseFloat(products[0].shipping) + parseFloat(products[0].total) %> </div>
+        </div>
     </div>
-    <div>
+
+    <div class="redirect-buttons-container">
         <a class="redirect-button" href="/">Voltar para Página Inicial</a>
         <a class="redirect-button" href="/users/enter/<%= user.id_user %>">Acompanhar seus pedidos</a>
     </div>
