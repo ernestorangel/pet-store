@@ -119,6 +119,22 @@ const cartController = {
             total: productTotal
         });
 
+        console.log('produto Order ',order)
+
+
+        productsDetails.forEach((e)=>{
+            Product_in_order.create({
+                id_product: e.id_product,
+                id_order: order.id_order
+            })
+        }) 
+
+        await Cart.destroy({
+            where: {
+                id_user: req.session.user.id_user,                
+            }
+        });
+
         res.send('Adicionado Na Order')
     },
     update: async (req, res) => {
