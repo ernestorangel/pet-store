@@ -11,7 +11,11 @@ module.exports = (sequelize, DataTypes) => {
         id_order: {
             type: DataTypes.INTEGER(11),
             allowNull: false
-        }        
+        },
+        product_qtd:{
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        },
     };
 
     let config = {   // configurações da tabela
