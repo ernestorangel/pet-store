@@ -24,34 +24,74 @@ function encryptPassword(user) {
 
 const usersController = {
     login: (req, res) => {
-      res.render('login');
+      let toastStatus = 'no-show';
+      let toastMessage = '';
+      let toastColor = 'transparent';
+
+      if(req.query.error == 'user') {
+        toastStatus = "show";
+        toastMessage = 'Usuário Não Encontrado.';
+        toastColor = 'red';
+      }
+
+      if(req.query.error == 'email') {
+        toastStatus = "show";
+        toastMessage = 'E-mail não cadastrado.';
+        toastColor = 'red';
+      }
+
+      if(req.query.error == 'pass') {
+        toastStatus = "show";
+        toastMessage = 'Senha inválida';
+        toastColor = 'red';
+      }
+
+      res.render('login', {
+        toastStatus: toastStatus,
+        toastMessage: toastMessage,
+        toastColor: toastColor
+      });
     },
     logarUser: async (req, res) => {
+      let toastStatus = 'no-show';
+      let toastMessage = '';
+      let toastColor = 'transparent';
       const {email, password, logado } = req.body
       let user = await User.findOne({        
         raw: true,
         where: {
           email: email,
         }
-      })    
+      })
+      
+      console.log("user teste: ", user)
           
       let errors = validationResult(req)
         if(errors.isEmpty()){            
         }else{
           console.log(errors.mapped())
-          return res.render('login', {errors: errors.mapped(), old: req.body});
+          return res.render('login', {
+            toastStatus: toastStatus,
+            toastMessage: toastMessage,
+            toastColor: toastColor,
+            errors: errors.mapped(), 
+            old: req.body
+          });
       }
       
       if(user == null){
-        return res.send("Usuario Nao Encontrado")
+        //return res.send("Usuario Nao Encontrado")
+        return res.redirect("/users/login?error=user");
       }
 
       if(email != user.email){
-        return res.send("Email nao Cadastrado")
+        //return res.send("Email nao Cadastrado")
+        return res.redirect("/users/login?error=email");
       }
 
       if(!bcrypt.compareSync(password, user.password)){
-        return res.send("Senha Invalida")
+        //return res.send("Senha Invalida")
+        return res.redirect("/users/login?error=pass");
       }
 
       req.session.user = user
