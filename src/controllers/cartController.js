@@ -171,7 +171,7 @@ const cartController = {
             }
         });
 
-        res.redirect(`/cart/checkoutTest?id=${order.id_order}`);
+        res.redirect(`/cart/checkout?id=${order.id_order}`);
     },
     update: async (req, res) => {
         if (req.query.new_qtd == 0) {
@@ -220,6 +220,7 @@ const cartController = {
             p.name,
             p.description,
             p.price,
+            pio.product_qtd,
             group_concat(i.img) as imgs
             FROM pet_store.orders AS o
             LEFT JOIN pet_store.products_in_orders AS pio
@@ -231,7 +232,7 @@ const cartController = {
             LEFT JOIN pet_store.product_images AS i
             ON iop.id_image = i.id_image
             WHERE o.id_order = :id
-            GROUP BY 1, 2, 3, 4, 5, 6`,
+            GROUP BY 1, 2, 3, 4, 5, 6, 7`,
             { 
               type: sequelize.QueryTypes.SELECT,
               replacements: { id: req.query.id }
@@ -240,7 +241,12 @@ const cartController = {
       
         sequelize.close();
 
-        //res.send(products);
+        fixPricesOfProducts(products);
+        
+        products.forEach((product)=>{
+            product.shipping = setPriceAsCurrency(product.shipping);
+            product.total = setPriceAsCurrency(product.total);
+        })
 
         res.render('checkout2', {
             title: 'Checkout',

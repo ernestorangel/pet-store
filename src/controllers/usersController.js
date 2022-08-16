@@ -22,6 +22,20 @@ function encryptPassword(user) {
   return user;
 };
 
+function setPriceAsCurrency(value) {
+  let splited = value.split('.');
+  splited.push('00');
+  let valueAsCurrency = "R$ " + splited[0] + "," + splited[1];
+  return valueAsCurrency;
+};
+
+function fixPricesOfProducts(arrayOfProducts) {
+  arrayOfProducts.forEach((product)=>{
+      product.price = setPriceAsCurrency(product.price);
+  });
+  return arrayOfProducts;
+};
+
 const usersController = {
     login: (req, res) => {
       let toastStatus = 'no-show';
@@ -126,6 +140,10 @@ const usersController = {
       return res.redirect('/users/login')
     },
     enter: async (req, res) => {
+      if (req.params.id != req.session.user.id_user) {
+        return res.redirect('/');
+      }
+
       let toastStatus = "no-show";
         if(req.query.login == 'error') {
             toastStatus = "show";
@@ -133,7 +151,8 @@ const usersController = {
       let isLogged = false;
       let user;
       if (req.session.user == undefined) {
-          isLogged = false;
+        isLogged = false;
+        return res.redirect('/?login=error')
       } else {
           isLogged = true;
           user = req.session.user;
@@ -150,6 +169,7 @@ const usersController = {
         p.name,
         p.description,
         p.price,
+        pio.product_qtd,
         group_concat(i.img) as imgs
         FROM pet_store.orders AS o
         LEFT JOIN pet_store.products_in_orders AS pio
@@ -161,7 +181,7 @@ const usersController = {
         LEFT JOIN pet_store.product_images AS i
         ON iop.id_image = i.id_image
         WHERE o.id_user = :id
-        GROUP BY 1, 2, 3, 4, 5, 6`,
+        GROUP BY 1, 2, 3, 4, 5, 6, 7`,
         { 
           type: sequelize.QueryTypes.SELECT,
           replacements: { id: req.session.user.id_user }
@@ -200,13 +220,20 @@ const usersController = {
           name: item.name,
           description: item.description,
           price: item.price,
-          imgs: item.imgs
+          imgs: item.imgs,
+          qtd: item.product_qtd
         };
 
         orderFinal.forEach((item)=>{
           if(item.id_order == id_order) item.products.push(prod);
         });
 
+      });
+
+      orderFinal.forEach((order)=>{
+        order.shipping = setPriceAsCurrency(order.shipping);
+        order.total = setPriceAsCurrency(order.total);
+        order.products = fixPricesOfProducts(order.products);
       });
 
       res.render('userPanel2', {

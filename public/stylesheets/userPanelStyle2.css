@@ -474,6 +474,27 @@ main {
 
 .overviewOrderCardBodyDescription {
   font-size: 15px;
-  font-weight: 800;
-  color: lightgray;
+  font-weight: 600;
+  color: green;
+}
+
+.overviewOrderCardFooter {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  padding: 10px 0;
+
+  border-top: 1px solid lightgray;
+}
+
+.overviewOrderCardFooterTitle {
+  margin: 0 5px 0 15px;
+}
+
+.overviewOrderCardFooterInfo {
+  color: green;
+  font-weight: 600;
 }
