@@ -535,11 +535,6 @@ header {
     border-top-right-radius: var(--card-border-size);
   }
   
-  .secondMenuButton:hover {
-    background-color: var(--main-color-darker);
-    transition: 0.5s;
-  }
-  
   .secondMenuButtonSpecial {
     display: flex;
     flex-direction: row;
@@ -562,11 +557,11 @@ header {
     margin-left: 20px;
     border-top-left-radius: var(--card-border-size);
     border-top-right-radius: var(--card-border-size);
+    cursor: pointer;
   }
   
   #secondSectionLeftSide:hover {
     background-color: var(--main-color-darker);
-    transition: 0.5s;
   }
   
   #locationPin {

@@ -49,7 +49,7 @@
                     </div>
                     <% products.forEach(function(item){ %>
                         <div class="pedido-produto">
-                            <img class="pedido-imagen" src="<%= item.imgs %>" alt="">
+                            <img class="pedido-imagen" src="<%= item.imgs[0] %>" alt="">
                             <div class="pedido-info">                                
                                 <h3 class="pedido-info-texto"> <%= item.name %> </h3>
                                 <p class="pedido-info-texto"> Preço un.: <%= item.price %> </p>
