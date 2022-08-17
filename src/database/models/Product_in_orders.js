@@ -25,17 +25,6 @@ module.exports = (sequelize, DataTypes) => {
 
     let Product_in_order = sequelize.define(alias, cols, config)
 
-    // Product_in_order.associate = (models) => {
-    //     Product_in_order.hasMany(models.Order, {
-    //         foreignKey: 'id_order',
-    //         timestamps: false
-    //     });
-
-    //     Product_in_order.hasMany(models.Product, {
-    //         foreignKey: 'id_product',
-    //         timestamps: false
-    //     });   
-    // }
-
+    
     return Product_in_order
 }

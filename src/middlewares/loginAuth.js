@@ -1,7 +1,7 @@
 const { body } = require('express-validator');
 
 const loginAuth = [  
-    body("email").notEmpty().withMessage('Digite Um Email Valido').isEmail(),
+    body("email").notEmpty().isEmail().withMessage('Digite Um Email Valido'),
     body("password").notEmpty().withMessage('Digite Uma Senha Valida'),
 ];
 

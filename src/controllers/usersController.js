@@ -1,7 +1,7 @@
-const { User } = require('../database/models')
+const { User } = require('../database/models');
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
-const salt = bcrypt.genSaltSync(10)
+const salt = bcrypt.genSaltSync(10);
 const Sequelize = require('sequelize');
 
 async function getUserById(user_id) {
@@ -67,7 +67,7 @@ const usersController = {
     },
     store: async (req, res) => {
       const {first_name, last_name, email, password } = req.body
-      let criptografada = bcrypt.hashSync(password, salt)      
+      let criptografada = bcrypt.hashSync(password, salt)
 
       let errors = validationResult(req)
         if(errors.isEmpty()){            

@@ -109,11 +109,10 @@ const cartController = {
         // console.log('produtos total ',productTotal)
         // console.log('produtos Quantidade ',productQtd)
 
-
         let order = await Order.create({
             id_user: req.session.user.id_user,
             id_adress: null,
-            created_at: timeStamp(),
+            created_at: new Date(),
             updated_at: null,
             shipping: 9.90,
             qtd: productQtd,
@@ -122,14 +121,13 @@ const cartController = {
 
         // console.log('produto Order ',order)
 
-
-        productsDetails.forEach((e)=>{
-            Product_in_order.create({
+        productsDetails.forEach(async (e)=>{
+            await Product_in_order.create({
                 id_product: e.id_product,
                 id_order: order.id_order,
                 product_qtd: e.qtd                
             })
-        }) 
+        });
 
         await Cart.destroy({
             where: {

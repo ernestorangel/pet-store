@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
             as: 'id_images',
             foreignKey: 'id_product',
             timestamps: false
-        });   
+        });
     };
 
     return Images_of_product;
