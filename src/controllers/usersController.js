@@ -117,27 +117,64 @@ const usersController = {
       res.redirect('/')
     },
     signup: (req, res) => {
-      res.render('signup');
+      let toastStatus = 'no-show';
+      let toastMessage = '';
+      let toastColor = 'transparent';
+
+      if(req.query.error == 'email') {
+        toastStatus = "show";
+        toastMessage = 'E-mail Já Cadastrado.';
+        toastColor = 'red';
+      }
+
+      res.render('signup',{
+        toastStatus: toastStatus,
+        toastMessage: toastMessage,
+        toastColor: toastColor
+      });
     },
     store: async (req, res) => {
+      let toastStatus = 'no-show';
+      let toastMessage = '';
+      let toastColor = 'transparent';
       const {first_name, last_name, email, password } = req.body
       let criptografada = bcrypt.hashSync(password, salt)
 
       let errors = validationResult(req)
-        if(errors.isEmpty()){            
-        }else{
-            console.log(errors.mapped())
-            return res.render('signup', {errors: errors.mapped(), old: req.body});
+
+      let userEmail = await User.findOne({
+        where:{
+          email:email
         }
+      })
 
-      await User.create({
-        first_name,
-        last_name,
-        email,
-        password:criptografada
-      })      
+      console.log('usuario email', userEmail)
 
-      return res.redirect('/users/login')
+      if(errors.isEmpty()){            
+      }else{
+        console.log(errors.mapped())
+        return res.render('signup',{
+          toastStatus: toastStatus,
+          toastMessage: toastMessage,
+          toastColor: toastColor,
+          errors: errors.mapped(),
+          old: req.body,
+        });
+      } 
+      
+      if(userEmail === null){
+        await User.create({
+          first_name,
+          last_name,
+          email,
+          password:criptografada
+        })        
+        return res.redirect('/users/login')
+      }else{
+        return res.redirect("/users/signup?error=email");
+      }
+
+      
     },
     enter: async (req, res) => {
       if (req.params.id != req.session.user.id_user) {

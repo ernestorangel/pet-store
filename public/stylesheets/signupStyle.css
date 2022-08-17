@@ -6,6 +6,27 @@ main {
     padding: 0px 0px 17px 0px;
  }
 
+ .toast-login {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px;
+
+    width: 250px;
+    height: 50px;
+
+    background-color: red;
+    color: white;
+
+    border-radius: var(--card-border-size);
+}
+
  .signup-1 {
      display: flex;
      flex-direction: column;
