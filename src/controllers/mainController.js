@@ -3,17 +3,11 @@ const { PassThrough } = require('stream');
 const { Product, Images_of_product, User } = require('../database/models');
 const Sequelize = require('sequelize');
 
-let finishDate = new Date(2022, 7, 12, 15, 30, 0);
+// Data Contador Home
+let finishDate = new Date(2022, 7, 25, 15, 30, 0);
 
 async function getArrayOfProducts(maxNumberOfProducts) {
     const sequelize = new Sequelize("pet_store", "root", null, {dialect: "mysql"});
-
-    // let data = await Product.findAll({
-    //     limit: maxNumberOfProducts,
-    //     include: 'id_images'
-    // })
-
-    // console.log("data: ", data)
 
     let products = await sequelize.query(
         `SELECT
@@ -27,9 +21,13 @@ async function getArrayOfProducts(maxNumberOfProducts) {
         ON p.id_product = iop.id_product
         LEFT JOIN pet_store.product_images AS i
         ON iop.id_image = i.id_image
-        GROUP BY 1, 2, 3, 4`,
+        GROUP BY 1, 2, 3, 4
+        LIMIT :limit`,
         { 
           type: sequelize.QueryTypes.SELECT,
+          replacements: {
+            limit: maxNumberOfProducts
+          }
         }
     );
 
@@ -97,15 +95,19 @@ const homeProperties = {
     brandsShowcaseTitle1: "Marcas em Destaque",
     brands1: [
         {
+            name: 'Pedigree',
             image: "/images/logos/pedigree-logo.png"
         },
         {
+            name: 'Purina',
             image: "/images/logos/purina-logo.png"
         },
         {
+            name: 'Royal Canin',
             image: "/images/logos/royal-canin-logo.png"
         },
         {
+            name: 'Whiskas',
             image: "/images/logos/whiskas-logo.png"
         },
     ],
@@ -147,22 +149,26 @@ const mainController = {
             user.avatar = result.avatar;
             isLogged = true;
         }
-        let prod1 = await fixPricesOfProducts(await getArrayOfProducts());
+        let prod1 = await fixPricesOfProducts(await getArrayOfProducts(10));
         prod1.forEach((item)=>{
             if (item.imgs == null) item.imgs = ['/images/products/std-no-photo-img.jpg'];
             else item.imgs = item.imgs.split(',');
         })
-        let prod2 = await fixPricesOfProducts(await getArrayOfProducts());
+        let prod2 = await fixPricesOfProducts(await getArrayOfProducts(10));
         prod2.forEach((item)=>{
             if (item.imgs == null) item.imgs = ['/images/products/std-no-photo-img.jpg'];
             else item.imgs = item.imgs.split(',');
         })
-        let prod3 = await fixPricesOfProducts(await getArrayOfProducts());
+        let prod3 = await fixPricesOfProducts(await getArrayOfProducts(10));
         prod3.forEach((item)=>{
             if (item.imgs == null) item.imgs = ['/images/products/std-no-photo-img.jpg'];
             else item.imgs = item.imgs.split(',');
         })
-        console.log("user: ", user)
+        let promotionProducts = await fixPricesOfProducts(await getArrayOfProducts(2));
+        promotionProducts.forEach((item)=>{
+            if (item.imgs == null) item.imgs = ['/images/products/std-no-photo-img.jpg'];
+            else item.imgs = item.imgs.split(',');
+        })
         user = setStandardUserImage(user);
         res.render('home2', {
             title: homeProperties.homeTitle,
@@ -180,7 +186,7 @@ const mainController = {
             brandsShowcaseTitle1: homeProperties.brandsShowcaseTitle1,
             brands1: homeProperties.brands1,
             promotionTimer: homeProperties.promotionTimer,
-            promotionProducts: homeProperties.promotionProducts,
+            promotionProducts: promotionProducts,
             productsShowcaseTitle3: homeProperties.productsShowcaseTitle3,
             products3: prod3,
         });

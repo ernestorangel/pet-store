@@ -16,25 +16,44 @@
         <div id="results-left-area">
             <div class="filter-portion-area">
                 <div class="filter-portion-area-title">Categorias</div>
-                <div class="filter-portion-area-content"></div>
+                <div class="filter-portion-area-content">
+                    <% categories.forEach((category)=>{ %>
+                        <div class="filter-option-wrapper">
+                            <input type="checkbox">
+                            <label class="filter-option-text"><%= category.name %></label>
+                        </div>
+                    <% }); %>
+                </div>
             </div>
             <div class="filter-portion-area">
                 <div class="filter-portion-area-title">Marcas</div>
-                <div class="filter-portion-area-content"></div>
+                <div class="filter-portion-area-content">
+                    <% brands.forEach((brand)=>{ %>
+                        <div class="filter-option-wrapper">
+                            <input type="checkbox">
+                            <label class="filter-option-text"><%= brand.name %></label>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+            <div class="filter-portion-area">
+                <p style="background-color:yellow ;color:red; margin:10px 0; padding: 5px;">O filtro de busca por marca e categoria ainda não foi implementado, porém as categorias e marcas estão sendo listadas a partir das que existem no banco</p>
             </div>
         </div>
-        <div id="results-right-area">
-            <% products.forEach((product)=>{ %>
-                <a class="product-card" href="/products/view/<%= product.id_product %>">
-                    <div class="product-card-image-container">
-                        <img class="product-card-image" src="<%= product.imgs[0] %>">
-                    </div>
-                    <div class="product-card-info-container">
-                        <div class="product-card-info-name"><%= product.name %></div>
-                        <div class="product-card-info-price"><%= product.price %></div>
-                    </div>
-                </a>
-            <% }); %>
+        <div class="results-right-area-container">
+            <div id="results-right-area">
+                <% products.forEach((product)=>{ %>
+                    <a class="product-card" href="/products/view/<%= product.id_product %>">
+                        <div class="product-card-image-container">
+                            <img class="product-card-image" src="<%= product.imgs[0] %>">
+                        </div>
+                        <div class="product-card-info-container">
+                            <div class="product-card-info-name"><%= product.name %></div>
+                            <div class="product-card-info-price"><%= product.price %></div>
+                        </div>
+                    </a>
+                <% }); %>
+            </div>
         </div>
     </div>
   </main>

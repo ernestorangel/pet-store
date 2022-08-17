@@ -13,6 +13,7 @@ function setPriceAsCurrency(value) {
 
 function fixPricesOfProducts(arrayOfProducts) {
     arrayOfProducts.forEach((product)=>{
+        product.product_total = parseFloat(product.qtd) * parseFloat(product.price);
         product.price = setPriceAsCurrency(product.price);
         product.product_total = setPriceAsCurrency(product.product_total + '');
     });
@@ -37,31 +38,64 @@ const cartController = {
 
         let bestSellers = await BestSellers.findAll();
 
-        let carts = await Cart.findAll({
-            where: {id_user: req.session.user.id_user},
-            attributes: ['id_product', 'qtd'],
-            include: 'products'
-        });
+        const sequelize = new Sequelize("pet_store", "root", null, {dialect: "mysql"});
 
-        let products = [];
-        carts.forEach((item) => {
-            products.push(item.dataValues);
-        });
+        let carts = await sequelize.query(
+            `SELECT
+            c.qtd,
+            p.id_product,
+            p.name,
+            p.description,
+            p.price,
+            group_concat(i.img) as imgs
+            FROM pet_store.cart AS c
+            LEFT JOIN pet_store.products AS p
+            ON c.id_product = p.id_product
+            LEFT JOIN pet_store.images_of_product AS iop
+            ON iop.id_product = p.id_product
+            LEFT JOIN pet_store.product_images AS i
+            ON iop.id_image = i.id_image
+            WHERE c.id_user = :id
+            GROUP BY 1, 2, 3, 4`,
+            { 
+              type: sequelize.QueryTypes.SELECT,
+              replacements: { id: req.session.user.id_user }
+            }
+        );
+      
+        sequelize.close();
 
-        console.log(products)
-        let productsDetails = [];
-        products.forEach((item)=>{
-            let values = item.products[0].dataValues;
-            values.qtd = item.qtd;
-            values.product_total = parseInt(item.qtd) * parseFloat(values.price);
-            productsDetails.push(values);
-        });
+        // let carts = await Cart.findAll({
+        //     where: {id_user: req.session.user.id_user},
+        //     attributes: ['id_product', 'qtd'],
+        //     include: 'products'
+        // });
+
+        // let products = [];
+        // carts.forEach((item) => {
+        //     products.push(item.dataValues);
+        // });
+
+        // let productsDetails = [];
+        // products.forEach((item)=>{
+        //     let values = item.products[0].dataValues;
+        //     values.qtd = item.qtd;
+        //     values.product_total = parseInt(item.qtd) * parseFloat(values.price);
+        //     productsDetails.push(values);
+        // });
         
-        let finalProductOnCart = fixPricesOfProducts(productsDetails);
+        // let finalProductOnCart = fixPricesOfProducts(productsDetails);
+
+        carts.forEach((item)=>{
+            if (item.imgs == null) item.imgs = ['/images/products/std-no-photo-img.jpg'];
+            else item.imgs = item.imgs.split(',');
+        });
+
+        let finalProductOnCart = fixPricesOfProducts(carts);
 
         res.render('cart2', { 
             title:'Carrinho',
-            products: finalProductOnCart,
+            products: carts,
             isLogged: isLogged,
             user: user,
             toastStatus: toastStatus,
@@ -135,7 +169,7 @@ const cartController = {
             }
         });
 
-        res.redirect(`/cart/checkoutTest?id=${order.id_order}`);
+        res.redirect(`/cart/checkout?id=${order.id_order}`);
     },
     update: async (req, res) => {
         if (req.query.new_qtd == 0) {
@@ -184,6 +218,7 @@ const cartController = {
             p.name,
             p.description,
             p.price,
+            pio.product_qtd,
             group_concat(i.img) as imgs
             FROM pet_store.orders AS o
             LEFT JOIN pet_store.products_in_orders AS pio
@@ -195,7 +230,7 @@ const cartController = {
             LEFT JOIN pet_store.product_images AS i
             ON iop.id_image = i.id_image
             WHERE o.id_order = :id
-            GROUP BY 1, 2, 3, 4, 5, 6`,
+            GROUP BY 1, 2, 3, 4, 5, 6, 7`,
             { 
               type: sequelize.QueryTypes.SELECT,
               replacements: { id: req.query.id }
@@ -204,7 +239,12 @@ const cartController = {
       
         sequelize.close();
 
-        //res.send(products);
+        fixPricesOfProducts(products);
+        
+        products.forEach((product)=>{
+            product.shipping = setPriceAsCurrency(product.shipping);
+            product.total = setPriceAsCurrency(product.total);
+        })
 
         res.render('checkout2', {
             title: 'Checkout',

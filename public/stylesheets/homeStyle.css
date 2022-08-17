@@ -473,14 +473,16 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 10px;
   border-radius: var(--card-border-size);
   transition: 0.3ms;
   text-decoration: none;
   border: 1px solid lightgrey;
+  background-color: white;
 }
 
 .longShowcaseItem:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
   border: 1px solid var(--secondary-color);
 }
 

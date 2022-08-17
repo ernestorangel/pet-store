@@ -112,10 +112,16 @@
                   <img class="overviewOrderCardBodyPic" src="<%= product.imgs[0] %>">
                   <div class="overviewOrderCardBodyInfoHolder">
                     <div class="overviewOrderCardBodyName"><%= product.name %></div>
-                    <div class="overviewOrderCardBodyDescription"><%= product.price %></div>
+                    <div class="overviewOrderCardBodyDescription"><%= product.qtd %> unidade(s) de <%= product.price %> cada.</div>
                   </div>
                 </div>
               <%  }); %>
+              <div class="overviewOrderCardFooter">
+                <div class="overviewOrderCardFooterTitle">Frete:</div>
+                <div class="overviewOrderCardFooterInfo"><%= order.shipping %></div>
+                <div class="overviewOrderCardFooterTitle">Total em Produtos:</div>
+                <div class="overviewOrderCardFooterInfo"><%= order.total %></div>
+              </div>
             </div>
           <% }); %>
         </div>

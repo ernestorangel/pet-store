@@ -25,7 +25,7 @@
                     <div class="order-item-info">
                         <div class="order-item-unit-name"> <%= product.name %></div>
                         <div class="order-item-unit-description"> <%= product.description %></div>
-                        <div class="order-item-unit-price"> <%= product.price %></div>
+                        <div class="order-item-unit-price"><%= product.product_qtd %> unidade(s) de <%= product.price %> cada.</div>
                     </div>
                 </div>
             <% }); %>
@@ -35,8 +35,6 @@
             <div class="order-footer-value"><%= products[0].shipping %></div>
             <div class="order-footer-title">Total em produtos: </div>
             <div class="order-footer-value"><%= products[0].total %></div>
-            <div class="order-footer-title">Total Pago: </div>
-            <div class="order-footer-value"><%= parseFloat(products[0].shipping) + parseFloat(products[0].total) %> </div>
         </div>
     </div>
 

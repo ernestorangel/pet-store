@@ -121,6 +121,10 @@ const productController = {
         }
       );
 
+      let categories = await sequelize.query(`SELECT * FROM pet_store.category`, { type: sequelize.QueryTypes.SELECT});
+
+      let brands = await sequelize.query(`SELECT * FROM pet_store.brand`, { type: sequelize.QueryTypes.SELECT});
+
       sequelize.close();
 
       products.forEach((product)=>{
@@ -128,14 +132,14 @@ const productController = {
         else product.imgs = product.imgs.split(',');
       });
 
-      console.log(products)
-
       res.render('productsList2', {
         title: 'Categorias',
         toastStatus: toastStatus,
         isLogged: isLogged,
         searched: req.query.word,
-        products: setStandardProductImage(fixPricesOfProducts(products))
+        products: setStandardProductImage(fixPricesOfProducts(products)),
+        categories: categories,
+        brands: brands
       });
     },
     view: async (req, res) => {
